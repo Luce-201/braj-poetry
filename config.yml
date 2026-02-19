@@ -1,0 +1,34 @@
+# Site settings
+title: braj-poetry
+description: A collection of Braj and Awadhi poetry with word meanings
+baseurl: "/braj-poetry"
+url: "https://luce-201.github.io"
+
+# Language and script settings
+lang: hi
+encoding: utf-8
+
+# Collections for organizing content
+collections:
+  poems:
+    output: true
+    permalink: /poems/:name/
+  poets:
+    output: true
+    permalink: /poets/:name/
+
+# Theme
+theme: minima
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "poems"
+    values:
+      layout: "poem"
+  - scope:
+      path: ""
+      type: "poets"
+    values:
+      layout: "poet"
