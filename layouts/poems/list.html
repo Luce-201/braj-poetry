@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="list-page">
+  <header class="list-header">
+    <h1>कविताएँ <span class="en">Poems</span></h1>
+    <p>{{ len .Pages }} कविताएँ / poems</p>
+  </header>
+  
+  <div class="filter-bar">
+    <span>विषय के अनुसार छाँटें / Filter by theme:</span>
+    {{ range .Site.Taxonomies.themes }}
+    <a href="{{ .Page.Permalink }}" class="theme-tag small">{{ .Page.Title }}</a>
+    {{ end }}
+  </div>
+
+  <div class="poem-grid">
+    {{ range .Pages }}
+    {{ partial "poem-card.html" . }}
+    {{ end }}
+  </div>
+
+  {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}

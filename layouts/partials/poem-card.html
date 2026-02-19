@@ -1,0 +1,18 @@
+<div class="poem-card">
+  <a href="{{ .Permalink }}" class="poem-card-link">
+    <h3 class="card-title">{{ .Title }}</h3>
+    {{ with .Params.poet }}
+    <p class="card-poet">{{ . }}</p>
+    {{ end }}
+    {{ with .Params.themes }}
+    <div class="card-themes">
+      {{ range first 2 . }}
+      <span class="theme-tag mini">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ if .Params.audio_url }}
+    <span class="audio-badge">🎵 पाठ उपलब्ध</span>
+    {{ end }}
+  </a>
+</div>

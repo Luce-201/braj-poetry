@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="hero">
+  <h1>{{ .Site.Params.siteName }}</h1>
+  <p class="hero-sub">{{ .Site.Params.siteNameEn }}</p>
+  <p class="hero-desc">{{ .Site.Params.descriptionHi }}</p>
+</section>
+
+<section class="home-section">
+  <h2>नवीनतम कविताएँ <span class="en">Recent Poems</span></h2>
+  <div class="poem-grid">
+    {{ range first 6 (where .Site.RegularPages "Type" "poems") }}
+    {{ partial "poem-card.html" . }}
+    {{ end }}
+  </div>
+  <a href="/poems/" class="btn-all">सभी कविताएँ देखें / View All Poems →</a>
+</section>
+
+<section class="home-section">
+  <h2>कवि <span class="en">Poets</span></h2>
+  <div class="poet-grid">
+    {{ range first 6 (where .Site.RegularPages "Type" "poets") }}
+    {{ partial "poet-card.html" . }}
+    {{ end }}
+  </div>
+  <a href="/poets/" class="btn-all">सभी कवि देखें / View All Poets →</a>
+</section>
+
+<section class="home-section">
+  <h2>विषय के अनुसार <span class="en">Browse by Theme</span></h2>
+  <div class="theme-cloud">
+    {{ range .Site.Taxonomies.themes }}
+    <a href="{{ .Page.Permalink }}" class="theme-tag">
+      {{ .Page.Title }} <span class="count">({{ .Count }})</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

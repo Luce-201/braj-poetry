@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Params.siteName }}</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+  
+  <!-- Google Fonts — Tiro Devanagari for Hindi, Lora for English -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo">
+      <span class="logo-hi">{{ .Site.Params.siteName }}</span>
+      <span class="logo-en">{{ .Site.Params.siteNameEn }}</span>
+    </a>
+    <nav class="main-nav">
+      <a href="/poems/">कविताएँ / Poems</a>
+      <a href="/poets/">कवि / Poets</a>
+      <a href="/themes/">विषय / Themes</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Word meaning tooltip — appears when you click a word in a poem -->
+<div id="word-tooltip" class="word-tooltip hidden">
+  <span class="tooltip-word"></span>
+  <span class="tooltip-meaning"></span>
+  <button class="tooltip-close" onclick="closeTooltip()">✕</button>
+</div>
+
+<main class="main-content">
+  {{ block "main" . }}{{ end }}
+</main>
+
+<footer class="site-footer">
+  <p>ब्रज काव्य कोश · Braj Kavya Kosha</p>
+</footer>
+
+<!-- Dictionary data embedded as JS variable -->
+{{ $dict := index .Site.Data "dictionary" }}
+{{ if $dict }}
+<script>
+  window.BRAJ_DICTIONARY = {{ $dict | jsonify }};
+</script>
+{{ end }}
+
+<script src="/js/dictionary.js"></script>
+</body>
+</html>

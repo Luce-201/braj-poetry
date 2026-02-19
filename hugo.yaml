@@ -1,0 +1,29 @@
+baseURL: "https://your-site-name.netlify.app/"
+languageCode: "hi"
+title: "ब्रज काव्य कोश"
+defaultContentLanguage: "hi"
+
+# Taxonomies — this creates your category/filter system
+taxonomies:
+  theme: themes
+  poet: poets_tax
+
+# Pagination
+paginate: 20
+
+# Build settings
+enableRobotsTXT: true
+enableEmoji: true
+
+params:
+  siteName: "ब्रज काव्य कोश"
+  siteNameEn: "Braj Kavya Kosha"
+  description: "A digital anthology of Braj language poetry"
+  descriptionHi: "ब्रज भाषा काव्य का डिजिटल संग्रह"
+  accentColor: "#8B1A1A"   # deep red, like rekhta — change if you want
+  bgColor: "#FDF6E3"        # warm cream background
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true   # allows HTML in markdown — needed for audio embeds
