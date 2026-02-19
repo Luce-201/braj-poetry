@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: Luce-201/braj-poetry
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "poems"
+    label: "Poems"
+    folder: "poems"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Content", name: "body", widget: "markdown" }
