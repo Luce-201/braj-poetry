@@ -15,7 +15,7 @@ content:
       - name: poet
         label: Poet
         type: string
-- name: form
+      - name: form
         label: Form (e.g. दोहा, पद, सवैया, कवित्त)
         type: select
         options:
