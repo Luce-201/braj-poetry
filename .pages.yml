@@ -1,0 +1,41 @@
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "poems"
+    label: "कविताएँ / Poems"
+    folder: "content/poems"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "शीर्षक / Title", name: "title", widget: "string" }
+      - { label: "कवि / Poet", name: "poet", widget: "string" }
+      - label: "विषय / Themes"
+        name: "themes"
+        widget: "list"
+      - label: "Audio URL"
+        name: "audio_url"
+        widget: "string"
+        required: false
+      - label: "Notes"
+        name: "notes"
+        widget: "text"
+        required: false
+      - label: "Poem Text"
+        name: "body"
+        widget: "markdown"
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+
+  - name: "poets"
+    label: "कवि / Poets"
+    folder: "content/poets"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Dates", name: "dates", widget: "string", required: false }
+      - { label: "Region", name: "region", widget: "string", required: false }
+      - { label: "Photo", name: "image", widget: "image", required: false }
+      - { label: "Biography", name: "body", widget: "markdown" }
+      - { label: "Date", name: "date", widget: "datetime" }
