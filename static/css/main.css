@@ -351,3 +351,36 @@ body {
   color: var(--accent);
 }
 .pagination .active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* FORM TABS (on poet pages) */
+.form-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+.form-tab {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  color: var(--text-light);
+  font-family: var(--font-hi);
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.form-tab:hover { border-color: var(--accent); color: var(--accent); }
+.form-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.form-tab .count { font-size: 0.75rem; opacity: 0.8; }
+.form-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.1rem 0.5rem;
+  margin-bottom: 0.4rem;
+}
