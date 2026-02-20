@@ -1,5 +1,5 @@
 ---
-title: Kavitawali
+title: अवधेस के द्वारे सकारे गई सुत गोद में भूपति लै निकसे ।
 poet: Tulsidas
 form: सवैया
 audio_url: <iframe src="https://archive.org/embed/Kavitawali" width="500"
