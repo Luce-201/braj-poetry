@@ -15,6 +15,12 @@ content:
       - name: poet
         label: Poet
         type: string
+- name: form
+        label: Form (e.g. दोहा, पद, सवैया, कवित्त)
+        type: select
+        options:
+          values: [दोहा, पद, सवैया, कवित्त, छंद, भजन, अन्य]
+        required: false
       - name: themes
         label: Themes
         type: string

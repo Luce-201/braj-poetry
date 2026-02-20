@@ -20,18 +20,78 @@
   </div>
 
   <!-- All poems by this poet -->
-  {{ $poet := .Title }}
-  {{ $poems := where .Site.RegularPages "Params.poet" $poet }}
-  {{ if $poems }}
-  <section class="poet-poems">
-    <h2>रचनाएँ <span class="en">Works</span></h2>
-    <div class="poem-grid">
-      {{ range $poems }}
-      {{ partial "poem-card.html" . }}
-      {{ end }}
-    </div>
-  </section>
+ {{ $poet := .Title }}
+{{ $poems := where .Site.RegularPages "Params.poet" $poet }}
+{{ if $poems }}
+<section class="poet-poems">
+  <h2>रचनाएँ <span class="en">Works</span></h2>
+
+  <!-- Form filter tabs -->
+  {{ $forms := slice }}
+  {{ range $poems }}
+    {{ with .Params.form }}
+      {{ $forms = $forms | append . }}
+    {{ end }}
   {{ end }}
+  {{ $forms = $forms | uniq }}
+
+  {{ if $forms }}
+  <div class="form-tabs">
+    <button class="form-tab active" onclick="filterPoems('all', this)">
+      संपूर्ण <span class="count">({{ len $poems }})</span>
+    </button>
+    {{ range $forms }}
+    {{ $form := . }}
+    {{ $count := len (where $poems "Params.form" $form) }}
+    <button class="form-tab" onclick="filterPoems('{{ $form }}', this)">
+      {{ $form }} <span class="count">({{ $count }})</span>
+    </button>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- All poems, tagged with their form -->
+  <div class="poem-grid" id="poet-poem-grid">
+    {{ range $poems }}
+    <div class="poem-card" data-form="{{ .Params.form }}">
+      <a href="{{ .Permalink }}" class="poem-card-link">
+        <h3 class="card-title">{{ .Title }}</h3>
+        {{ with .Params.form }}
+        <span class="form-badge">{{ . }}</span>
+        {{ end }}
+        {{ with .Params.themes }}
+        <div class="card-themes">
+          {{ range first 2 . }}
+          <span class="theme-tag mini">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+        {{ if .Params.audio_url }}
+        <span class="audio-badge">🎵 पाठ उपलब्ध</span>
+        {{ end }}
+      </a>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<script>
+function filterPoems(form, btn) {
+  // Update active tab
+  document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Show/hide poems
+  document.querySelectorAll('#poet-poem-grid .poem-card').forEach(card => {
+    if (form === 'all' || card.dataset.form === form) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+{{ end }}
 
 </article>
 {{ end }}
