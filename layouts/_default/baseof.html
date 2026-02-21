@@ -48,8 +48,13 @@
 {{ if $dict }}
 <script>
   window.BRAJ_DICTIONARY = {{ $dict | jsonify }};
+  if (typeof window.BRAJ_DICTIONARY === 'string') {
+    window.BRAJ_DICTIONARY = JSON.parse(window.BRAJ_DICTIONARY);
+  }
 </script>
 {{ end }}
+
+
 
 <script src="/js/dictionary.js"></script>
 </body>

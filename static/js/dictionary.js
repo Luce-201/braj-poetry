@@ -2,7 +2,8 @@
 // Braj Kavya Dictionary — Word Click Feature
 // ============================================
 
-const dictionary = window.BRAJ_DICTIONARY || {};
+const raw = window.BRAJ_DICTIONARY || '{}';
+const dictionary = typeof raw === 'string' ? JSON.parse(raw) : raw;
 
 // This function wraps each word in the poem in a clickable <span>
 function makePoemWordsClickable() {
