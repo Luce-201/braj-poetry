@@ -1,5 +1,4 @@
 ---
 title: "खोज / Search"
-layout: "search"
+type: "search"
 ---
-
