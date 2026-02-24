@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tulsidas — ब्रज काव्य कोश</title>
+  <meta name="description" content="A digital anthology of Braj language poetry">
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/search.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo">
+      <span class="logo-hi">ब्रज काव्य कोश</span>
+      <span class="logo-en">Braj Kavya Kosha</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/poems/">कविताएँ / Poems</a>
+      <a href="/poets/">कवि / Poets</a>
+      <a href="/themes/">विषय / Themes</a>
+    </nav>
+
+    
+    <div class="header-search" id="header-search-form">
+      <div class="header-search-wrap">
+        <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="search"
+          id="header-search-input"
+          class="header-search-input"
+          placeholder="खोजें / Search…"
+          autocomplete="off"
+          aria-label="Search poems and poets"
+        >
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div id="word-tooltip" class="word-tooltip hidden">
+  <span class="tooltip-word"></span>
+  <span class="tooltip-meaning"></span>
+  <button class="tooltip-close" onclick="closeTooltip()">✕</button>
+</div>
+
+<main class="main-content">
+  
+<article class="poet-page">
+  
+  <header class="poet-header">
+    
+    <div class="poet-image">
+      <img src="/uploads/tulsidas.png" alt="Tulsidas" loading="lazy">
+    </div>
+    
+    
+    <div class="poet-meta">
+      <h1>Tulsidas</h1>
+      <p class="dates">1511-1623</p>
+      <p class="region">Modern Uttar Pradesh</p>
+    </div>
+  </header>
+
+  <div class="poet-bio">
+    <p>गोस्वामी तुलसीदास (लगभग 1532–1623) हिंदी साहित्य के महान भक्तिकालीन कवि थे, जिनका नाम रामभक्ति की परंपरा में अत्यंत आदर से लिया जाता है। उनका जन्म उत्तर प्रदेश के बाँदा जनपद (राजापुर) में माना जाता है। बाल्यावस्था में ही अनाथ हो जाने के कारण उनका जीवन प्रारम्भ से ही संघर्षपूर्ण रहा, परंतु गुरु नरहरिदास के सान्निध्य में उन्हें आध्यात्मिक दिशा मिली।</p>
+<p>तुलसीदास ने अवधी भाषा में रचित <em>रामचरितमानस</em> के माध्यम से भगवान राम के आदर्श जीवन, मर्यादा और धर्म की ऐसी प्रस्तुति दी, जिसने जन-जन के हृदय में भक्ति की नई चेतना जगाई। उन्होंने संस्कृत की गूढ़ परंपरा को लोकभाषा में ढालकर धर्म और साहित्य को जनता के निकट ला दिया। <em>विनयपत्रिका</em>, <em>कवितावली</em>, <em>दोहावली</em> और <em>गीतावली</em> उनकी अन्य प्रमुख कृतियाँ हैं।</p>
+<p>तुलसीदास का काव्य केवल भक्ति का ही नहीं, बल्कि नीति, समाज और मानवीय मूल्यों का भी गहन दर्पण है। वे भारतीय संस्कृति में मर्यादा, समन्वय और श्रद्धा के अमर गायक माने जाते हैं।</p>
+
+  </div>
+
+  
+ 
+
+
+<section class="poet-poems">
+  <h2>रचनाएँ <span class="en">Works</span></h2>
+
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+
+  
+  <div class="form-tabs">
+    <button class="form-tab active" onclick="filterPoems('all', this)">
+      संपूर्ण <span class="count">(4)</span>
+    </button>
+    
+    
+    
+    <button class="form-tab" onclick="filterPoems('सवैया', this)">
+      सवैया <span class="count">(2)</span>
+    </button>
+    
+    
+    
+    <button class="form-tab" onclick="filterPoems('दोहा', this)">
+      दोहा <span class="count">(2)</span>
+    </button>
+    
+  </div>
+  
+
+  
+  <div class="poem-grid" id="poet-poem-grid">
+    
+    <div class="poem-card" data-form="सवैया">
+      <a href="http://localhost:1313/poems/2026-02-20-kavitawali/" class="poem-card-link">
+        <h3 class="card-title">अवधेस के द्वारे सकारे गई सुत गोद में भूपति लै निकसे ।</h3>
+        
+        <span class="form-badge">सवैया</span>
+        
+        
+        
+        <span class="audio-badge">🎵 पाठ उपलब्ध</span>
+        
+      </a>
+    </div>
+    
+    <div class="poem-card" data-form="सवैया">
+      <a href="http://localhost:1313/poems/2026-02-21-/" class="poem-card-link">
+        <h3 class="card-title">कबहूँ ससि मागत आरि करैं कबहूँ प्रतिबिंब निहारि डरैं।</h3>
+        
+        <span class="form-badge">सवैया</span>
+        
+        
+        
+        <span class="audio-badge">🎵 पाठ उपलब्ध</span>
+        
+      </a>
+    </div>
+    
+    <div class="poem-card" data-form="दोहा">
+      <a href="http://localhost:1313/poems/2026-02-21--1/" class="poem-card-link">
+        <h3 class="card-title">राम नाम अवलंब बिनु, परमारथ की आस।</h3>
+        
+        <span class="form-badge">दोहा</span>
+        
+        
+        <div class="card-themes">
+          
+          <span class="theme-tag mini">राम</span>
+          
+        </div>
+        
+        
+      </a>
+    </div>
+    
+    <div class="poem-card" data-form="दोहा">
+      <a href="http://localhost:1313/poems/2026-02-21--2/" class="poem-card-link">
+        <h3 class="card-title">राम नाम अवलंब बिनु, परमारथ की आस।</h3>
+        
+        <span class="form-badge">दोहा</span>
+        
+        
+        <div class="card-themes">
+          
+          <span class="theme-tag mini">राम</span>
+          
+        </div>
+        
+        
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+<script>
+function filterPoems(form, btn) {
+  
+  document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  
+  document.querySelectorAll('#poet-poem-grid .poem-card').forEach(card => {
+    if (form === 'all' || card.dataset.form === form) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
+
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <p>ब्रज काव्य कोश · Braj Kavya Kosha</p>
+</footer>
+
+
+
+
+<script>
+  window.BRAJ_DICTIONARY = "{\"गोपी\":\"cowherd woman, devotee of Krishna\",\"नयन\":\"eyes\",\"प्रेम\":\"love, affection\",\"बरसात\":\"rain, rainfall\",\"मुरली\":\"flute\",\"विरह\":\"separation, longing\",\"सुत\":\"son, child\"}";
+</script>
+
+
+<script src="/js/dictionary.js"></script>
+<script src="/js/search.js"></script>
+</body>
+</html>

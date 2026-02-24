@@ -1,6 +1,11 @@
 baseURL: "https://braj-poetry.netlify.app/"
 languageCode: "hi"
 title: "ब्रज काव्य कोश"
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
 defaultContentLanguage: "hi"
 
 # Taxonomies — this creates your category/filter system
@@ -9,7 +14,8 @@ taxonomies:
   poet: poets_tax
 
 # Pagination
-paginate: 20
+pagination:
+  pagerSize: 20
 
 # Build settings
 enableRobotsTXT: true

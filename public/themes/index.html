@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="hi">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Params.siteName }}</title>
-  <meta name="description" content="{{ .Site.Params.description }}">
+  <title>Themes — ब्रज काव्य कोश</title>
+  <meta name="description" content="A digital anthology of Braj language poetry">
   
-  <!-- Google Fonts — Tiro Devanagari for Hindi, Lora for English -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   
@@ -18,8 +18,8 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="site-logo">
-      <span class="logo-hi">{{ .Site.Params.siteName }}</span>
-      <span class="logo-en">{{ .Site.Params.siteNameEn }}</span>
+      <span class="logo-hi">ब्रज काव्य कोश</span>
+      <span class="logo-en">Braj Kavya Kosha</span>
     </a>
 
     <nav class="main-nav">
@@ -28,7 +28,7 @@
       <a href="/themes/">विषय / Themes</a>
     </nav>
 
-    <!-- Header search bar -->
+    
     <div class="header-search" id="header-search-form">
       <div class="header-search-wrap">
         <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -47,7 +47,7 @@
   </div>
 </header>
 
-<!-- Word meaning tooltip — appears when you click a word in a poem -->
+
 <div id="word-tooltip" class="word-tooltip hidden">
   <span class="tooltip-word"></span>
   <span class="tooltip-meaning"></span>
@@ -55,20 +55,54 @@
 </div>
 
 <main class="main-content">
-  {{ block "main" . }}{{ end }}
+  
+<div class="list-page">
+  <header class="list-header">
+    <h1>Themes</h1>
+    <p>4 items</p>
+  </header>
+  <div class="poem-grid">
+    
+    
+      <div class="generic-card">
+        <a href="http://localhost:1313/themes/%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3/">कृष्ण</a>
+      </div>
+    
+    
+    
+      <div class="generic-card">
+        <a href="http://localhost:1313/themes/%E0%A4%AD%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF/">भक्ति</a>
+      </div>
+    
+    
+    
+      <div class="generic-card">
+        <a href="http://localhost:1313/themes/%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%83%E0%A4%82%E0%A4%97%E0%A4%BE%E0%A4%B0/">श्रृंगार</a>
+      </div>
+    
+    
+    
+      <div class="generic-card">
+        <a href="http://localhost:1313/themes/%E0%A4%B0%E0%A4%BE%E0%A4%AE/">राम</a>
+      </div>
+    
+    
+  </div>
+</div>
+
 </main>
 
 <footer class="site-footer">
   <p>ब्रज काव्य कोश · Braj Kavya Kosha</p>
 </footer>
 
-<!-- Dictionary data embedded as JS variable -->
-{{ $dict := index .Site.Data "dictionary" }}
-{{ if $dict }}
+
+
+
 <script>
-  window.BRAJ_DICTIONARY = {{ $dict | jsonify }};
+  window.BRAJ_DICTIONARY = "{\"गोपी\":\"cowherd woman, devotee of Krishna\",\"नयन\":\"eyes\",\"प्रेम\":\"love, affection\",\"बरसात\":\"rain, rainfall\",\"मुरली\":\"flute\",\"विरह\":\"separation, longing\",\"सुत\":\"son, child\"}";
 </script>
-{{ end }}
+
 
 <script src="/js/dictionary.js"></script>
 <script src="/js/search.js"></script>

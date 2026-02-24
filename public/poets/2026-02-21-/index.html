@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surdas — ब्रज काव्य कोश</title>
+  <meta name="description" content="A digital anthology of Braj language poetry">
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/search.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo">
+      <span class="logo-hi">ब्रज काव्य कोश</span>
+      <span class="logo-en">Braj Kavya Kosha</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/poems/">कविताएँ / Poems</a>
+      <a href="/poets/">कवि / Poets</a>
+      <a href="/themes/">विषय / Themes</a>
+    </nav>
+
+    
+    <div class="header-search" id="header-search-form">
+      <div class="header-search-wrap">
+        <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="search"
+          id="header-search-input"
+          class="header-search-input"
+          placeholder="खोजें / Search…"
+          autocomplete="off"
+          aria-label="Search poems and poets"
+        >
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div id="word-tooltip" class="word-tooltip hidden">
+  <span class="tooltip-word"></span>
+  <span class="tooltip-meaning"></span>
+  <button class="tooltip-close" onclick="closeTooltip()">✕</button>
+</div>
+
+<main class="main-content">
+  
+<article class="poet-page">
+  
+  <header class="poet-header">
+    
+    <div class="poet-image">
+      <img src="/uploads/surdas.png" alt="Surdas" loading="lazy">
+    </div>
+    
+    
+    <div class="poet-meta">
+      <h1>Surdas</h1>
+      <p class="dates">1478-1583</p>
+      <p class="region">Modern Uttar Pradesh</p>
+    </div>
+  </header>
+
+  <div class="poet-bio">
+    <p>सूरदास (लगभग 1478–1583) भक्तिकाल के महान कृष्णभक्त कवि थे, जिनका स्थान हिंदी साहित्य में अत्यंत ऊँचा माना जाता है। उनका जन्म प्रायः उत्तर प्रदेश के रुनकता या सीही गाँव में माना जाता है। वे जन्मांध थे—ऐसी मान्यता प्रचलित है—परंतु उनकी अंतर्दृष्टि और काव्यदृष्टि अद्भुत थी।</p>
+<p>सूरदास वल्लभाचार्य द्वारा प्रवर्तित पुष्टिमार्ग से जुड़े और श्रीकृष्ण की बाल एवं किशोर लीलाओं का अत्यंत सजीव, कोमल और भावपूर्ण चित्रण किया। उनकी प्रमुख कृति <em>सूरसागर</em> है, जिसमें कृष्ण की बाल-लीलाओं, गोपियों के प्रेम और वात्सल्य-भाव का अनूठा संसार रचा गया है। इसके अतिरिक्त <em>सूरसारावली</em> और <em>साहित्यलहरी</em> भी उनकी उल्लेखनीय रचनाएँ हैं।</p>
+<p>सूरदास की भाषा ब्रजभाषा है, जिसमें माधुर्य, सरलता और संगीतात्मकता का अद्भुत संगम मिलता है। उनके पद आज भी भजन-कीर्तन और शास्त्रीय संगीत की परंपरा में गाए जाते हैं। वे भक्ति, प्रेम और करुणा के अमर गायक के रूप में भारतीय साहित्य में सदा स्मरणीय रहेंगे।</p>
+
+  </div>
+
+  
+ 
+
+
+<section class="poet-poems">
+  <h2>रचनाएँ <span class="en">Works</span></h2>
+
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+
+  
+  <div class="form-tabs">
+    <button class="form-tab active" onclick="filterPoems('all', this)">
+      संपूर्ण <span class="count">(3)</span>
+    </button>
+    
+    
+    
+    <button class="form-tab" onclick="filterPoems('दोहा', this)">
+      दोहा <span class="count">(3)</span>
+    </button>
+    
+  </div>
+  
+
+  
+  <div class="poem-grid" id="poet-poem-grid">
+    
+    <div class="poem-card" data-form="दोहा">
+      <a href="http://localhost:1313/poems/2026-02-21--3/" class="poem-card-link">
+        <h3 class="card-title">मीन वियोग न सहि सकै</h3>
+        
+        <span class="form-badge">दोहा</span>
+        
+        
+        
+      </a>
+    </div>
+    
+    <div class="poem-card" data-form="दोहा">
+      <a href="http://localhost:1313/poems/2026-02-21--4/" class="poem-card-link">
+        <h3 class="card-title">मीन वियोग न सहि सकै</h3>
+        
+        <span class="form-badge">दोहा</span>
+        
+        
+        
+      </a>
+    </div>
+    
+    <div class="poem-card" data-form="दोहा">
+      <a href="http://localhost:1313/poems/2026-02-21--5/" class="poem-card-link">
+        <h3 class="card-title">मीन वियोग न सहि सकै</h3>
+        
+        <span class="form-badge">दोहा</span>
+        
+        
+        
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+<script>
+function filterPoems(form, btn) {
+  
+  document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  
+  document.querySelectorAll('#poet-poem-grid .poem-card').forEach(card => {
+    if (form === 'all' || card.dataset.form === form) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
+
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <p>ब्रज काव्य कोश · Braj Kavya Kosha</p>
+</footer>
+
+
+
+
+<script>
+  window.BRAJ_DICTIONARY = "{\"गोपी\":\"cowherd woman, devotee of Krishna\",\"नयन\":\"eyes\",\"प्रेम\":\"love, affection\",\"बरसात\":\"rain, rainfall\",\"मुरली\":\"flute\",\"विरह\":\"separation, longing\",\"सुत\":\"son, child\"}";
+</script>
+
+
+<script src="/js/dictionary.js"></script>
+<script src="/js/search.js"></script>
+</body>
+</html>
