@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>कृष्ण on ब्रज काव्य कोश</title>
-    <link>http://localhost:38541/themes/%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3/</link>
+    <link>http://localhost:1313/themes/%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3/</link>
     <description>Recent content in कृष्ण on ब्रज काव्य कोश</description>
     <generator>Hugo</generator>
     <language>hi</language>
     <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:38541/themes/%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/themes/%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>मधुर मिलन</title>
-      <link>http://localhost:38541/poems/surdas-madhura-milan/</link>
+      <link>http://localhost:1313/poems/surdas-madhura-milan/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38541/poems/surdas-madhura-milan/</guid>
+      <guid>http://localhost:1313/poems/surdas-madhura-milan/</guid>
       <description>&lt;p&gt;मैया मोहिं दाऊ बहुत खिझायो।&lt;/p&gt;&#xA;&lt;p&gt;मोसौं कहत मोल को लीन्हों, तू जसुमति कब जायो।&lt;/p&gt;&#xA;&lt;p&gt;कहा करौं इहि रिस के मारें, खेलन हौं नहिं जायो।&lt;/p&gt;</description>
     </item>
   </channel>
