@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38541&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>भक्ति — ब्रज काव्य कोश</title>
+  <title>खोज / Search — ब्रज काव्य कोश</title>
   <meta name="description" content="A digital anthology of Braj language poetry">
   
   
@@ -56,36 +56,59 @@
 
 <main class="main-content">
   
-<div class="list-page">
+<div class="search-page">
+
   <header class="list-header">
-    <h1>भक्ति</h1>
-    <p>1 items</p>
+    <h1>खोज <span class="en">Search</span></h1>
+    <p>कविताएँ, कवि और विषय खोजें / Search poems, poets and themes</p>
   </header>
-  <div class="poem-grid">
-    
-    
-      <div class="poem-card">
-  <a href="http://localhost:38541/poems/surdas-madhura-milan/" class="poem-card-link">
-    <h3 class="card-title">मधुर मिलन</h3>
-    
-    <p class="card-poet">सूरदास</p>
-    
-    
-    <div class="card-themes">
-      
-      <span class="theme-tag mini">भक्ति</span>
-      
-      <span class="theme-tag mini">श्रृंगार</span>
-      
+
+  <div class="search-main-bar">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="search"
+        id="search-input"
+        class="search-input-large"
+        placeholder="यहाँ टाइप करें... / Type here..."
+        autocomplete="off"
+        autofocus
+      >
+      <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
     </div>
-    
-    
-  </a>
-</div>
-    
-    
+
+    <div class="search-filters">
+      <span class="filter-label">फ़िल्टर / Filter:</span>
+      <button class="filter-btn active" data-filter="all">सभी / All</button>
+      <button class="filter-btn" data-filter="poem">कविताएँ / Poems</button>
+      <button class="filter-btn" data-filter="poet">कवि / Poets</button>
+    </div>
   </div>
+
+  <div class="search-stats" id="search-stats"></div>
+  <div id="search-results" class="search-results"></div>
+
+  <div id="search-empty" class="search-empty">
+    <div class="search-empty-icon">🔍</div>
+    <p>खोज शुरू करने के लिए कुछ टाइप करें</p>
+    <p class="en">Start typing to search the collection</p>
+  </div>
+
+  <div id="search-no-results" class="search-no-results hidden">
+    <div class="search-empty-icon">😔</div>
+    <p id="search-no-results-text">कोई परिणाम नहीं मिला</p>
+    <p class="en">No results found. Try different keywords.</p>
+  </div>
+
 </div>
+
+<script>
+window.SEARCH_INDEX_URL = "http:\/\/localhost:38541\/index.json";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
+<script src="/js/search.js"></script>
 
 </main>
 
