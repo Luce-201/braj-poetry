@@ -12,6 +12,7 @@ content:
       - name: slug
         label: "File Slug (e.g. surdas-madhura-milan)"
         type: string
+        optional: true 
         hint: "Use only English letters, numbers, and hyphens. No spaces. This becomes the URL of the poem."
       - name: title
         label: Title
@@ -59,6 +60,7 @@ content:
       - name: slug
         label: "File Slug (e.g. surdas, mirabai, kabirdas)"
         type: string
+        optional: true
         hint: "Use only English letters, numbers, and hyphens. No spaces."
       - name: title
         label: Name
@@ -93,6 +95,7 @@ content:
     - name: slug
       label: "File Slug (e.g. krishna-bhakti)"
       type: string
+      optional: true
       hint: "Use only English letters, numbers, and hyphens."
     - name: title
       label: संग्रह का नाम / Collection Title
