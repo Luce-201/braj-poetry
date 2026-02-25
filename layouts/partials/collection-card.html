@@ -1,0 +1,12 @@
+<div class="collection-card">
+  <a href="{{ .Permalink }}" class="collection-card-link">
+    <p class="collection-card-label">संग्रह</p>
+    <h3 class="collection-card-title">{{ .Title }}</h3>
+    {{ with .Params.description_hi }}
+    <p class="collection-card-desc">{{ . }}</p>
+    {{ end }}
+    <p class="collection-card-count">
+      {{ len .Params.poems }} कविताएँ
+    </p>
+  </a>
+</div>

@@ -1,0 +1,59 @@
+{{ define "main" }}
+<article class="collection-page">
+
+  <header class="collection-header">
+    <p class="collection-label">संग्रह / Collection</p>
+    <h1 class="collection-title">{{ .Title }}</h1>
+
+    {{ with .Params.description_hi }}
+    <p class="collection-desc-hi">{{ . }}</p>
+    {{ end }}
+
+    {{ with .Params.description }}
+    <p class="collection-desc-en">{{ . }}</p>
+    {{ end }}
+
+    <p class="collection-count">
+      {{ len .Params.poems }} कविताएँ / poems
+    </p>
+  </header>
+
+  <!-- If there's a longer intro written in the body -->
+  {{ if .Content }}
+  <div class="collection-intro">
+    {{ .Content }}
+  </div>
+  {{ end }}
+
+  <!-- The poems in this collection -->
+  <div class="collection-poems">
+    {{ range $index, $slug := .Params.poems }}
+      {{ $poem := $.Site.GetPage (printf "/poems/%s" $slug) }}
+      {{ if $poem }}
+      <div class="collection-poem-row">
+        <span class="collection-poem-number">{{ add $index 1 }}</span>
+        <div class="collection-poem-info">
+          <a href="{{ $poem.Permalink }}" class="collection-poem-title">{{ $poem.Title }}</a>
+          {{ with $poem.Params.poet }}
+          <span class="collection-poem-poet">— {{ . }}</span>
+          {{ end }}
+          {{ with $poem.Params.themes }}
+          <div class="collection-poem-themes">
+            {{ range first 3 . }}
+            <span class="theme-tag mini">{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+        {{ if $poem.Params.audio_url }}
+        <span class="audio-badge">🎵</span>
+        {{ end }}
+      </div>
+      {{ else }}
+      <!-- Poem not found — silently skip so broken slugs don't crash the page -->
+      {{ end }}
+    {{ end }}
+  </div>
+
+</article>
+{{ end }}

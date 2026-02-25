@@ -73,3 +73,31 @@ content:
       - name: body
         label: Biography
         type: rich-text
+
+  - name: collections
+    label: संग्रह / Collections
+    path: content/collections
+    type: collection
+    fields:
+    - name: title
+      label: संग्रह का नाम / Collection Title
+      type: string
+    - name: description_hi
+      label: विवरण (हिन्दी) / Description in Hindi
+      type: string
+      optional: true
+    - name: description
+      label: Description (English)
+      type: string
+      optional: true
+    - name: poems
+      label: कविताएँ / Poems (slugs)
+      type: list
+      hint: "Enter the filename of each poem without .md — e.g. surdas-madhura-milan"
+    - name: draft
+      label: Draft (hide from site)
+      type: boolean
+      default: false
+    - name: date
+      label: Date
+      type: date
