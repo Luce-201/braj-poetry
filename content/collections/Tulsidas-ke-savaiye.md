@@ -1,5 +1,5 @@
 ---
-title: Tulsidas ke savaiye
+title: Tulsidas-ke-savaiye
 description_hi: कृष्ण की भक्ति और प्रेम पर आधारित कविताओं का संग्रह
 description: A curated selection of savaiyas of Tulsidas
 poems: |
