@@ -6,12 +6,17 @@
   <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Params.siteName }}</title>
   <meta name="description" content="{{ .Site.Params.description }}">
   
-  <!-- Google Fonts — Tiro Devanagari for Hindi, Lora for English -->
+  <!-- Apply saved language BEFORE render to prevent flash -->
+  <script>
+    (function() {
+      var lang = localStorage.getItem('braj_lang') || 'hi';
+      document.documentElement.setAttribute('data-lang', lang);
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/search.css">
 </head>
 <body>
 
@@ -21,33 +26,24 @@
       <span class="logo-hi">{{ .Site.Params.siteName }}</span>
       <span class="logo-en">{{ .Site.Params.siteNameEn }}</span>
     </a>
-
     <nav class="main-nav">
-      <a href="/poems/">कविताएँ / Poems</a>
-      <a href="/poets/">कवि / Poets</a>
-      <a href="/themes/">विषय / Themes</a>
+      <a href="/poems/">
+        <span class="lang-hi">कविताएँ</span>
+        <span class="lang-en">Poems</span>
+      </a>
+      <a href="/poets/">
+        <span class="lang-hi">कवि</span>
+        <span class="lang-en">Poets</span>
+      </a>
+      <a href="/themes/">
+        <span class="lang-hi">विषय</span>
+        <span class="lang-en">Themes</span>
+      </a>
+      <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">English</button>
     </nav>
-
-    <!-- Header search bar -->
-    <div class="header-search" id="header-search-form">
-      <div class="header-search-wrap">
-        <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input
-          type="search"
-          id="header-search-input"
-          class="header-search-input"
-          placeholder="खोजें / Search…"
-          autocomplete="off"
-          aria-label="Search poems and poets"
-        >
-      </div>
-    </div>
   </div>
 </header>
 
-<!-- Word meaning tooltip — appears when you click a word in a poem -->
 <div id="word-tooltip" class="word-tooltip hidden">
   <span class="tooltip-word"></span>
   <span class="tooltip-meaning"></span>
@@ -59,10 +55,10 @@
 </main>
 
 <footer class="site-footer">
-  <p>ब्रज काव्य कोश · Braj Kavya Kosha</p>
+  <span class="lang-hi">ब्रज काव्य कोश</span>
+  <span class="lang-en">Braj Kavya Kosha</span>
 </footer>
 
-<!-- Dictionary data embedded as JS variable -->
 {{ $dict := index .Site.Data "dictionary" }}
 {{ if $dict }}
 <script>
@@ -71,8 +67,6 @@
 {{ end }}
 
 <script src="/js/dictionary.js"></script>
-<script src="/js/fuse.min.js"></script>
-<script src="/js/search.js"></script>
-</body>
+<script src="/js/lang.js"></script>
 </body>
 </html>

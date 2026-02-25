@@ -2,7 +2,10 @@
   <a href="{{ .Permalink }}" class="poem-card-link">
     <h3 class="card-title">{{ .Title }}</h3>
     {{ with .Params.poet }}
-    <p class="card-poet">{{ . }}</p>
+    <p class="card-poet">
+      <span class="lang-hi">{{ . }}</span>
+      <span class="lang-en">{{ $.Params.poet_en | default . }}</span>
+    </p>
     {{ end }}
     {{ with .Params.themes }}
     <div class="card-themes">
@@ -12,7 +15,9 @@
     </div>
     {{ end }}
     {{ if .Params.audio_url }}
-    <span class="audio-badge">🎵 पाठ उपलब्ध</span>
+    <span class="audio-badge">
+      🎵 <span class="lang-hi">पाठ उपलब्ध</span><span class="lang-en">Audio available</span>
+    </span>
     {{ end }}
   </a>
 </div>

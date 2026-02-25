@@ -5,7 +5,10 @@
     {{ else }}
     <div class="poet-thumb-placeholder">{{ substr $.Title 0 1 }}</div>
     {{ end }}
-    <h3>{{ .Title }}</h3>
+    <h3>
+      <span class="lang-hi">{{ .Title }}</span>
+      <span class="lang-en">{{ .Params.title_en | default .Title }}</span>
+    </h3>
     {{ with .Params.dates }}<p class="dates">{{ . }}</p>{{ end }}
   </a>
 </div>

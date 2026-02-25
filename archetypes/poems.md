@@ -1,6 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 poet: ""
+poet_en: ""
 themes: []
 audio_url: ""
 notes: ""

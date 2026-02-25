@@ -14,6 +14,32 @@
   --font-en: 'Lora', Georgia, serif;
 }
 
+/* ============================================
+   LANGUAGE SWITCHER
+   ============================================ */
+
+/* Default: show Hindi, hide English */
+[data-lang="hi"] .lang-en { display: none; }
+[data-lang="en"] .lang-hi { display: none; }
+
+/* If no data-lang set yet, default to Hindi */
+html:not([data-lang]) .lang-en { display: none; }
+
+/* Toggle button */
+.lang-toggle {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 20px;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: var(--font-en);
+  margin-left: 1.5rem;
+  transition: background 0.2s;
+}
+.lang-toggle:hover { background: rgba(255,255,255,0.25); }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {

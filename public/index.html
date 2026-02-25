@@ -8,11 +8,16 @@
   <meta name="description" content="A digital anthology of Braj language poetry">
   
   
+  <script>
+    (function() {
+      var lang = localStorage.getItem('braj_lang') || 'hi';
+      document.documentElement.setAttribute('data-lang', lang);
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/search.css">
 </head>
 <body>
 
@@ -22,32 +27,23 @@
       <span class="logo-hi">ब्रज काव्य कोश</span>
       <span class="logo-en">Braj Kavya Kosha</span>
     </a>
-
     <nav class="main-nav">
-      <a href="/poems/">कविताएँ / Poems</a>
-      <a href="/poets/">कवि / Poets</a>
-      <a href="/themes/">विषय / Themes</a>
+      <a href="/poems/">
+        <span class="lang-hi">कविताएँ</span>
+        <span class="lang-en">Poems</span>
+      </a>
+      <a href="/poets/">
+        <span class="lang-hi">कवि</span>
+        <span class="lang-en">Poets</span>
+      </a>
+      <a href="/themes/">
+        <span class="lang-hi">विषय</span>
+        <span class="lang-en">Themes</span>
+      </a>
+      <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">English</button>
     </nav>
-
-    
-    <div class="header-search" id="header-search-form">
-      <div class="header-search-wrap">
-        <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input
-          type="search"
-          id="header-search-input"
-          class="header-search-input"
-          placeholder="खोजें / Search…"
-          autocomplete="off"
-          aria-label="Search poems and poets"
-        >
-      </div>
-    </div>
   </div>
 </header>
-
 
 <div id="word-tooltip" class="word-tooltip hidden">
   <span class="tooltip-word"></span>
@@ -60,41 +56,33 @@
 <section class="hero">
   <h1>ब्रज काव्य कोश</h1>
   <p class="hero-sub">Braj Kavya Kosha</p>
-  <p class="hero-desc">ब्रज भाषा काव्य का डिजिटल संग्रह</p>
+  <p class="hero-desc">
+    <span class="lang-hi">ब्रज भाषा काव्य का डिजिटल संग्रह</span>
+    <span class="lang-en">A digital anthology of Braj language poetry</span>
+  </p>
 </section>
 
 <section class="home-section">
-  <h2>नवीनतम कविताएँ <span class="en">Recent Poems</span></h2>
+  <h2>
+    <span class="lang-hi">नवीनतम कविताएँ</span>
+    <span class="lang-en">Recent Poems</span>
+  </h2>
   <div class="poem-grid">
-    
-    <div class="poem-card">
-  <a href="http://localhost:1313/poems/surdas-madhura-milan/" class="poem-card-link">
-    <h3 class="card-title">मधुर मिलन</h3>
-    
-    <p class="card-poet">सूरदास</p>
-    
-    
-    <div class="card-themes">
-      
-      <span class="theme-tag mini">भक्ति</span>
-      
-      <span class="theme-tag mini">श्रृंगार</span>
-      
-    </div>
-    
-    
-  </a>
-</div>
     
     <div class="poem-card">
   <a href="http://localhost:1313/poems/2026-02-20-kavitawali/" class="poem-card-link">
     <h3 class="card-title">अवधेस के द्वारे सकारे गई सुत गोद में भूपति लै निकसे ।</h3>
     
-    <p class="card-poet">Tulsidas</p>
+    <p class="card-poet">
+      <span class="lang-hi">Tulsidas</span>
+      <span class="lang-en">Tulsidas</span>
+    </p>
     
     
     
-    <span class="audio-badge">🎵 पाठ उपलब्ध</span>
+    <span class="audio-badge">
+      🎵 <span class="lang-hi">पाठ उपलब्ध</span><span class="lang-en">Audio available</span>
+    </span>
     
   </a>
 </div>
@@ -103,11 +91,16 @@
   <a href="http://localhost:1313/poems/2026-02-21-/" class="poem-card-link">
     <h3 class="card-title">कबहूँ ससि मागत आरि करैं कबहूँ प्रतिबिंब निहारि डरैं।</h3>
     
-    <p class="card-poet">Tulsidas</p>
+    <p class="card-poet">
+      <span class="lang-hi">Tulsidas</span>
+      <span class="lang-en">Tulsidas</span>
+    </p>
     
     
     
-    <span class="audio-badge">🎵 पाठ उपलब्ध</span>
+    <span class="audio-badge">
+      🎵 <span class="lang-hi">पाठ उपलब्ध</span><span class="lang-en">Audio available</span>
+    </span>
     
   </a>
 </div>
@@ -116,7 +109,10 @@
   <a href="http://localhost:1313/poems/2026-02-21--3/" class="poem-card-link">
     <h3 class="card-title">मीन वियोग न सहि सकै</h3>
     
-    <p class="card-poet">Surdas</p>
+    <p class="card-poet">
+      <span class="lang-hi">Surdas</span>
+      <span class="lang-en">Surdas</span>
+    </p>
     
     
     
@@ -127,7 +123,10 @@
   <a href="http://localhost:1313/poems/2026-02-21--4/" class="poem-card-link">
     <h3 class="card-title">मीन वियोग न सहि सकै</h3>
     
-    <p class="card-poet">Surdas</p>
+    <p class="card-poet">
+      <span class="lang-hi">Surdas</span>
+      <span class="lang-en">Surdas</span>
+    </p>
     
     
     
@@ -138,19 +137,48 @@
   <a href="http://localhost:1313/poems/2026-02-21--5/" class="poem-card-link">
     <h3 class="card-title">मीन वियोग न सहि सकै</h3>
     
-    <p class="card-poet">Surdas</p>
+    <p class="card-poet">
+      <span class="lang-hi">Surdas</span>
+      <span class="lang-en">Surdas</span>
+    </p>
     
     
     
   </a>
 </div>
     
+    <div class="poem-card">
+  <a href="http://localhost:1313/poems/2026-02-21--1/" class="poem-card-link">
+    <h3 class="card-title">राम नाम अवलंब बिनु, परमारथ की आस।</h3>
+    
+    <p class="card-poet">
+      <span class="lang-hi">Tulsidas</span>
+      <span class="lang-en">Tulsidas</span>
+    </p>
+    
+    
+    <div class="card-themes">
+      
+      <span class="theme-tag mini">राम</span>
+      
+    </div>
+    
+    
+  </a>
+</div>
+    
   </div>
-  <a href="/poems/" class="btn-all">सभी कविताएँ देखें / View All Poems →</a>
+  <a href="/poems/" class="btn-all">
+    <span class="lang-hi">सभी कविताएँ देखें →</span>
+    <span class="lang-en">View All Poems →</span>
+  </a>
 </section>
 
 <section class="home-section">
-  <h2>कवि <span class="en">Poets</span></h2>
+  <h2>
+    <span class="lang-hi">कवि</span>
+    <span class="lang-en">Poets</span>
+  </h2>
   <div class="poet-grid">
     
     <div class="poet-card">
@@ -158,7 +186,10 @@
     
     <div class="poet-thumb-placeholder">स</div>
     
-    <h3>सूरदास</h3>
+    <h3>
+      <span class="lang-hi">सूरदास</span>
+      <span class="lang-en">सूरदास</span>
+    </h3>
     <p class="dates">1478–1583 (अनु.)</p>
   </a>
 </div>
@@ -168,7 +199,10 @@
     
     <img src="/uploads/surdas.png" alt="Surdas" class="poet-thumb" loading="lazy">
     
-    <h3>Surdas</h3>
+    <h3>
+      <span class="lang-hi">Surdas</span>
+      <span class="lang-en">Surdas</span>
+    </h3>
     <p class="dates">1478-1583</p>
   </a>
 </div>
@@ -178,33 +212,32 @@
     
     <img src="/uploads/tulsidas.png" alt="Tulsidas" class="poet-thumb" loading="lazy">
     
-    <h3>Tulsidas</h3>
+    <h3>
+      <span class="lang-hi">Tulsidas</span>
+      <span class="lang-en">Tulsidas</span>
+    </h3>
     <p class="dates">1511-1623</p>
   </a>
 </div>
     
   </div>
-  <a href="/poets/" class="btn-all">सभी कवि देखें / View All Poets →</a>
+  <a href="/poets/" class="btn-all">
+    <span class="lang-hi">सभी कवि देखें →</span>
+    <span class="lang-en">View All Poets →</span>
+  </a>
 </section>
 
 <section class="home-section">
-  <h2>विषय के अनुसार <span class="en">Browse by Theme</span></h2>
+  <h2>
+    <span class="lang-hi">विषय के अनुसार</span>
+    <span class="lang-en">Browse by Theme</span>
+  </h2>
   <div class="theme-cloud">
     
-    <a href="http://localhost:1313/themes/%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3/" class="theme-tag">
-      कृष्ण <span class="count">(1)</span>
-    </a>
-    
-    <a href="http://localhost:1313/themes/%E0%A4%AD%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF/" class="theme-tag">
-      भक्ति <span class="count">(1)</span>
-    </a>
-    
     <a href="http://localhost:1313/themes/%E0%A4%B0%E0%A4%BE%E0%A4%AE/" class="theme-tag">
-      राम <span class="count">(2)</span>
-    </a>
-    
-    <a href="http://localhost:1313/themes/%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%83%E0%A4%82%E0%A4%97%E0%A4%BE%E0%A4%B0/" class="theme-tag">
-      श्रृंगार <span class="count">(1)</span>
+      <span class="lang-hi">राम</span>
+      <span class="lang-en">राम</span>
+      <span class="count">(2)</span>
     </a>
     
   </div>
@@ -213,9 +246,9 @@
 </main>
 
 <footer class="site-footer">
-  <p>ब्रज काव्य कोश · Braj Kavya Kosha</p>
+  <span class="lang-hi">ब्रज काव्य कोश</span>
+  <span class="lang-en">Braj Kavya Kosha</span>
 </footer>
-
 
 
 
@@ -225,8 +258,6 @@
 
 
 <script src="/js/dictionary.js"></script>
-<script src="/js/fuse.min.js"></script>
-<script src="/js/search.js"></script>
-</body>
+<script src="/js/lang.js"></script>
 </body>
 </html>

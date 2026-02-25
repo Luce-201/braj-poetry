@@ -6,7 +6,11 @@
     
     {{ with .Params.poet }}
     <p class="poem-poet">
-      <a href="/poets/{{ . | urlize }}/">{{ . }}</a>
+      <a href="/poets/{{ . | urlize }}/">
+        {{/* Show Hindi name (stored as .Params.poet) or English transliteration */}}
+        <span class="lang-hi">{{ . }}</span>
+        <span class="lang-en">{{ $.Params.poet_en | default . }}</span>
+      </a>
     </p>
     {{ end }}
     
@@ -19,28 +23,26 @@
     {{ end }}
   </header>
 
-  <!-- The poem text — words become clickable via JS -->
   <div class="poem-body" id="poem-text">
     {{ .Content }}
   </div>
 
-  <!-- Audio player — only shows if audio_url is set -->
   {{ with .Params.audio_url }}
   <section class="poem-audio">
-    <h3>पाठ सुनें <span class="en">Listen</span></h3>
-    <iframe src="{{ . }}" 
-            width="100%" 
-            height="80" 
-            frameborder="0" 
-            allowfullscreen>
-    </iframe>
+    <h3>
+      <span class="lang-hi">पाठ सुनें</span>
+      <span class="lang-en">Listen</span>
+    </h3>
+    <iframe src="{{ . }}" width="100%" height="80" frameborder="0" allowfullscreen></iframe>
   </section>
   {{ end }}
 
-  <!-- Notes / Commentary -->
   {{ with .Params.notes }}
   <section class="poem-notes">
-    <h3>टिप्पणी <span class="en">Notes</span></h3>
+    <h3>
+      <span class="lang-hi">टिप्पणी</span>
+      <span class="lang-en">Notes</span>
+    </h3>
     <p>{{ . }}</p>
   </section>
   {{ end }}

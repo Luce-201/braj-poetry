@@ -2,35 +2,55 @@
 <section class="hero">
   <h1>{{ .Site.Params.siteName }}</h1>
   <p class="hero-sub">{{ .Site.Params.siteNameEn }}</p>
-  <p class="hero-desc">{{ .Site.Params.descriptionHi }}</p>
+  <p class="hero-desc">
+    <span class="lang-hi">{{ .Site.Params.descriptionHi }}</span>
+    <span class="lang-en">{{ .Site.Params.description }}</span>
+  </p>
 </section>
 
 <section class="home-section">
-  <h2>नवीनतम कविताएँ <span class="en">Recent Poems</span></h2>
+  <h2>
+    <span class="lang-hi">नवीनतम कविताएँ</span>
+    <span class="lang-en">Recent Poems</span>
+  </h2>
   <div class="poem-grid">
     {{ range first 6 (where .Site.RegularPages "Type" "poems") }}
     {{ partial "poem-card.html" . }}
     {{ end }}
   </div>
-  <a href="/poems/" class="btn-all">सभी कविताएँ देखें / View All Poems →</a>
+  <a href="/poems/" class="btn-all">
+    <span class="lang-hi">सभी कविताएँ देखें →</span>
+    <span class="lang-en">View All Poems →</span>
+  </a>
 </section>
 
 <section class="home-section">
-  <h2>कवि <span class="en">Poets</span></h2>
+  <h2>
+    <span class="lang-hi">कवि</span>
+    <span class="lang-en">Poets</span>
+  </h2>
   <div class="poet-grid">
     {{ range first 6 (where .Site.RegularPages "Type" "poets") }}
     {{ partial "poet-card.html" . }}
     {{ end }}
   </div>
-  <a href="/poets/" class="btn-all">सभी कवि देखें / View All Poets →</a>
+  <a href="/poets/" class="btn-all">
+    <span class="lang-hi">सभी कवि देखें →</span>
+    <span class="lang-en">View All Poets →</span>
+  </a>
 </section>
 
 <section class="home-section">
-  <h2>विषय के अनुसार <span class="en">Browse by Theme</span></h2>
+  <h2>
+    <span class="lang-hi">विषय के अनुसार</span>
+    <span class="lang-en">Browse by Theme</span>
+  </h2>
   <div class="theme-cloud">
     {{ range .Site.Taxonomies.themes }}
     <a href="{{ .Page.Permalink }}" class="theme-tag">
-      {{ .Page.Title }} <span class="count">({{ .Count }})</span>
+      <span class="lang-hi">{{ .Page.Title }}</span>
+      <span class="lang-en">{{ .Page.Params.title_en | default .Page.Title }}</span>
+      <span class="count">({{ .Count }})</span>
     </a>
     {{ end }}
   </div>

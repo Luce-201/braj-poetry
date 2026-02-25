@@ -15,6 +15,7 @@ content:
       - name: poet
         label: Poet
         type: string
+        - { label: "Poet name in English (e.g. Surdas)", name: "poet_en", widget: "string", required: false }
       - name: form
         label: Form (e.g. दोहा, पद, सवैया, कवित्त)
         type: select
@@ -53,6 +54,7 @@ content:
         label: Name
         type: string
         required: true
+        - { label: "Name in English (e.g. Surdas)", name: "title_en", widget: "string", required: false }
       - name: dates
         label: Dates (e.g. 1478–1583)
         type: string
