@@ -7,7 +7,12 @@ content:
     label: Poems
     path: content/poems
     type: collection
+    filename: "{{fields.slug}}"
     fields:
+      - name: slug
+        label: "File Slug (e.g. surdas-madhura-milan)"
+        type: string
+        hint: "Use only English letters, numbers, and hyphens. No spaces. This becomes the URL of the poem."
       - name: title
         label: Title
         type: string
@@ -49,7 +54,12 @@ content:
     label: Poets
     path: content/poets
     type: collection
+    filename: "{{fields.slug}}"
     fields:
+      - name: slug
+        label: "File Slug (e.g. surdas, mirabai, kabirdas)"
+        type: string
+        hint: "Use only English letters, numbers, and hyphens. No spaces."
       - name: title
         label: Name
         type: string
@@ -78,7 +88,12 @@ content:
     label: संग्रह / Collections
     path: content/collections
     type: collection
+    filename: "{{fields.slug}}"
     fields:
+    - name: slug
+      label: "File Slug (e.g. krishna-bhakti)"
+      type: string
+      hint: "Use only English letters, numbers, and hyphens."
     - name: title
       label: संग्रह का नाम / Collection Title
       type: string
