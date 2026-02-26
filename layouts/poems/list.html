@@ -1,70 +1,63 @@
 {{ define "main" }}
-<article class="collection-page">
+<div class="list-page">
 
-  <header class="collection-header">
-    {{ with .Params.image }}
-    <div class="collection-cover">
-      <img src="{{ . }}" alt="{{ $.Title }}">
-    </div>
-    {{ end }}
-    <div class="collection-meta">
-      <p class="breadcrumb"><a href="/collections/">सभी संग्रह / All Collections</a></p>
-      <h1>{{ .Title }}</h1>
-      {{ with .Params.description }}
-      <p class="collection-desc">{{ . }}</p>
-      {{ end }}
-    </div>
+  <header class="list-header">
+    <h1>कविताएँ <span class="en">Poems</span></h1>
+    <p id="poem-count">{{ len .Pages }} कविताएँ / poems</p>
   </header>
 
-  {{ with .Content }}
-  <div class="collection-body">{{ . }}</div>
-  {{ end }}
-
-  <section class="collection-poems">
-    <h2>
-      इस संग्रह की कविताएँ <span class="en">Poems in this Collection</span>
-    </h2>
-
-    {{ if .Params.poems }}
-
-      {{/* Handle both string (single poem) and slice (multiple poems) */}}
-      {{ $poemList := slice }}
-      {{ if reflect.IsSlice .Params.poems }}
-        {{ $poemList = .Params.poems }}
-      {{ else }}
-        {{ $poemList = slice .Params.poems }}
-      {{ end }}
-
-      <span class="count-badge" style="margin-bottom:1rem;display:inline-block;">{{ len $poemList }}</span>
-
-      <div class="poem-grid">
-        {{ range $poemList }}
-          {{ $poemTitle := . }}
-          {{ $found := where $.Site.RegularPages "Title" $poemTitle }}
-          {{ if $found }}
-            {{ range $found }}
-              {{ partial "poem-card.html" . }}
-            {{ end }}
-          {{ else }}
-            <p class="empty-msg">⚠ "{{ $poemTitle }}" — title not matched</p>
-          {{ end }}
+  <div class="filter-bar">
+    <div class="filter-group">
+      <label>विषय / Theme:</label>
+      <div class="theme-filter-tags">
+        <button class="theme-btn active" onclick="setTheme('', this)">सभी / All</button>
+        {{ range .Site.Taxonomies.themes }}
+          <button class="theme-btn" onclick="setTheme(this.dataset.theme, this)" data-theme="{{ .Page.Title }}">{{ .Page.Title }}</button>
         {{ end }}
       </div>
+    </div>
+  </div>
 
-    {{ else }}
-    <p class="empty-msg">इस संग्रह में अभी कोई कविता नहीं है। / No poems added yet.</p>
+  <div class="poem-grid" id="poem-grid">
+    {{ range .Pages }}
+      {{ $themes := "" }}
+      {{ if .Params.themes }}
+        {{ $themes = delimit .Params.themes "|" }}
+      {{ end }}
+      <div class="poem-card-wrapper" data-themes="{{ $themes }}">
+        {{ partial "poem-card.html" . }}
+      </div>
     {{ end }}
+  </div>
 
-  </section>
+  <p id="no-results" class="empty-msg" style="display:none;">
+    कोई कविता नहीं मिली / No poems found for this filter.
+  </p>
 
-</article>
-{{ end }}
-```
+</div>
 
-The key part is this block:
-```
-{{ if reflect.IsSlice .Params.poems }}
-  {{ $poemList = .Params.poems }}
-{{ else }}
-  {{ $poemList = slice .Params.poems }}
+<script>
+  let activeTheme = '';
+
+  function filterPoems() {
+    const wrappers = document.querySelectorAll('.poem-card-wrapper');
+    let visible = 0;
+    wrappers.forEach(function(wrapper) {
+      const themes = wrapper.dataset.themes || '';
+      const themeList = themes === '' ? [] : themes.split('|').map(function(t) { return t.trim(); });
+      const match = !activeTheme || themeList.includes(activeTheme);
+      wrapper.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    document.getElementById('poem-count').textContent = visible + ' कविताएँ / poems';
+    document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  function setTheme(theme, btn) {
+    activeTheme = theme;
+    document.querySelectorAll('.theme-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    filterPoems();
+  }
+</script>
 {{ end }}
