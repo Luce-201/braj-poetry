@@ -20,25 +20,27 @@
   <div class="collection-body">{{ . }}</div>
   {{ end }}
 
-  <!-- All poems in this collection -->
-  {{ $collectionTitle := .Title }}
-  {{ $poems := where .Site.RegularPages "Params.collection" $collectionTitle }}
-
   <section class="collection-poems">
     <h2>
       इस संग्रह की कविताएँ <span class="en">Poems in this Collection</span>
-      <span class="count-badge">{{ len $poems }}</span>
+      {{ with .Params.poems }}
+      <span class="count-badge">{{ len . }}</span>
+      {{ end }}
     </h2>
 
-    {{ if $poems }}
+    {{ with .Params.poems }}
     <div class="poem-grid">
-      {{ range $poems }}
-      {{ partial "poem-card.html" . }}
+      {{ range . }}
+        {{ $poemTitle := . }}
+        {{ range where $.Site.RegularPages "Title" $poemTitle }}
+          {{ partial "poem-card.html" . }}
+        {{ end }}
       {{ end }}
     </div>
     {{ else }}
-    <p class="empty-msg">इस संग्रह में अभी कोई कविता नहीं है। / No poems in this collection yet.</p>
+    <p class="empty-msg">इस संग्रह में अभी कोई कविता नहीं है। / No poems added yet.</p>
     {{ end }}
+
   </section>
 
 </article>
