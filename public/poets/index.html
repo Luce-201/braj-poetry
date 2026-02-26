@@ -1,124 +1,16 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poets — ब्रज काव्य कोश</title>
-  <meta name="description" content="A digital anthology of Braj language poetry">
-  
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/search.css">
-</head>
-<body>
-
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="site-logo">
-      <span class="logo-hi">ब्रज काव्य कोश</span>
-      <span class="logo-en">Braj Kavya Kosha</span>
-    </a>
-
-    <nav class="main-nav">
-      <a href="/poems/">कविताएँ / Poems</a>
-      <a href="/poets/">कवि / Poets</a>
-      <a href="/themes/">विषय / Themes</a>
-    </nav>
-
-    
-    <div class="header-search" id="header-search-form">
-      <div class="header-search-wrap">
-        <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input
-          type="search"
-          id="header-search-input"
-          class="header-search-input"
-          placeholder="खोजें / Search…"
-          autocomplete="off"
-          aria-label="Search poems and poets"
-        >
-      </div>
-    </div>
-  </div>
-</header>
-
-
-<div id="word-tooltip" class="word-tooltip hidden">
-  <span class="tooltip-word"></span>
-  <span class="tooltip-meaning"></span>
-  <button class="tooltip-close" onclick="closeTooltip()">✕</button>
-</div>
-
-<main class="main-content">
-  
-<div class="list-page">
-  <header class="list-header">
-    <h1>Poets</h1>
-    <p>3 items</p>
-  </header>
-  <div class="poem-grid">
-    
-    
-      <div class="poet-card">
-  <a href="http://localhost:1313/poets/surdas/">
-    
-    <div class="poet-thumb-placeholder">स</div>
-    
-    <h3>सूरदास</h3>
-    <p class="dates">1478–1583 (अनु.)</p>
-  </a>
-</div>
-    
-    
-    
-      <div class="poet-card">
-  <a href="http://localhost:1313/poets/2026-02-21-/">
-    
-    <img src="/uploads/surdas.png" alt="Surdas" class="poet-thumb" loading="lazy">
-    
-    <h3>Surdas</h3>
-    <p class="dates">1478-1583</p>
-  </a>
-</div>
-    
-    
-    
-      <div class="poet-card">
-  <a href="http://localhost:1313/poets/2026-02-20-tulsidas/">
-    
-    <img src="/uploads/tulsidas.png" alt="Tulsidas" class="poet-thumb" loading="lazy">
-    
-    <h3>Tulsidas</h3>
-    <p class="dates">1511-1623</p>
-  </a>
-</div>
-    
-    
-  </div>
-</div>
-
-</main>
-
-<footer class="site-footer">
-  <p>ब्रज काव्य कोश · Braj Kavya Kosha</p>
-</footer>
-
-
-
-
-<script>
-  window.BRAJ_DICTIONARY = "{\"गोपी\":\"cowherd woman, devotee of Krishna\",\"नयन\":\"eyes\",\"प्रेम\":\"love, affection\",\"बरसात\":\"rain, rainfall\",\"मुरली\":\"flute\",\"विरह\":\"separation, longing\",\"सुत\":\"son, child\"}";
-</script>
-
-
-<script src="/js/dictionary.js"></script>
-<script src="/js/fuse.min.js"></script>
-<script src="/js/search.js"></script>
-</body>
-</body>
-</html>
+<!doctype html><html lang=hi><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Poets — ब्रज काव्य कोश</title><meta name=description content="A digital anthology of Braj language poetry"><script>(function(){var e=localStorage.getItem("braj_lang")||"hi";document.documentElement.setAttribute("data-lang",e)})()</script><link rel=preconnect href=https://fonts.googleapis.com><link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel=stylesheet><link rel=stylesheet href=/css/main.css></head><body><header class=site-header><div class=header-inner><a href=/ class=site-logo><span class=logo-hi>ब्रज काव्य कोश</span>
+<span class=logo-en>Braj Kavya Kosha</span></a><nav class=main-nav><a href=/poems/><span class=lang-hi>कविताएँ</span>
+<span class=lang-en>Poems</span>
+</a><a href=/poets/><span class=lang-hi>कवि</span>
+<span class=lang-en>Poets</span>
+</a><a href=/themes/><span class=lang-hi>विषय</span>
+<span class=lang-en>Themes</span>
+</a><a href=/collections/><span class=lang-hi>संग्रह</span>
+<span class=lang-en>Collections</span>
+</a><button class=lang-toggle id=lang-toggle onclick=toggleLang()>English</button></nav></div></header><div id=word-tooltip class="word-tooltip hidden"><span class=tooltip-word></span>
+<span class=tooltip-meaning></span>
+<button class=tooltip-close onclick=closeTooltip()>✕</button></div><main class=main-content><div class=list-page><header class=list-header><h1>Poets</h1><p>3 items</p></header><div class=poem-grid><div class=poet-card><a href=https://braj-poetry.netlify.app/poets/surdas/><div class=poet-thumb-placeholder>स</div><h3><span class=lang-hi>सूरदास</span>
+<span class=lang-en>सूरदास</span></h3><p class=dates>1478–1583 (अनु.)</p></a></div><div class=poet-card><a href=https://braj-poetry.netlify.app/poets/2026-02-21-/><img src=/uploads/surdas.png alt=Surdas class=poet-thumb loading=lazy><h3><span class=lang-hi>Surdas</span>
+<span class=lang-en>Surdas</span></h3><p class=dates>1478-1583</p></a></div><div class=poet-card><a href=https://braj-poetry.netlify.app/poets/2026-02-20-tulsidas/><img src=/uploads/tulsidas.png alt=Tulsidas class=poet-thumb loading=lazy><h3><span class=lang-hi>Tulsidas</span>
+<span class=lang-en>Tulsidas</span></h3><p class=dates>1511-1623</p></a></div></div></div></main><footer class=site-footer><span class=lang-hi>ब्रज काव्य कोश</span>
+<span class=lang-en>Braj Kavya Kosha</span></footer><script>window.BRAJ_DICTIONARY='{"गोपी":"cowherd woman, devotee of Krishna","नयन":"eyes","प्रेम":"love, affection","बरसात":"rain, rainfall","मुरली":"flute","विरह":"separation, longing","सुत":"son, child"}'</script><script src=/js/dictionary.js></script><script src=/js/lang.js></script></body></html>

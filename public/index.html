@@ -1,263 +1,30 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-	<meta name="generator" content="Hugo 0.154.5"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ब्रज काव्य कोश — ब्रज काव्य कोश</title>
-  <meta name="description" content="A digital anthology of Braj language poetry">
-  
-  
-  <script>
-    (function() {
-      var lang = localStorage.getItem('braj_lang') || 'hi';
-      document.documentElement.setAttribute('data-lang', lang);
-    })();
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
-
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="site-logo">
-      <span class="logo-hi">ब्रज काव्य कोश</span>
-      <span class="logo-en">Braj Kavya Kosha</span>
-    </a>
-    <nav class="main-nav">
-      <a href="/poems/">
-        <span class="lang-hi">कविताएँ</span>
-        <span class="lang-en">Poems</span>
-      </a>
-      <a href="/poets/">
-        <span class="lang-hi">कवि</span>
-        <span class="lang-en">Poets</span>
-      </a>
-      <a href="/themes/">
-        <span class="lang-hi">विषय</span>
-        <span class="lang-en">Themes</span>
-      </a>
-      <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">English</button>
-    </nav>
-  </div>
-</header>
-
-<div id="word-tooltip" class="word-tooltip hidden">
-  <span class="tooltip-word"></span>
-  <span class="tooltip-meaning"></span>
-  <button class="tooltip-close" onclick="closeTooltip()">✕</button>
-</div>
-
-<main class="main-content">
-  
-<section class="hero">
-  <h1>ब्रज काव्य कोश</h1>
-  <p class="hero-sub">Braj Kavya Kosha</p>
-  <p class="hero-desc">
-    <span class="lang-hi">ब्रज भाषा काव्य का डिजिटल संग्रह</span>
-    <span class="lang-en">A digital anthology of Braj language poetry</span>
-  </p>
-</section>
-
-<section class="home-section">
-  <h2>
-    <span class="lang-hi">नवीनतम कविताएँ</span>
-    <span class="lang-en">Recent Poems</span>
-  </h2>
-  <div class="poem-grid">
-    
-    <div class="poem-card">
-  <a href="http://localhost:1313/poems/2026-02-20-kavitawali/" class="poem-card-link">
-    <h3 class="card-title">अवधेस के द्वारे सकारे गई सुत गोद में भूपति लै निकसे ।</h3>
-    
-    <p class="card-poet">
-      <span class="lang-hi">Tulsidas</span>
-      <span class="lang-en">Tulsidas</span>
-    </p>
-    
-    
-    
-    <span class="audio-badge">
-      🎵 <span class="lang-hi">पाठ उपलब्ध</span><span class="lang-en">Audio available</span>
-    </span>
-    
-  </a>
-</div>
-    
-    <div class="poem-card">
-  <a href="http://localhost:1313/poems/2026-02-21-/" class="poem-card-link">
-    <h3 class="card-title">कबहूँ ससि मागत आरि करैं कबहूँ प्रतिबिंब निहारि डरैं।</h3>
-    
-    <p class="card-poet">
-      <span class="lang-hi">Tulsidas</span>
-      <span class="lang-en">Tulsidas</span>
-    </p>
-    
-    
-    
-    <span class="audio-badge">
-      🎵 <span class="lang-hi">पाठ उपलब्ध</span><span class="lang-en">Audio available</span>
-    </span>
-    
-  </a>
-</div>
-    
-    <div class="poem-card">
-  <a href="http://localhost:1313/poems/2026-02-21--3/" class="poem-card-link">
-    <h3 class="card-title">मीन वियोग न सहि सकै</h3>
-    
-    <p class="card-poet">
-      <span class="lang-hi">Surdas</span>
-      <span class="lang-en">Surdas</span>
-    </p>
-    
-    
-    
-  </a>
-</div>
-    
-    <div class="poem-card">
-  <a href="http://localhost:1313/poems/2026-02-21--4/" class="poem-card-link">
-    <h3 class="card-title">मीन वियोग न सहि सकै</h3>
-    
-    <p class="card-poet">
-      <span class="lang-hi">Surdas</span>
-      <span class="lang-en">Surdas</span>
-    </p>
-    
-    
-    
-  </a>
-</div>
-    
-    <div class="poem-card">
-  <a href="http://localhost:1313/poems/2026-02-21--5/" class="poem-card-link">
-    <h3 class="card-title">मीन वियोग न सहि सकै</h3>
-    
-    <p class="card-poet">
-      <span class="lang-hi">Surdas</span>
-      <span class="lang-en">Surdas</span>
-    </p>
-    
-    
-    
-  </a>
-</div>
-    
-    <div class="poem-card">
-  <a href="http://localhost:1313/poems/2026-02-21--1/" class="poem-card-link">
-    <h3 class="card-title">राम नाम अवलंब बिनु, परमारथ की आस।</h3>
-    
-    <p class="card-poet">
-      <span class="lang-hi">Tulsidas</span>
-      <span class="lang-en">Tulsidas</span>
-    </p>
-    
-    
-    <div class="card-themes">
-      
-      <span class="theme-tag mini">राम</span>
-      
-    </div>
-    
-    
-  </a>
-</div>
-    
-  </div>
-  <a href="/poems/" class="btn-all">
-    <span class="lang-hi">सभी कविताएँ देखें →</span>
-    <span class="lang-en">View All Poems →</span>
-  </a>
-</section>
-
-<section class="home-section">
-  <h2>
-    <span class="lang-hi">कवि</span>
-    <span class="lang-en">Poets</span>
-  </h2>
-  <div class="poet-grid">
-    
-    <div class="poet-card">
-  <a href="http://localhost:1313/poets/surdas/">
-    
-    <div class="poet-thumb-placeholder">स</div>
-    
-    <h3>
-      <span class="lang-hi">सूरदास</span>
-      <span class="lang-en">सूरदास</span>
-    </h3>
-    <p class="dates">1478–1583 (अनु.)</p>
-  </a>
-</div>
-    
-    <div class="poet-card">
-  <a href="http://localhost:1313/poets/2026-02-21-/">
-    
-    <img src="/uploads/surdas.png" alt="Surdas" class="poet-thumb" loading="lazy">
-    
-    <h3>
-      <span class="lang-hi">Surdas</span>
-      <span class="lang-en">Surdas</span>
-    </h3>
-    <p class="dates">1478-1583</p>
-  </a>
-</div>
-    
-    <div class="poet-card">
-  <a href="http://localhost:1313/poets/2026-02-20-tulsidas/">
-    
-    <img src="/uploads/tulsidas.png" alt="Tulsidas" class="poet-thumb" loading="lazy">
-    
-    <h3>
-      <span class="lang-hi">Tulsidas</span>
-      <span class="lang-en">Tulsidas</span>
-    </h3>
-    <p class="dates">1511-1623</p>
-  </a>
-</div>
-    
-  </div>
-  <a href="/poets/" class="btn-all">
-    <span class="lang-hi">सभी कवि देखें →</span>
-    <span class="lang-en">View All Poets →</span>
-  </a>
-</section>
-
-<section class="home-section">
-  <h2>
-    <span class="lang-hi">विषय के अनुसार</span>
-    <span class="lang-en">Browse by Theme</span>
-  </h2>
-  <div class="theme-cloud">
-    
-    <a href="http://localhost:1313/themes/%E0%A4%B0%E0%A4%BE%E0%A4%AE/" class="theme-tag">
-      <span class="lang-hi">राम</span>
-      <span class="lang-en">राम</span>
-      <span class="count">(2)</span>
-    </a>
-    
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <span class="lang-hi">ब्रज काव्य कोश</span>
-  <span class="lang-en">Braj Kavya Kosha</span>
-</footer>
-
-
-
-<script>
-  window.BRAJ_DICTIONARY = "{\"गोपी\":\"cowherd woman, devotee of Krishna\",\"नयन\":\"eyes\",\"प्रेम\":\"love, affection\",\"बरसात\":\"rain, rainfall\",\"मुरली\":\"flute\",\"विरह\":\"separation, longing\",\"सुत\":\"son, child\"}";
-</script>
-
-
-<script src="/js/dictionary.js"></script>
-<script src="/js/lang.js"></script>
-</body>
-</html>
+<!doctype html><html lang=hi><head><meta name=generator content="Hugo 0.154.5"><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>ब्रज काव्य कोश — ब्रज काव्य कोश</title><meta name=description content="A digital anthology of Braj language poetry"><script>(function(){var e=localStorage.getItem("braj_lang")||"hi";document.documentElement.setAttribute("data-lang",e)})()</script><link rel=preconnect href=https://fonts.googleapis.com><link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel=stylesheet><link rel=stylesheet href=/css/main.css></head><body><header class=site-header><div class=header-inner><a href=/ class=site-logo><span class=logo-hi>ब्रज काव्य कोश</span>
+<span class=logo-en>Braj Kavya Kosha</span></a><nav class=main-nav><a href=/poems/><span class=lang-hi>कविताएँ</span>
+<span class=lang-en>Poems</span>
+</a><a href=/poets/><span class=lang-hi>कवि</span>
+<span class=lang-en>Poets</span>
+</a><a href=/themes/><span class=lang-hi>विषय</span>
+<span class=lang-en>Themes</span>
+</a><a href=/collections/><span class=lang-hi>संग्रह</span>
+<span class=lang-en>Collections</span>
+</a><button class=lang-toggle id=lang-toggle onclick=toggleLang()>English</button></nav></div></header><div id=word-tooltip class="word-tooltip hidden"><span class=tooltip-word></span>
+<span class=tooltip-meaning></span>
+<button class=tooltip-close onclick=closeTooltip()>✕</button></div><main class=main-content><section class=hero><h1>ब्रज काव्य कोश</h1><p class=hero-sub>Braj Kavya Kosha</p><p class=hero-desc><span class=lang-hi>ब्रज भाषा काव्य का डिजिटल संग्रह</span>
+<span class=lang-en>A digital anthology of Braj language poetry</span></p></section><section class=home-section><h2><span class=lang-hi>नवीनतम कविताएँ</span>
+<span class=lang-en>Recent Poems</span></h2><div class=poem-grid><div class=poem-card><a href=https://braj-poetry.netlify.app/poems/2026-02-20-kavitawali/ class=poem-card-link><h3 class=card-title>अवधेस के द्वारे सकारे गई सुत गोद में भूपति लै निकसे ।</h3><p class=card-poet><span class=lang-hi>Tulsidas</span>
+<span class=lang-en>Tulsidas</span></p><span class=audio-badge>🎵 <span class=lang-hi>पाठ उपलब्ध</span><span class=lang-en>Audio available</span></span></a></div><div class=poem-card><a href=https://braj-poetry.netlify.app/poems/2026-02-21-/ class=poem-card-link><h3 class=card-title>कबहूँ ससि मागत आरि करैं कबहूँ प्रतिबिंब निहारि डरैं।</h3><p class=card-poet><span class=lang-hi>Tulsidas</span>
+<span class=lang-en>Tulsidas</span></p><span class=audio-badge>🎵 <span class=lang-hi>पाठ उपलब्ध</span><span class=lang-en>Audio available</span></span></a></div><div class=poem-card><a href=https://braj-poetry.netlify.app/poems/2026-02-21--3/ class=poem-card-link><h3 class=card-title>मीन वियोग न सहि सकै</h3><p class=card-poet><span class=lang-hi>Surdas</span>
+<span class=lang-en>Surdas</span></p></a></div><div class=poem-card><a href=https://braj-poetry.netlify.app/poems/2026-02-21--4/ class=poem-card-link><h3 class=card-title>मीन वियोग न सहि सकै</h3><p class=card-poet><span class=lang-hi>Surdas</span>
+<span class=lang-en>Surdas</span></p></a></div><div class=poem-card><a href=https://braj-poetry.netlify.app/poems/2026-02-21--5/ class=poem-card-link><h3 class=card-title>मीन वियोग न सहि सकै</h3><p class=card-poet><span class=lang-hi>Surdas</span>
+<span class=lang-en>Surdas</span></p></a></div><div class=poem-card><a href=https://braj-poetry.netlify.app/poems/2026-02-21--1/ class=poem-card-link><h3 class=card-title>राम नाम अवलंब बिनु, परमारथ की आस।</h3><p class=card-poet><span class=lang-hi>Tulsidas</span>
+<span class=lang-en>Tulsidas</span></p><div class=card-themes><span class="theme-tag mini">राम</span></div></a></div></div><a href=/poems/ class=btn-all><span class=lang-hi>सभी कविताएँ देखें →</span>
+<span class=lang-en>View All Poems →</span></a></section><section class=home-section><h2><span class=lang-hi>कवि</span>
+<span class=lang-en>Poets</span></h2><div class=poet-grid><div class=poet-card><a href=https://braj-poetry.netlify.app/poets/surdas/><div class=poet-thumb-placeholder>स</div><h3><span class=lang-hi>सूरदास</span>
+<span class=lang-en>सूरदास</span></h3><p class=dates>1478–1583 (अनु.)</p></a></div><div class=poet-card><a href=https://braj-poetry.netlify.app/poets/2026-02-21-/><img src=/uploads/surdas.png alt=Surdas class=poet-thumb loading=lazy><h3><span class=lang-hi>Surdas</span>
+<span class=lang-en>Surdas</span></h3><p class=dates>1478-1583</p></a></div><div class=poet-card><a href=https://braj-poetry.netlify.app/poets/2026-02-20-tulsidas/><img src=/uploads/tulsidas.png alt=Tulsidas class=poet-thumb loading=lazy><h3><span class=lang-hi>Tulsidas</span>
+<span class=lang-en>Tulsidas</span></h3><p class=dates>1511-1623</p></a></div></div><a href=/poets/ class=btn-all><span class=lang-hi>सभी कवि देखें →</span>
+<span class=lang-en>View All Poets →</span></a></section><section class=home-section><h2><span class=lang-hi>विषय के अनुसार</span>
+<span class=lang-en>Browse by Theme</span></h2><div class=theme-cloud><a href=https://braj-poetry.netlify.app/themes/%E0%A4%B0%E0%A4%BE%E0%A4%AE/ class=theme-tag><span class=lang-hi>राम</span>
+<span class=lang-en>राम</span>
+<span class=count>(2)</span></a></div></section></main><footer class=site-footer><span class=lang-hi>ब्रज काव्य कोश</span>
+<span class=lang-en>Braj Kavya Kosha</span></footer><script>window.BRAJ_DICTIONARY='{"गोपी":"cowherd woman, devotee of Krishna","नयन":"eyes","प्रेम":"love, affection","बरसात":"rain, rainfall","मुरली":"flute","विरह":"separation, longing","सुत":"son, child"}'</script><script src=/js/dictionary.js></script><script src=/js/lang.js></script></body></html>

@@ -410,3 +410,161 @@ body {
   padding: 0.1rem 0.5rem;
   margin-bottom: 0.4rem;
 }
+
+/* ============================================
+   COLLECTIONS
+   ============================================ */
+
+/* Collection grid on list page */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Collection card */
+.collection-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.collection-card:hover {
+  box-shadow: 0 4px 16px rgba(139,26,26,0.15);
+  transform: translateY(-2px);
+}
+.collection-card-link {
+  display: block;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+.collection-card-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
+  font-family: var(--font-en);
+}
+.collection-card-title {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.collection-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+.collection-card-count {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-family: var(--font-en);
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* Single collection page */
+.collection-page { max-width: 750px; margin: 0 auto; }
+
+.collection-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+}
+.collection-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-light);
+  font-family: var(--font-en);
+  margin-bottom: 0.5rem;
+}
+.collection-title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.collection-desc-hi {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  line-height: 1.7;
+}
+.collection-desc-en {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  font-family: var(--font-en);
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+.collection-count {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-family: var(--font-en);
+}
+.collection-intro {
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* Poem rows inside collection */
+.collection-poems {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.collection-poem-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.collection-poem-row:hover {
+  background: rgba(139,26,26,0.03);
+  margin: 0 -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 4px;
+}
+.collection-poem-number {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-family: var(--font-en);
+  min-width: 2rem;
+  padding-top: 0.15rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+.collection-poem-info {
+  flex: 1;
+}
+.collection-poem-title {
+  font-size: 1.05rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-family: var(--font-hi);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.collection-poem-title:hover { text-decoration: underline; }
+.collection-poem-poet {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-family: var(--font-hi);
+}
+.collection-poem-themes {
+  margin-top: 0.35rem;
+}
