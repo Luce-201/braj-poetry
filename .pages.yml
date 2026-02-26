@@ -8,7 +8,7 @@ content:
     type: "collection"
     path: "content/poems"
     view:
-      fields: ["title", "poet", "form", "collection"]
+      fields: ["title", "poet", "form"]
     fields:
       - { label: "शीर्षक / Title", name: "title", type: "string" }
       - { label: "कवि / Poet", name: "poet", type: "string" }
@@ -17,11 +17,6 @@ content:
         type: "select"
         options:
           values: ["दोहा", "पद", "सवैया", "कवित्त", "छंद", "भजन", "अन्य"]
-      - name: "collection"
-        label: "संग्रह / Collection"
-        type: "string"
-        required: false
-        hint: "Type the collection name exactly as it appears in Collections (e.g. 'वसंत पद')"
       - name: "themes"
         label: "विषय / Themes"
         type: "list"
@@ -71,7 +66,10 @@ content:
         label: "विवरण / Description"
         type: "string"
         required: false
-        hint: "Short description shown on the collections page"
+      - name: "poems"
+        label: "कविताएँ / Poems in this Collection"
+        type: "list"
+        hint: "Type each poem title exactly as it appears in PageCMS, one per line"
       - name: "body"
         label: "विस्तृत विवरण / Full Description"
         type: "rich-text"
