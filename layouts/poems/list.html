@@ -6,19 +6,6 @@
   </header>
 
   <div class="filter-bar">
-
-    <!-- Collection dropdown — auto-built from your collections content -->
-    <div class="filter-group">
-      <label for="filter-collection">संग्रह / Collection:</label>
-      <select id="filter-collection" class="filter-select" onchange="filterPoems()">
-        <option value="">— सभी / All —</option>
-        {{ range sort (where .Site.RegularPages "Type" "collections") "Title" }}
-        <option value="{{ .Title }}">{{ .Title }}</option>
-        {{ end }}
-      </select>
-    </div>
-
-    <!-- Theme filter (kept from before) -->
     <div class="filter-group">
       <label>विषय / Theme:</label>
       <div class="theme-filter-tags">
@@ -28,15 +15,12 @@
         {{ end }}
       </div>
     </div>
-
   </div>
 
-  <!-- Each card gets data attributes for filtering -->
   <div class="poem-grid" id="poem-grid">
     {{ range .Pages }}
     <div class="poem-card-wrapper"
-         data-collection="{{ .Params.collection }}"
-         data-themes="{{ delimit .Params.themes "," }}">
+         data-themes="{{ delimit .Params.themes "|" }}">
       {{ partial "poem-card.html" . }}
     </div>
     {{ end }}
@@ -52,18 +36,14 @@
   let activeTheme = '';
 
   function filterPoems() {
-    const selectedCollection = document.getElementById('filter-collection').value;
     const wrappers = document.querySelectorAll('.poem-card-wrapper');
     let visible = 0;
 
     wrappers.forEach(wrapper => {
-      const collection = wrapper.dataset.collection || '';
       const themes = wrapper.dataset.themes || '';
+      const themeMatch = !activeTheme || themes.split('|').map(t => t.trim()).includes(activeTheme);
 
-      const collectionMatch = !selectedCollection || collection === selectedCollection;
-      const themeMatch = !activeTheme || themes.split(',').map(t => t.trim()).includes(activeTheme);
-
-      if (collectionMatch && themeMatch) {
+      if (themeMatch) {
         wrapper.style.display = '';
         visible++;
       } else {
@@ -71,4 +51,15 @@
       }
     });
 
-    document.getElementById
+    document.getElementById('poem-count').textContent = visible + ' कविताएँ / poems';
+    document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  function setTheme(theme, btn) {
+    activeTheme = theme;
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterPoems();
+  }
+</script>
+{{ end }}
