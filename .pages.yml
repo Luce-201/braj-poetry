@@ -69,3 +69,33 @@ content:
       - name: body
         label: Biography
         type: rich-text
+  - name: collections
+    label: Collections
+    path: content/collections
+    type: collection
+    fields:
+      - name: title
+        label: Collection Title
+        type: string
+      - name: description_hi
+        label: Description in Hindi
+        type: string
+        required: false
+      - name: description
+        label: Description in English
+        type: string
+        required: false
+      - name: poems
+        label: Poems (slugs)
+        type: string
+        list: true
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: date
+        label: Date
+        type: date
+      - name: body
+        label: Notes
+        type: rich-text
