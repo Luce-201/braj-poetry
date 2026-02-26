@@ -14,7 +14,7 @@
     {{ end }}
 
     <p class="collection-count">
-      {{ len .Params.poems }} कविताएँ / poems
+      {{ with .Params.poems }}{{ len . }}{{ else }}0{{ end }} कविताएँ / poems
     </p>
   </header>
 
