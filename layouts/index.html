@@ -41,6 +41,16 @@
 </section>
 
 <section class="home-section">
+  <h2>संग्रह <span class="en">Collections</span></h2>
+  <div class="collection-grid">
+    {{ range first 4 (where .Site.RegularPages "Type" "collections") }}
+    {{ partial "collection-card.html" . }}
+    {{ end }}
+  </div>
+  <a href="/collections/" class="btn-all">सभी संग्रह देखें / View All Collections →</a>
+</section>
+
+<section class="home-section">
   <h2>
     <span class="lang-hi">विषय के अनुसार</span>
     <span class="lang-en">Browse by Theme</span>
