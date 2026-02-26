@@ -1,5 +1,5 @@
 ---
-title: kay bacho man te basi
+title: "काय बचो मन ते बसी "
 poet: Rasleen
 form: सवैया
 draft: false
