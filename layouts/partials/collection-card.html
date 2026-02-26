@@ -5,8 +5,8 @@
     {{ with .Params.description_hi }}
     <p class="collection-card-desc">{{ . }}</p>
     {{ end }}
-    <p class="collection-card-count">
-      {{ len .Params.poems }} कविताएँ
+        <p class="collection-card-count">
+      {{ with .Params.poems }}{{ len . }}{{ else }}0{{ end }} कविताएँ
     </p>
   </a>
 </div>
