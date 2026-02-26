@@ -1,71 +1,78 @@
-media:
-  input: static/uploads
-  output: /uploads
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
 content:
-  - name: poems
-    label: Poems
-    path: content/poems
-    type: collection
+  - name: "poems"
+    label: "कविताएँ / Poems"
+    type: "collection"
+    path: "content/poems"
+    view:
+      fields: ["title", "poet", "form", "collection"]
     fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: poet
-        label: Poet
-        type: string
-      - name: form
-        label: Form (e.g. दोहा, पद, सवैया, कवित्त)
-        type: select
+      - { label: "शीर्षक / Title", name: "title", type: "string" }
+      - { label: "कवि / Poet", name: "poet", type: "string" }
+      - name: "form"
+        label: "रूप / Form"
+        type: "select"
         options:
-          values: [दोहा, पद, सवैया, कवित्त, छंद, भजन, अन्य]
+          values: ["दोहा", "पद", "सवैया", "कवित्त", "छंद", "भजन", "अन्य"]
+      - name: "collection"
+        label: "संग्रह / Collection"
+        type: "string"
         required: false
-      - name: themes
-        label: Themes
-        type: string
-        list: true
-      - name: audio_url
-        label: Audio URL
-        type: string
+        hint: "Type the collection name exactly as it appears in Collections (e.g. 'वसंत पद')"
+      - name: "themes"
+        label: "विषय / Themes"
+        type: "list"
+        hint: "Add themes one by one (e.g. भक्ति, श्रृंगार, प्रकृति)"
+      - name: "audio_url"
+        label: "पाठ लिंक / Audio URL"
+        type: "string"
         required: false
-      - name: notes
-        label: Notes
-        type: text
+      - name: "notes"
+        label: "टिप्पणी / Notes"
+        type: "rich-text"
         required: false
-      - name: draft
-        label: Draft
-        type: boolean
-        default: false
-      - name: date
-        label: Date
-        type: date
-      - name: body
-        label: Poem Text
-        type: rich-text
-  - name: poets
-    label: Poets
-    path: content/poets
-    type: collection
+      - name: "body"
+        label: "कविता / Poem Text"
+        type: "rich-text"
+      - { label: "Draft", name: "draft", type: "boolean", default: false }
+      - { label: "Date", name: "date", type: "date" }
+
+  - name: "poets"
+    label: "कवि / Poets"
+    type: "collection"
+    path: "content/poets"
     fields:
-      - name: title
-        label: Name
-        type: string
-        required: true
-      - name: dates
-        label: Dates (e.g. 1478–1583)
-        type: string
+      - { label: "नाम / Name", name: "title", type: "string" }
+      - { label: "काल / Dates", name: "dates", type: "string", required: false }
+      - { label: "क्षेत्र / Region", name: "region", type: "string", required: false }
+      - name: "image"
+        label: "चित्र / Photo"
+        type: "image"
         required: false
-      - name: region
-        label: Region
-        type: string
+      - name: "body"
+        label: "जीवन परिचय / Biography"
+        type: "rich-text"
+      - { label: "Date", name: "date", type: "date" }
+
+  - name: "collections"
+    label: "संग्रह / Collections"
+    type: "collection"
+    path: "content/collections"
+    fields:
+      - { label: "शीर्षक / Title", name: "title", type: "string" }
+      - name: "image"
+        label: "संग्रह चित्र / Cover Image"
+        type: "image"
         required: false
-      - name: image
-        label: Photo
-        type: image
+      - name: "description"
+        label: "विवरण / Description"
+        type: "string"
         required: false
-      - name: date
-        label: Date
-        type: date
-      - name: body
-        label: Biography
-        type: rich-text
+        hint: "Short description shown on the collections page"
+      - name: "body"
+        label: "विस्तृत विवरण / Full Description"
+        type: "rich-text"
+        required: false
+      - { label: "Date", name: "date", type: "date" }
