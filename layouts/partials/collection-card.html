@@ -1,0 +1,23 @@
+{{ $collectionTitle := .Title }}
+{{ $poemCount := len (where .Site.RegularPages "Params.collection" $collectionTitle) }}
+
+<div class="collection-card">
+  <a href="{{ .Permalink }}" class="collection-card-link">
+    <div class="collection-card-image">
+      {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $collectionTitle }}" loading="lazy">
+      {{ else }}
+      <div class="collection-img-placeholder">
+        <span>{{ substr $collectionTitle 0 1 }}</span>
+      </div>
+      {{ end }}
+    </div>
+    <div class="collection-card-body">
+      <h3>{{ .Title }}</h3>
+      {{ with .Params.description }}
+      <p class="collection-card-desc">{{ . }}</p>
+      {{ end }}
+      <span class="poem-count">{{ $poemCount }} कविताएँ / poems</span>
+    </div>
+  </a>
+</div>
