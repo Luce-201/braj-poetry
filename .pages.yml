@@ -1,5 +1,6 @@
-media_folder: "static/uploads"
-public_folder: "/uploads"
+media:
+  input: "static/uploads"
+  output: "/uploads"
 
 content:
   - name: "poems"
