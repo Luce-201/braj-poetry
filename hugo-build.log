@@ -1,0 +1,13 @@
+Start building sites … 
+hugo v0.154.5+extended linux/amd64 BuildDate=2026-01-13T19:59:22Z VendorInfo=debian:0.154.5-1
+
+INFO  build:  step process substep collect files 14 files_total 14 pagesources_total 14 resourcesources_total 0 duration 822.297µs
+INFO  build:  step process duration 874.848µs
+INFO  build:  step assemble duration 4.549666ms
+INFO  static: syncing static files to / duration 8.427433ms
+INFO  build:  step render pages 24 content 12 duration 15.829609ms
+INFO  build:  step render deferred count 0 duration 2.074µs
+INFO  build:  step postProcess duration 18.907µs
+INFO  build:  duration 22.419488ms
+Total in 54 ms
+ERROR error building site: render: [hi v1.0.0 guest] failed to render pages: render of "/collections" failed: "/home/bhola/Desktop/braj-kavya/layouts/collections/list.html:10:7": execute of template failed: template: collections/list.html:10:7: executing "main" at <partial "collection-card.html" .>: error calling partial: "/home/bhola/Desktop/braj-kavya/layouts/partials/collection-card.html:9:9": execute of template failed: template: _partials/collection-card.html:9:9: executing "_partials/collection-card.html" at <len .Params.poems>: error calling len: reflect: call of reflect.Value.Type on zero Value
