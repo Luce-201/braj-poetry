@@ -1,33 +1,74 @@
 {{ define "main" }}
 <div class="list-page">
   <header class="list-header">
-    <h1>
-      <span class="lang-hi">कविताएँ</span>
-      <span class="lang-en">Poems</span>
-    </h1>
-    <p>{{ len .Pages }}
-      <span class="lang-hi">कविताएँ</span>
-      <span class="lang-en">poems</span>
-    </p>
+    <h1>कविताएँ <span class="en">Poems</span></h1>
+    <p id="poem-count">{{ len .Pages }} कविताएँ / poems</p>
   </header>
-  
+
   <div class="filter-bar">
-    <span class="lang-hi">विषय के अनुसार छाँटें:</span>
-    <span class="lang-en">Filter by theme:</span>
-    {{ range .Site.Taxonomies.themes }}
-    <a href="{{ .Page.Permalink }}" class="theme-tag small">
-      <span class="lang-hi">{{ .Page.Title }}</span>
-      <span class="lang-en">{{ .Page.Params.title_en | default .Page.Title }}</span>
-    </a>
-    {{ end }}
+
+    <!-- Collection dropdown — auto-built from your collections content -->
+    <div class="filter-group">
+      <label for="filter-collection">संग्रह / Collection:</label>
+      <select id="filter-collection" class="filter-select" onchange="filterPoems()">
+        <option value="">— सभी / All —</option>
+        {{ range sort (where .Site.RegularPages "Type" "collections") "Title" }}
+        <option value="{{ .Title }}">{{ .Title }}</option>
+        {{ end }}
+      </select>
+    </div>
+
+    <!-- Theme filter (kept from before) -->
+    <div class="filter-group">
+      <label>विषय / Theme:</label>
+      <div class="theme-filter-tags">
+        <button class="theme-btn active" onclick="setTheme('', this)">सभी / All</button>
+        {{ range .Site.Taxonomies.themes }}
+        <button class="theme-btn" onclick="setTheme('{{ .Page.Title }}', this)">{{ .Page.Title }}</button>
+        {{ end }}
+      </div>
+    </div>
+
   </div>
 
-  <div class="poem-grid">
+  <!-- Each card gets data attributes for filtering -->
+  <div class="poem-grid" id="poem-grid">
     {{ range .Pages }}
-    {{ partial "poem-card.html" . }}
+    <div class="poem-card-wrapper"
+         data-collection="{{ .Params.collection }}"
+         data-themes="{{ delimit .Params.themes "," }}">
+      {{ partial "poem-card.html" . }}
+    </div>
     {{ end }}
   </div>
 
-  {{ template "_internal/pagination.html" . }}
+  <p id="no-results" class="empty-msg" style="display:none;">
+    कोई कविता नहीं मिली / No poems found for this filter.
+  </p>
+
 </div>
-{{ end }}
+
+<script>
+  let activeTheme = '';
+
+  function filterPoems() {
+    const selectedCollection = document.getElementById('filter-collection').value;
+    const wrappers = document.querySelectorAll('.poem-card-wrapper');
+    let visible = 0;
+
+    wrappers.forEach(wrapper => {
+      const collection = wrapper.dataset.collection || '';
+      const themes = wrapper.dataset.themes || '';
+
+      const collectionMatch = !selectedCollection || collection === selectedCollection;
+      const themeMatch = !activeTheme || themes.split(',').map(t => t.trim()).includes(activeTheme);
+
+      if (collectionMatch && themeMatch) {
+        wrapper.style.display = '';
+        visible++;
+      } else {
+        wrapper.style.display = 'none';
+      }
+    });
+
+    document.getElementById
