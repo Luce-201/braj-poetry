@@ -1,8 +1,7 @@
 ---
-title: अवधेस के द्वारे सकारे गई सुत गोद में भूपति लै निकसे ।
+title: अवधेस के द्वारे सकारे गई ।
 poet: Tulsidas
 form: सवैया
-collection: "Tulsidas Ke Savaiye "
 audio_url: <iframe src="https://archive.org/embed/Kavitawali" width="500"
   height="30" frameborder="0" webkitallowfullscreen="true"
   mozallowfullscreen="true" allowfullscreen></iframe>
