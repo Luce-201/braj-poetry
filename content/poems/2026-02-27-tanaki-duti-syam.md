@@ -1,5 +1,5 @@
 ---
-title: Tanaki duti syam
+title: "तनकी दुति स्याम "
 poet: Tulsidas
 form: सवैया
 draft: false
