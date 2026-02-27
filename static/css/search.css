@@ -1,55 +1,44 @@
 /* ============================================
-   SEARCH FEATURE — Append this to main.css
+   SEARCH FEATURE — Dark Gold Theme
    ============================================ */
 
-/* ── HEADER SEARCH BAR ─────────────────────────────────────────────── */
-.header-search {
-  margin-left: 1.5rem;
-}
-.header-search-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
+/* ── HEADER SEARCH BAR ──────────────────────────────────────────────── */
+.header-search { margin-left: 1.5rem; }
+.header-search-wrap { position: relative; display: flex; align-items: center; }
+
 .header-search-icon {
   position: absolute;
   left: 0.6rem;
-  width: 16px;
-  height: 16px;
-  color: rgba(255,255,255,0.6);
+  width: 16px; height: 16px;
+  color: rgba(232,184,122,0.4);
   pointer-events: none;
   flex-shrink: 0;
 }
 .header-search-input {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(232,184,122,0.07);
+  border: 1px solid rgba(232,184,122,0.2);
   border-radius: 20px;
-  color: #fff;
+  color: var(--text);
   font-family: var(--font-hi);
   font-size: 0.85rem;
   height: 34px;
   padding: 0 1rem 0 2.1rem;
   width: 200px;
-  transition: width 0.3s ease, background 0.2s;
+  transition: width 0.3s ease, background 0.2s, border-color 0.2s;
   outline: none;
 }
-.header-search-input::placeholder { color: rgba(255,255,255,0.5); }
+.header-search-input::placeholder { color: rgba(232,184,122,0.35); }
 .header-search-input:focus {
-  background: rgba(255,255,255,0.2);
-  border-color: rgba(255,255,255,0.5);
+  background: rgba(232,184,122,0.12);
+  border-color: rgba(232,184,122,0.45);
   width: 260px;
 }
-/* Remove default search "×" on webkit */
 .header-search-input::-webkit-search-cancel-button { display: none; }
 
 /* ── SEARCH PAGE ──────────────────────────────────────────────────── */
 .search-page { max-width: 860px; margin: 0 auto; }
+.search-main-bar { margin-bottom: 1.5rem; }
 
-.search-main-bar {
-  margin-bottom: 1.5rem;
-}
-
-/* Large search input on /search/ page */
 .search-input-wrap {
   position: relative;
   display: flex;
@@ -59,14 +48,13 @@
 .search-icon {
   position: absolute;
   left: 1rem;
-  width: 22px;
-  height: 22px;
+  width: 22px; height: 22px;
   color: var(--text-light);
   pointer-events: none;
 }
 .search-input-large {
   width: 100%;
-  border: 2px solid var(--border);
+  border: 2px solid var(--border-light);
   border-radius: 12px;
   background: var(--bg-card);
   color: var(--text);
@@ -77,10 +65,10 @@
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .search-input-large:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(139,26,26,0.1);
+  border-color: var(--gold-dim);
+  box-shadow: 0 0 0 3px rgba(232,184,122,0.08);
 }
-.search-input-large::placeholder { color: var(--text-light); opacity: 0.7; }
+.search-input-large::placeholder { color: var(--text-dim); opacity: 0.7; }
 .search-input-large::-webkit-search-cancel-button { display: none; }
 
 .search-clear {
@@ -94,12 +82,11 @@
   display: none;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 28px; height: 28px;
   border-radius: 50%;
   transition: background 0.15s;
 }
-.search-clear:hover { background: var(--border); color: var(--text); }
+.search-clear:hover { background: var(--border-light); color: var(--text); }
 
 /* Filter buttons */
 .search-filters {
@@ -108,14 +95,10 @@
   gap: 0.5rem;
   flex-wrap: wrap;
 }
-.filter-label {
-  color: var(--text-light);
-  font-size: 0.85rem;
-  margin-right: 0.25rem;
-}
+.filter-label { color: var(--text-light); font-size: 0.85rem; margin-right: 0.25rem; }
 .filter-btn {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-light);
   border-radius: 20px;
   color: var(--text-light);
   cursor: pointer;
@@ -124,19 +107,12 @@
   padding: 0.25rem 0.9rem;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
-.filter-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.filter-btn.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
+.filter-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+.filter-btn.active { background: #3b0a0a; border-color: var(--border-light); color: var(--gold); }
 
 /* Stats bar */
 .search-stats {
-  color: var(--text-light);
+  color: var(--text-dim);
   font-size: 0.85rem;
   margin-bottom: 1.25rem;
   min-height: 1.2em;
@@ -144,11 +120,7 @@
 }
 
 /* ── RESULT CARDS ─────────────────────────────────────────────────── */
-.search-results {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
+.search-results { display: flex; flex-direction: column; gap: 0.85rem; }
 
 .search-result-card {
   display: block;
@@ -162,12 +134,11 @@
   transition: box-shadow 0.2s, transform 0.15s, border-color 0.2s;
 }
 .search-result-card:hover {
-  box-shadow: 0 4px 16px rgba(139,26,26,0.12);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
   transform: translateY(-1px);
-  border-color: rgba(139,26,26,0.25);
+  border-color: var(--border-light);
 }
 
-/* Type badge */
 .result-type-badge {
   display: inline-block;
   font-size: 0.7rem;
@@ -180,45 +151,24 @@
   text-transform: uppercase;
 }
 .poem-badge {
-  background: rgba(139,26,26,0.08);
-  color: var(--accent);
-  border: 1px solid rgba(139,26,26,0.2);
+  background: rgba(232,184,122,0.08);
+  color: var(--gold-dim);
+  border: 1px solid rgba(232,184,122,0.2);
 }
 .poet-badge {
-  background: rgba(60,90,140,0.08);
-  color: #3c5a8c;
-  border: 1px solid rgba(60,90,140,0.2);
+  background: rgba(180,120,80,0.1);
+  color: var(--gold-dim);
+  border: 1px solid rgba(180,120,80,0.25);
 }
 
-.result-title {
-  font-size: 1.15rem;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-  line-height: 1.4;
-}
-.result-poet {
-  font-size: 0.88rem;
-  color: var(--text-light);
-  margin-bottom: 0.35rem;
-}
-.result-form {
-  font-size: 0.82rem;
-  color: var(--text-light);
-  margin-bottom: 0.35rem;
-}
-.result-meta {
-  font-size: 0.83rem;
-  color: var(--text-light);
-  margin-bottom: 0.25rem;
-  font-family: var(--font-en);
-}
-.result-themes {
-  margin-top: 0.5rem;
-  margin-bottom: 0.4rem;
-}
+.result-title  { font-size: 1.15rem; color: var(--gold); margin-bottom: 0.4rem; line-height: 1.4; }
+.result-poet   { font-size: 0.88rem; color: var(--text-light); margin-bottom: 0.35rem; }
+.result-form   { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.35rem; }
+.result-meta   { font-size: 0.83rem; color: var(--text-light); margin-bottom: 0.25rem; font-family: var(--font-en); }
+.result-themes { margin-top: 0.5rem; margin-bottom: 0.4rem; }
 .result-snippet {
   font-size: 0.88rem;
-  color: var(--text-light);
+  color: var(--text-dim);
   margin-top: 0.6rem;
   line-height: 1.6;
   border-top: 1px solid var(--border);
@@ -226,41 +176,27 @@
   font-style: italic;
 }
 
-/* Highlight marks */
 .search-result-card mark {
-  background: rgba(139,26,26,0.12);
-  color: var(--accent);
+  background: rgba(232,184,122,0.15);
+  color: var(--gold);
   font-weight: bold;
   border-radius: 2px;
   padding: 0 1px;
 }
 
-/* ── EMPTY / NO RESULTS STATES ───────────────────────────────────── */
-.search-empty,
-.search-no-results {
+/* ── EMPTY / NO RESULTS ────────────────────────────────────────────── */
+.search-empty, .search-no-results {
   text-align: center;
   padding: 4rem 1rem;
   color: var(--text-light);
 }
-.search-empty-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  opacity: 0.5;
-}
-.search-empty p,
-.search-no-results p {
-  margin-bottom: 0.4rem;
-  font-size: 1rem;
-}
-.search-empty .en,
-.search-no-results .en {
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
+.search-empty-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.4; }
+.search-empty p, .search-no-results p { margin-bottom: 0.4rem; font-size: 1rem; }
+.search-empty .en, .search-no-results .en { font-size: 0.9rem; opacity: 0.6; }
 .hidden { display: none !important; }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────── */
 @media (max-width: 700px) {
-  .header-search { display: none; }  /* hide header bar on mobile — use /search/ page */
+  .header-search { display: none; }
   .search-input-large { font-size: 1rem; padding: 0.75rem 2.75rem 0.75rem 3rem; }
 }
