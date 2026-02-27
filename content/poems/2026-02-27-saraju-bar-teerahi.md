@@ -1,5 +1,5 @@
 ---
-title: "सरजू बर तीरहि तीर फिरैं "
+title: सरजू बर तीरहि तीर फिरैं
 poet: Tulsidas
 form: सवैया
 draft: false
