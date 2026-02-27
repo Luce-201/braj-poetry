@@ -1,5 +1,5 @@
 ---
-title: अवधेस के द्वारे सकारे गई ।
+title: अवधेस के द्वारे सकारे गई।
 poet: Tulsidas
 form: सवैया
 audio_url: <iframe src="https://archive.org/embed/Kavitawali" width="500"
