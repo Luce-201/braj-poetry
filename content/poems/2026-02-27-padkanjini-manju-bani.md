@@ -1,5 +1,5 @@
 ---
-title: "पदकंजनि मंजु बनीं "
+title: पदकंजनि मंजु बनीं
 poet: Tulsidas
 form: सवैया
 themes: Ram
