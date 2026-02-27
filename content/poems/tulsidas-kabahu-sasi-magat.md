@@ -1,9 +1,7 @@
 ---
-title: कबहूँ ससि मागत आरि करैं कबहूँ प्रतिबिंब निहारि डरैं।
+title: कबहूँ ससि मागत आरि करैं
 poet: Tulsidas
 form: सवैया
-themes:
-  - Ram
 audio_url: https://archive.org/embed/kabahu-sasi-mangat-aari-kare
 draft: false
 ---
