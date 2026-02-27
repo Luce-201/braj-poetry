@@ -42,33 +42,14 @@
         <span class="lang-hi">संग्रह</span>
         <span class="lang-en">Collections</span>
       </a>
-
-      <!-- ── Tools dropdown ── -->
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" id="tools-toggle" aria-haspopup="true" aria-expanded="false">
-          <span class="lang-hi">उपकरण</span>
-          <span class="lang-en">Tools</span>
-          <span class="dropdown-arrow">▾</span>
-        </button>
-        <div class="nav-dropdown-menu" id="tools-menu" role="menu">
-          <a href="/tools/meter-analyzer/" role="menuitem">
-            <span class="tool-icon">◎</span>
-            <span class="tool-info">
-              <span class="tool-name lang-en">Meter Analyzer</span>
-              <span class="tool-name-hi lang-hi">छंद विश्लेषक</span>
-            </span>
-          </a>
-          <a href="/tools/rhyme-dictionary/" role="menuitem">
-            <span class="tool-icon">◈</span>
-            <span class="tool-info">
-              <span class="tool-name lang-en">Rhyme Dictionary</span>
-              <span class="tool-name-hi lang-hi">तुक शब्दकोश</span>
-            </span>
-          </a>
-        </div>
-      </div>
-      <!-- ── end Tools dropdown ── -->
-
+      <a href="/tools/meter-analyzer/">
+        <span class="lang-hi">छंद विश्लेषक</span>
+        <span class="lang-en">Meter Analyzer</span>
+      </a>
+      <a href="/tools/rhyme-dictionary/">
+        <span class="lang-hi">तुक शब्दकोश</span>
+        <span class="lang-en">Rhyme Dictionary</span>
+      </a>
       <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">English</button>
     </nav>
     <div class="header-search" id="header-search-form">
@@ -114,6 +95,5 @@
 <script src="/js/lang.js"></script>
 <script src="/js/fuse.min.js"></script>
 <script src="/js/search.js"></script>
-<script src="/js/nav.js"></script>
 </body>
 </html>
