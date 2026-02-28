@@ -1,3 +1,18 @@
 {{ define "main" }}
-{{ .Content }}
+{{ if eq .File.ContentBaseName "rhyme-dictionary" }}
+
+  {{ partial "rhyme-dictionary-tool.html" . }}
+
+{{ else }}
+<div class="tool-page">
+  <header class="tool-page-header">
+    <div class="tool-page-icon">{{ .Params.icon }}</div>
+    <div>
+      <h1 class="tool-page-title">{{ .Title }}</h1>
+      {{ with .Params.name_hi }}<p class="tool-page-subtitle">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+  {{ .Content }}
+</div>
+{{ end }}
 {{ end }}
