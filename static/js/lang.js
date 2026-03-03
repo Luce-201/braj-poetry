@@ -1,5 +1,5 @@
 // ============================================
-// Braj Kavya — Language Switcher
+// Braj Awadhi Kavyalok — Language Switcher
 // ============================================
 
 const LANG_KEY = 'braj_lang';
