@@ -1,5 +1,5 @@
 // ============================================
-// Braj Kavya Dictionary — Word Click Feature
+// Braj Awadhi Kavyalok Dictionary — Word Click Feature
 // ============================================
 
 const raw = window.BRAJ_DICTIONARY || '{}';
