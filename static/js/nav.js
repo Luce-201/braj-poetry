@@ -1,5 +1,5 @@
 // ============================================
-// Braj Kavya — Nav Dropdown (Tools menu)
+// Braj Awadhi Kavyalok — Nav Dropdown (Tools menu)
 // ============================================
 
 (function () {
