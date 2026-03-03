@@ -1,5 +1,5 @@
 // ============================================
-// Braj Kavya Kosha — Rhyme Dictionary Engine v2
+// Braj Awadhi Kavyalok — Rhyme Dictionary Engine v2
 // Phonetic matching with:
 //   • Homophone normalisation  (ण→न, ष→श)
 //   • Word-final schwa deletion (राम→raam not raama)
