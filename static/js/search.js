@@ -1,5 +1,5 @@
 // ============================================
-// Braj Kavya Kosha — Search Feature
+// Braj Awadhi Kavyalok — Search Feature
 // Powered by Fuse.js (fuzzy search with Unicode/Hindi support)
 // ============================================
 
