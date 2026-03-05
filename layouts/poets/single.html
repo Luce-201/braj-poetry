@@ -30,11 +30,24 @@
       <span class="lang-hi">रचनाएँ</span>
       <span class="lang-en">Works</span>
     </h2>
-    <div class="poem-grid">
-      {{ range $poems }}
-      {{ partial "poem-card.html" . }}
-      {{ end }}
+
+    {{ range $poems.GroupByParam "form" }}
+    <div class="poet-form-section">
+      <h3 class="poet-form-heading">
+        {{ if .Key }}
+          {{ .Key }}
+        {{ else }}
+          <span class="lang-hi">अन्य</span><span class="lang-en">Other</span>
+        {{ end }}
+      </h3>
+      <div class="poem-grid">
+        {{ range .Pages }}
+        {{ partial "poem-card.html" . }}
+        {{ end }}
+      </div>
     </div>
+    {{ end }}
+
   </section>
   {{ end }}
 

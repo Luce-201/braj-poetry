@@ -590,6 +590,20 @@ body {
   font-weight: normal;
 }
 .empty-msg { color: var(--text-dim); font-style: italic; padding: 2rem 0; }
+/* ── POET FORM SECTIONS ───────────────────────── */
+.poet-form-section {
+  margin-bottom: 2.5rem;
+}
+.poet-form-heading {
+  font-size: 1rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-hi);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+}
 
 @media (max-width: 680px) {
   .collection-header { grid-template-columns: 1fr; }
