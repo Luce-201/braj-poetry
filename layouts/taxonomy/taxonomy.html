@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="list-page">
+
+  <header class="list-header">
+    <h1>
+      <span class="lang-hi">काव्य-रूप</span>
+      <span class="lang-en">Poetic Forms</span>
+    </h1>
+  </header>
+
+  <div class="poem-grid">
+    {{ range .Pages }}
+    <div class="poem-card">
+      <a href="{{ .Permalink }}" class="poem-card-link">
+        <h3 class="card-title">{{ .Title }}</h3>
+        <p class="card-poet">{{ len .Pages }} कविताएँ / poems</p>
+      </a>
+    </div>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}
