@@ -12,6 +12,7 @@ defaultContentLanguage: "hi"
 taxonomies:
   theme: themes
   poet: poets_tax
+  forms: forms
 
 # Pagination
 pagination:
