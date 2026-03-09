@@ -2,8 +2,10 @@
 title: "{{ replace .Name "-" " " | title }}"
 poet: ""
 poet_en: ""
+form: ""
 themes: []
 audio_url: ""
+youtube_id: ""
 notes: ""
 date: {{ .Date }}
 draft: false
