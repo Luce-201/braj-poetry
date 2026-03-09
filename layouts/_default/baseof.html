@@ -95,5 +95,62 @@
 <script src="/js/lang.js"></script>
 <script src="/js/fuse.min.js"></script>
 <script src="/js/search.js"></script>
+
+<!-- YouTube IFrame API + Custom Player -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+var ytPlayers = {};
+
+function onYouTubeIframeAPIReady() {
+  document.querySelectorAll('.custom-player').forEach(function(el) {
+    var vid = el.dataset.vid;
+    ytPlayers[vid] = new YT.Player('yt-' + vid, {
+      videoId: vid,
+      playerVars: { autoplay: 0, controls: 0, modestbranding: 1 },
+      events: {
+        onReady:       function(e) { bindPlayer(el, e.target); },
+        onStateChange: function(e) { syncIcons(el, e.data); }
+      }
+    });
+  });
+}
+
+function fmt(s) {
+  s = Math.floor(s || 0);
+  return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+}
+
+function bindPlayer(el, yt) {
+  var btn    = el.querySelector('.play-btn');
+  var seeker = el.querySelector('.seeker');
+  var cur    = el.querySelector('.time-current');
+  var tot    = el.querySelector('.time-total');
+
+  btn.addEventListener('click', function() {
+    yt.getPlayerState() === YT.PlayerState.PLAYING
+      ? yt.pauseVideo()
+      : yt.playVideo();
+  });
+
+  seeker.addEventListener('input', function() {
+    yt.seekTo(seeker.value / 100 * (yt.getDuration() || 0), true);
+  });
+
+  setInterval(function() {
+    var dur = yt.getDuration() || 0;
+    var now = yt.getCurrentTime() || 0;
+    tot.textContent = fmt(dur);
+    cur.textContent = fmt(now);
+    seeker.value    = dur ? (now / dur * 100) : 0;
+  }, 500);
+}
+
+function syncIcons(el, state) {
+  var playing = (state === 1);
+  el.querySelector('.icon-play').classList.toggle('hidden', playing);
+  el.querySelector('.icon-pause').classList.toggle('hidden', !playing);
+}
+</script>
+
 </body>
 </html>
