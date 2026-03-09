@@ -1,4 +1,5 @@
 ---
+slug: "kaay-bco-mn-te-bsii"
 title: "काय बचो मन ते बसी "
 poet: Rasleen
 form: सवैया

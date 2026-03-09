@@ -1,4 +1,5 @@
 ---
+slug: "avdhes-ke-dvaare-skaare-gii"
 title: अवधेस के द्वारे सकारे गई।
 poet: Tulsidas
 form: सवैया

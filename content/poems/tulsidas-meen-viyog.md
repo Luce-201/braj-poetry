@@ -1,4 +1,5 @@
 ---
+slug: "miin-viyog-n-shi-skai"
 title: मीन वियोग न सहि सकै
 poet: Surdas
 poet_en: Surdas

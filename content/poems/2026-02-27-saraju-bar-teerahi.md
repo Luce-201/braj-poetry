@@ -1,4 +1,5 @@
 ---
+slug: "srjuu-br-tiirhi-tiir-phirain"
 title: सरजू बर तीरहि तीर फिरैं
 poet: Tulsidas
 form: सवैया

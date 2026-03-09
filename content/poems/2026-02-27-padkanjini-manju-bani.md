@@ -1,4 +1,5 @@
 ---
+slug: "pdknjni-mnju-bniin"
 title: पदकंजनि मंजु बनीं
 poet: Tulsidas
 form: सवैया

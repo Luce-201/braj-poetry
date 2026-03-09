@@ -1,4 +1,5 @@
 ---
+slug: "kbhuun-ssi-maagt-aari-krain"
 title: कबहूँ ससि मागत आरि करैं
 poet: Tulsidas
 form: सवैया

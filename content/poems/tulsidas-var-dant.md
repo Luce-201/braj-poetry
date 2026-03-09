@@ -1,4 +1,5 @@
 ---
+slug: "vr-dnt-kii-pngti-kundklii"
 title: वर दंत की पंगति कुंदकली
 poet: Tulsidas
 form: सवैया
