@@ -1,14 +1,9 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-poet: ""
-poet_en: ""
-form: ""
-themes: []
-audio_url: ""
-youtube_id: ""
-notes: ""
+title_en: ""
+dates: ""
+region: ""
+image: ""
 date: {{ .Date }}
 draft: false
 ---
-
-<!-- Write the poem below this line. Use two blank lines between verses. -->
