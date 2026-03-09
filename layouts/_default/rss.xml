@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ .Site.Params.siteName }} — पाठ / Recitations</title>
+    <link>{{ .Site.BaseURL }}</link>
+    <description>ब्रज अवधी काव्यलोक की कविताओं के पाठ / Recitations of classical Braj and Awadhi poetry</description>
+    <language>hi</language>
+    <atom:link href="{{ .Site.BaseURL }}index.xml" rel="self" type="application/rss+xml"/>
+    <itunes:author>{{ .Site.Params.siteName }}</itunes:author>
+    <itunes:summary>Classical Braj and Awadhi poetry recitations</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="Arts">
+      <itunes:category text="Literature"/>
+    </itunes:category>
+    {{ $poems := where .Site.RegularPages "Type" "poems" }}
+    {{ range $poems }}
+    {{ if .Params.audio_url }}
+    {{ $audioUrl := .Params.audio_url | replaceRE "archive.org/embed/" "archive.org/download/" }}
+    <item>
+      <title>{{ .Title | html }}{{ with .Params.poet }} — {{ . | html }}{{ end }}</title>
+      <link>{{ .Permalink }}</link>
+      <guid isPermaLink="true">{{ .Permalink }}</guid>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+      <description>{{ with .Params.poet }}कवि: {{ . }} | {{ end }}{{ .Title | html }}</description>
+      <enclosure url="{{ $audioUrl | safeURL }}" type="audio/mpeg" length="0"/>
+      <itunes:title>{{ .Title | html }}</itunes:title>
+      <itunes:author>{{ .Params.poet | default $.Site.Params.siteName }}</itunes:author>
+      <itunes:summary>{{ with .Params.poet }}कवि: {{ . }} | {{ end }}{{ .Title | html }}</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    {{ end }}
+    {{ end }}
+  </channel>
+</rss>
