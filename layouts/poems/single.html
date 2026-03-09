@@ -19,11 +19,9 @@
       </div>
     {{ end }}
   </header>
-
   <div class="poem-body" id="poem-text">
     {{ .Content }}
   </div>
-
   {{/* ── Audio / Recitation Section ─────────────────────────── */}}
   {{ if .Params.youtube_id }}
     <section class="poem-audio">
@@ -46,29 +44,25 @@
       </div>
       <div id="yt-{{ .Params.youtube_id }}" style="display:none"></div>
     </section>
-
   {{ else if .Params.audio_url }}
     <section class="poem-audio">
       <h3>पाठ सुनें <span class="en">Listen</span></h3>
       <iframe src="{{ .Params.audio_url }}" width="100%" height="80"
               frameborder="0" allowfullscreen></iframe>
     </section>
-
   {{ else }}
     <div class="add-recitation">
-      <a href="https://docs.google.com/forms/d/1FAIpQLSeWZv7w1f5y5azQJURZwKUytYBEDOAkepr_O9jgHSdHLYy2vA/viewform?usp=pp_url&entry.1782549942={{ .Title | urlquery }}"
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWZv7w1f5y5azQJURZwKUytYBEDOAkepr_O9jgHSdHLYy2vA/viewform?usp=pp_url&entry.1782549942={{ .Title | urlquery }}"
          target="_blank" rel="noopener" class="recitation-link">
         🎙&nbsp;पाठ जोड़ें <span class="en">/ Add Recitation</span>
       </a>
     </div>
   {{ end }}
-
   {{ with .Params.notes }}
   <section class="poem-notes">
     <h3>टिप्पणी <span class="en">Notes</span></h3>
     <p>{{ . }}</p>
   </section>
   {{ end }}
-
 </article>
 {{ end }}
