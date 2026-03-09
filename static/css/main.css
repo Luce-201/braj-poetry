@@ -314,6 +314,74 @@ body {
   margin-bottom: 1rem;
 }
 .poem-audio iframe { border-radius: 4px; }
+/* ── Custom YouTube Audio Player ───────────────────────── */
+.custom-player {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1.1rem;
+  max-width: 480px;
+}
+
+.play-btn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 0;
+  transition: color 0.2s;
+}
+.play-btn:hover { color: var(--gold-light); }
+
+.seeker-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  font-size: 0.76rem;
+  color: var(--text-light);
+  font-family: var(--font-en);
+}
+
+.seeker {
+  flex: 1;
+  accent-color: var(--gold);
+  cursor: pointer;
+  height: 3px;
+}
+
+.hidden { display: none !important; }
+
+/* ── Add Recitation Link ────────────────────────────────── */
+.add-recitation {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.recitation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--gold-dim);
+  font-size: 0.88rem;
+  font-family: var(--font-hi);
+  text-decoration: none;
+  border: 1px dashed var(--border-light);
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.recitation-link:hover {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+  background: rgba(232,184,122,0.05);
+}
 
 /* ============================================
    POET PAGE
