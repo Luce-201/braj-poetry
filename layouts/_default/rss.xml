@@ -1,17 +1,11 @@
-{{- $preamble := `<?xml version="1.0" encoding="UTF-8"?>` -}}
-{{ $preamble | safeHTML }}
-<rss version="2.0"
-  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-  xmlns:atom="http://www.w3.org/2005/Atom"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ .Site.Params.siteName }} — पाठ / Recitations</title>
     <link>{{ .Site.BaseURL }}</link>
     <description>ब्रज अवधी काव्यलोक की कविताओं के पाठ / Recitations of classical Braj and Awadhi poetry</description>
     <language>hi</language>
     <atom:link href="{{ .Site.BaseURL }}recitations.xml" rel="self" type="application/rss+xml"/>
-
     <itunes:author>{{ .Site.Params.siteName }}</itunes:author>
     <itunes:summary>Classical Braj and Awadhi poetry recitations</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
@@ -20,27 +14,21 @@
     </itunes:category>
 
     {{ $poems := where .Site.RegularPages "Type" "poems" }}
-    {{ $withAudio := where $poems ".Params.audio_url" "!=" nil }}
-
-    {{ range $withAudio }}
+    {{ range $poems }}
     {{ if .Params.audio_url }}
     <item>
-      <title>{{ .Title }}{{ with .Params.poet }} — {{ . }}{{ end }}</title>
+      <title>{{ .Title | html }}{{ with .Params.poet }} — {{ . | html }}{{ end }}</title>
       <link>{{ .Permalink }}</link>
       <guid isPermaLink="true">{{ .Permalink }}</guid>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
-      <description>{{ with .Params.poet }}कवि: {{ . }} | {{ end }}{{ .Title }}</description>
-      <content:encoded><![CDATA[
-        <p><strong>{{ .Title }}</strong>{{ with .Params.poet }} — {{ . }}{{ end }}</p>
-        <p><a href="{{ .Permalink }}">कविता पढ़ें / Read poem</a></p>
-      ]]></content:encoded>
+      <description>{{ with .Params.poet }}कवि: {{ . }} | {{ end }}{{ .Title | html }}</description>
       <enclosure
         url="{{ .Params.audio_url | replaceRE "archive.org/embed/" "archive.org/download/" }}"
         type="audio/mpeg"
         length="0"/>
-      <itunes:title>{{ .Title }}</itunes:title>
-      <itunes:author>{{ .Params.poet | default .Site.Params.siteName }}</itunes:author>
-      <itunes:summary>{{ with .Params.poet }}कवि: {{ . }} | {{ end }}{{ .Title }}</itunes:summary>
+      <itunes:title>{{ .Title | html }}</itunes:title>
+      <itunes:author>{{ .Params.poet | default $.Site.Params.siteName }}</itunes:author>
+      <itunes:summary>{{ with .Params.poet }}कवि: {{ . }} | {{ end }}{{ .Title | html }}</itunes:summary>
       <itunes:explicit>false</itunes:explicit>
     </item>
     {{ end }}
@@ -48,3 +36,13 @@
 
   </channel>
 </rss>
+```
+
+Also update `content/recitations.md` — the `layout` field needs to match the template name:
+```
+---
+title: "पाठ / Recitations"
+url: "/recitations.xml"
+outputs:
+  - RSS
+---
