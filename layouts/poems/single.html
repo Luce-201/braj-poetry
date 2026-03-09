@@ -27,23 +27,45 @@
     {{ .Content }}
   </div>
 
-  {{ with .Params.audio_url }}
-  <section class="poem-audio">
-    <h3>पाठ सुनें <span class="en">Listen</span></h3>
-    <iframe src="{{ . }}" width="100%" height="80" frameborder="0" allowfullscreen></iframe>
-  </section>
-  {{ end }}
-
+  {{/* ── Audio / Recitation Section ─────────────────────────── */}}
   {{ if .Params.youtube_id }}
-  {{/* custom player — covered below */}}
-{{ else }}
-  <div class="add-recitation">
-    <a href="https://docs.google.com/forms/d/YOUR_FORM_ID/viewform?usp=pp_url&entry.POEM_FIELD_ID={{ .Title | urlquery }}" 
-       target="_blank" class="recitation-link">
-      🎙 पाठ जोड़ें / Add Recitation
-    </a>
-  </div>
-{{ end }}
+    <section class="poem-audio">
+      <h3>पाठ सुनें <span class="en">Listen</span></h3>
+      <div class="custom-player" data-vid="{{ .Params.youtube_id }}">
+        <button class="play-btn" aria-label="चलाएँ / Play">
+          <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+            <polygon points="5,3 19,12 5,21"/>
+          </svg>
+          <svg class="icon-pause hidden" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+            <rect x="6" y="4" width="4" height="16"/>
+            <rect x="14" y="4" width="4" height="16"/>
+          </svg>
+        </button>
+        <div class="seeker-wrap">
+          <span class="time-current">0:00</span>
+          <input type="range" class="seeker" value="0" min="0" max="100" step="0.1">
+          <span class="time-total">–:––</span>
+        </div>
+      </div>
+      <div id="yt-{{ .Params.youtube_id }}" style="display:none"></div>
+    </section>
+
+  {{ else if .Params.audio_url }}
+    {{/* Legacy archive.org embeds — kept working */}}
+    <section class="poem-audio">
+      <h3>पाठ सुनें <span class="en">Listen</span></h3>
+      <iframe src="{{ .Params.audio_url }}" width="100%" height="80"
+              frameborder="0" allowfullscreen></iframe>
+    </section>
+
+  {{ else }}
+    <div class="add-recitation">
+      <a href="https://docs.google.com/forms/d/YOUR_FORM_ID/viewform?usp=pp_url&entry.YOUR_ENTRY_ID={{ .Title | urlquery }}"
+         target="_blank" rel="noopener" class="recitation-link">
+        🎙&nbsp;पाठ जोड़ें <span class="en">/ Add Recitation</span>
+      </a>
+    </div>
+  {{ end }}
 
   {{ with .Params.notes }}
   <section class="poem-notes">
