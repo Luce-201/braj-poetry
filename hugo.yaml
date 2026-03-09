@@ -6,7 +6,6 @@ outputs:
     - HTML
     - RSS
     - JSON
-defaultContentLanguage: "hi"
 
 # Taxonomies — this creates your category/filter system
 taxonomies:
