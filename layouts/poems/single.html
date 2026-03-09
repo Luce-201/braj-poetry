@@ -34,6 +34,17 @@
   </section>
   {{ end }}
 
+  {{ if .Params.youtube_id }}
+  {{/* custom player — covered below */}}
+{{ else }}
+  <div class="add-recitation">
+    <a href="https://docs.google.com/forms/d/YOUR_FORM_ID/viewform?usp=pp_url&entry.POEM_FIELD_ID={{ .Title | urlquery }}" 
+       target="_blank" class="recitation-link">
+      🎙 पाठ जोड़ें / Add Recitation
+    </a>
+  </div>
+{{ end }}
+
   {{ with .Params.notes }}
   <section class="poem-notes">
     <h3>टिप्पणी <span class="en">Notes</span></h3>
