@@ -69,11 +69,17 @@
   </div>
 </header>
 
+<!-- ↓ CHANGED: compact scrollable tooltip card -->
 <div id="word-tooltip" class="word-tooltip hidden">
-  <span class="tooltip-word"></span>
-  <span class="tooltip-meaning"></span>
-  <button class="tooltip-close" onclick="closeTooltip()">✕</button>
+  <div class="tooltip-header">
+    <span class="tooltip-word"></span>
+    <button class="tooltip-close" onclick="closeTooltip()" aria-label="Close">✕</button>
+  </div>
+  <div class="tooltip-body">
+    <span class="tooltip-meaning"></span>
+  </div>
 </div>
+<!-- ↑ END CHANGE -->
 
 <main class="main-content">
   {{ block "main" . }}{{ end }}

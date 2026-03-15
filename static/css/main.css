@@ -269,34 +269,68 @@ body {
 .poem-word:hover { border-bottom-color: var(--gold-dim); color: var(--gold); }
 
 /* ============================================
-   WORD TOOLTIP
+   WORD TOOLTIP  — compact scrollable card
    ============================================ */
 .word-tooltip {
   position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 1.5rem;
+  right: 1.5rem;
   background: #0d0604;
   color: var(--text);
   border: 1px solid var(--border-light);
-  padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.7);
+  border-radius: 10px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.75);
   z-index: 1000;
-  max-width: 400px;
+  width: 270px;
+  max-height: 190px;
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1rem;
+  flex-direction: column;
+  font-size: 0.95rem;
   transition: opacity 0.2s;
 }
 .word-tooltip.hidden { display: none; }
-.tooltip-word    { font-weight: bold; font-family: var(--font-hi); color: var(--gold); }
-.tooltip-word::after { content: ":"; margin-right: 0.25rem; }
-.tooltip-meaning { font-family: var(--font-en); font-style: italic; color: var(--text-light); }
+
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.85rem 0.45rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.tooltip-word {
+  font-weight: bold;
+  font-family: var(--font-hi);
+  color: var(--gold);
+  font-size: 1rem;
+}
+.tooltip-body {
+  padding: 0.5rem 0.85rem 0.6rem;
+  overflow-y: auto;
+  flex: 1;
+  /* subtle scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-light) transparent;
+}
+.tooltip-body::-webkit-scrollbar { width: 4px; }
+.tooltip-body::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 4px; }
+
+.tooltip-meaning {
+  font-family: var(--font-en);
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
 .tooltip-close {
-  background: none; border: none; color: var(--text-dim);
-  cursor: pointer; margin-left: auto; font-size: 1rem; padding: 0 0.25rem;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0 0.2rem;
+  flex-shrink: 0;
+  line-height: 1;
 }
 .tooltip-close:hover { color: var(--text); }
 
