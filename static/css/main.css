@@ -322,6 +322,18 @@ body {
   font-size: 0.87rem;
   line-height: 1.55;
 }
+/* ── Add this block inside main.css, after .tooltip-meaning { } ── */
+
+.tooltip-note {
+  display: block;
+  font-size: 0.73rem;
+  font-family: var(--font-hi);
+  color: var(--gold);
+  opacity: 0.65;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.01em;
+}
+
 .tooltip-close {
   background: none;
   border: none;
