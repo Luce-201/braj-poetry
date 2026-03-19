@@ -25,7 +25,9 @@
       <span class="logo-hi">{{ .Site.Params.siteName }}</span>
       <span class="logo-en">{{ .Site.Params.siteNameEn }}</span>
     </a>
-    <nav class="main-nav">
+
+    <!-- Desktop nav -->
+    <nav class="main-nav" id="main-nav">
       <a href="/poems/">
         <span class="lang-hi">कविताएँ</span>
         <span class="lang-en">Poems</span>
@@ -52,35 +54,96 @@
       </a>
       <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">English</button>
     </nav>
-    <div class="header-search" id="header-search-form">
-      <div class="header-search-wrap">
-        <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input
-          type="search"
-          id="header-search-input"
-          class="header-search-input"
-          placeholder="खोजें / Search…"
-          autocomplete="off"
-        >
+
+    <!-- Header right: search + hamburger -->
+    <div class="header-right">
+      <div class="header-search" id="header-search-form">
+        <div class="header-search-wrap">
+          <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input
+            type="search"
+            id="header-search-input"
+            class="header-search-input"
+            placeholder="खोजें / Search…"
+            autocomplete="off"
+          >
+        </div>
       </div>
+
+      <!-- Hamburger button (mobile only) -->
+      <button class="hamburger" id="hamburger" aria-label="मेनू खोलें / Open menu" aria-expanded="false">
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+      </button>
     </div>
   </div>
 </header>
 
-<!-- ↓ CHANGED: compact scrollable tooltip card -->
+<!-- Mobile nav overlay -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+<!-- Mobile nav drawer -->
+<nav class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav-header">
+    <span class="mobile-nav-title lang-hi">मेनू</span>
+    <span class="mobile-nav-title lang-en">Menu</span>
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="बंद करें / Close">✕</button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="/poems/" class="mobile-nav-link">
+      <span class="mnl-icon">📜</span>
+      <span class="lang-hi">कविताएँ</span>
+      <span class="lang-en">Poems</span>
+    </a>
+    <a href="/poets/" class="mobile-nav-link">
+      <span class="mnl-icon">✍</span>
+      <span class="lang-hi">कवि</span>
+      <span class="lang-en">Poets</span>
+    </a>
+    <a href="/themes/" class="mobile-nav-link">
+      <span class="mnl-icon">🏷</span>
+      <span class="lang-hi">विषय</span>
+      <span class="lang-en">Themes</span>
+    </a>
+    <a href="/collections/" class="mobile-nav-link">
+      <span class="mnl-icon">📚</span>
+      <span class="lang-hi">संग्रह</span>
+      <span class="lang-en">Collections</span>
+    </a>
+    <a href="/tools/meter-analyzer/" class="mobile-nav-link">
+      <span class="mnl-icon">◎</span>
+      <span class="lang-hi">छंद विश्लेषक</span>
+      <span class="lang-en">Meter Analyzer</span>
+    </a>
+    <a href="/tools/rhyme-dictionary/" class="mobile-nav-link">
+      <span class="mnl-icon">◈</span>
+      <span class="lang-hi">तुक शब्दकोश</span>
+      <span class="lang-en">Rhyme Dictionary</span>
+    </a>
+    <a href="/search/" class="mobile-nav-link">
+      <span class="mnl-icon">🔍</span>
+      <span class="lang-hi">खोज</span>
+      <span class="lang-en">Search</span>
+    </a>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle mobile-lang-toggle" onclick="toggleLang(); closeMobileNav();">English</button>
+  </div>
+</nav>
+
+<!-- ↓ compact scrollable tooltip card -->
 <div id="word-tooltip" class="word-tooltip hidden">
   <div class="tooltip-header">
     <span class="tooltip-word"></span>
     <button class="tooltip-close" onclick="closeTooltip()" aria-label="Close">✕</button>
   </div>
   <div class="tooltip-body">
-    <span class="tooltip-note" style="display:none"></span>   <!-- ADD THIS LINE -->
     <span class="tooltip-meaning"></span>
   </div>
 </div>
-<!-- ↑ END CHANGE -->
 
 <main class="main-content">
   {{ block "main" . }}{{ end }}
@@ -157,6 +220,34 @@ function syncIcons(el, state) {
   el.querySelector('.icon-play').classList.toggle('hidden', playing);
   el.querySelector('.icon-pause').classList.toggle('hidden', !playing);
 }
+
+/* ── Mobile nav ── */
+function openMobileNav() {
+  document.getElementById('mobile-nav').classList.add('is-open');
+  document.getElementById('mobile-nav-overlay').classList.add('is-open');
+  document.getElementById('hamburger').setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileNav() {
+  document.getElementById('mobile-nav').classList.remove('is-open');
+  document.getElementById('mobile-nav-overlay').classList.remove('is-open');
+  document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('hamburger').addEventListener('click', function() {
+  this.getAttribute('aria-expanded') === 'true' ? closeMobileNav() : openMobileNav();
+});
+document.getElementById('mobile-nav-close').addEventListener('click', closeMobileNav);
+document.getElementById('mobile-nav-overlay').addEventListener('click', closeMobileNav);
+
+/* Keep mobile lang-toggle label in sync */
+document.addEventListener('DOMContentLoaded', function() {
+  var lang = localStorage.getItem('braj_lang') || 'hi';
+  var mlt = document.querySelector('.mobile-lang-toggle');
+  if (mlt) mlt.textContent = lang === 'hi' ? 'English' : 'हिंदी';
+});
 </script>
 
 </body>
