@@ -46,6 +46,24 @@
     </div>
   </header>
 
+  {{ with .Params.region }}<p class="region">{{ . }}</p>{{ end }}
+
+      <!-- ── FAVOURITE BUTTON ── -->
+      <button
+        class="fav-btn"
+        data-url="{{ .Permalink }}"
+        data-title="{{ .Title }}"
+        data-type="poet"
+        title="पसंदीदा में जोड़ें / Add to favourites"
+      >
+        <span class="fav-heart">♡</span>
+        <span class="lang-hi">पसंदीदा कवि</span>
+        <span class="lang-en">Favourite Poet</span>
+      </button>
+
+    </div>
+  </header>
+
   <!-- ── BIO ── -->
   <div class="poet-bio">
     {{ .Content }}

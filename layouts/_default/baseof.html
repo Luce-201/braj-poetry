@@ -13,21 +13,30 @@
       document.documentElement.setAttribute('data-lang', lang);
     })();
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/search.css">
+  <link rel="stylesheet" href="/css/auth.css">
+
+  <!-- Supabase JS client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 </head>
 <body>
+
+<!-- ════════════════════════════════════════════════════
+     HEADER
+     ════════════════════════════════════════════════════ -->
 <header class="site-header">
   <div class="header-inner">
+
     <a href="/" class="site-logo">
       <span class="logo-hi">{{ .Site.Params.siteName }}</span>
       <span class="logo-en">{{ .Site.Params.siteNameEn }}</span>
     </a>
 
-    <!-- Desktop nav -->
-    <nav class="main-nav" id="main-nav">
+    <nav class="main-nav">
       <a href="/poems/">
         <span class="lang-hi">कविताएँ</span>
         <span class="lang-en">Poems</span>
@@ -52,89 +61,54 @@
         <span class="lang-hi">तुक शब्दकोश</span>
         <span class="lang-en">Rhyme Dictionary</span>
       </a>
+
+      <!-- Language toggle -->
       <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">English</button>
+
+      <!-- ── LOGIN BUTTON (shown when logged out) ── -->
+      <button class="auth-login-btn" id="auth-login-btn">
+        <span>♡</span>
+        <span class="lang-hi">लॉग इन</span>
+        <span class="lang-en">Sign In</span>
+      </button>
+
+      <!-- ── USER MENU (shown when logged in) ── -->
+      <div class="auth-user-menu" id="auth-user-menu">
+        <div class="auth-user-avatar" id="auth-user-avatar">?</div>
+        <span class="auth-user-name" id="auth-user-name"></span>
+        <a href="/favourites/" class="auth-fav-link">
+          <span class="lang-hi">पसंदीदा</span>
+          <span class="lang-en">Favourites</span>
+        </a>
+        <button class="auth-logout-btn" id="auth-logout-btn">
+          <span class="lang-hi">बाहर</span>
+          <span class="lang-en">Sign Out</span>
+        </button>
+      </div>
     </nav>
 
-    <!-- Header right: search + hamburger -->
-    <div class="header-right">
-      <div class="header-search" id="header-search-form">
-        <div class="header-search-wrap">
-          <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <input
-            type="search"
-            id="header-search-input"
-            class="header-search-input"
-            placeholder="खोजें / Search…"
-            autocomplete="off"
-          >
-        </div>
+    <!-- Header search bar -->
+    <div class="header-search" id="header-search-form">
+      <div class="header-search-wrap">
+        <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="search"
+          id="header-search-input"
+          class="header-search-input"
+          placeholder="खोजें / Search…"
+          autocomplete="off"
+        >
       </div>
-
-      <!-- Hamburger button (mobile only) -->
-      <button class="hamburger" id="hamburger" aria-label="मेनू खोलें / Open menu" aria-expanded="false">
-        <span class="ham-bar"></span>
-        <span class="ham-bar"></span>
-        <span class="ham-bar"></span>
-      </button>
     </div>
+
   </div>
 </header>
 
-<!-- Mobile nav overlay -->
-<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
-
-<!-- Mobile nav drawer -->
-<nav class="mobile-nav" id="mobile-nav" aria-hidden="true">
-  <div class="mobile-nav-header">
-    <span class="mobile-nav-title lang-hi">मेनू</span>
-    <span class="mobile-nav-title lang-en">Menu</span>
-    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="बंद करें / Close">✕</button>
-  </div>
-  <div class="mobile-nav-links">
-    <a href="/poems/" class="mobile-nav-link">
-      <span class="mnl-icon">📜</span>
-      <span class="lang-hi">कविताएँ</span>
-      <span class="lang-en">Poems</span>
-    </a>
-    <a href="/poets/" class="mobile-nav-link">
-      <span class="mnl-icon">✍</span>
-      <span class="lang-hi">कवि</span>
-      <span class="lang-en">Poets</span>
-    </a>
-    <a href="/themes/" class="mobile-nav-link">
-      <span class="mnl-icon">🏷</span>
-      <span class="lang-hi">विषय</span>
-      <span class="lang-en">Themes</span>
-    </a>
-    <a href="/collections/" class="mobile-nav-link">
-      <span class="mnl-icon">📚</span>
-      <span class="lang-hi">संग्रह</span>
-      <span class="lang-en">Collections</span>
-    </a>
-    <a href="/tools/meter-analyzer/" class="mobile-nav-link">
-      <span class="mnl-icon">◎</span>
-      <span class="lang-hi">छंद विश्लेषक</span>
-      <span class="lang-en">Meter Analyzer</span>
-    </a>
-    <a href="/tools/rhyme-dictionary/" class="mobile-nav-link">
-      <span class="mnl-icon">◈</span>
-      <span class="lang-hi">तुक शब्दकोश</span>
-      <span class="lang-en">Rhyme Dictionary</span>
-    </a>
-    <a href="/search/" class="mobile-nav-link">
-      <span class="mnl-icon">🔍</span>
-      <span class="lang-hi">खोज</span>
-      <span class="lang-en">Search</span>
-    </a>
-  </div>
-  <div class="mobile-nav-footer">
-    <button class="lang-toggle mobile-lang-toggle" onclick="toggleLang(); closeMobileNav();">English</button>
-  </div>
-</nav>
-
-<!-- ↓ compact scrollable tooltip card -->
+<!-- ════════════════════════════════════════════════════
+     WORD TOOLTIP (dictionary lookup)
+     ════════════════════════════════════════════════════ -->
 <div id="word-tooltip" class="word-tooltip hidden">
   <div class="tooltip-header">
     <span class="tooltip-word"></span>
@@ -145,15 +119,80 @@
   </div>
 </div>
 
+<!-- ════════════════════════════════════════════════════
+     AUTH MODAL
+     ════════════════════════════════════════════════════ -->
+<div class="auth-modal-wrap hidden" id="auth-modal-wrap">
+
+  <!-- Dark overlay — click to close -->
+  <div id="auth-modal-overlay"></div>
+
+  <!-- Modal card -->
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+
+    <button class="auth-modal-close" id="auth-modal-close" aria-label="Close">✕</button>
+
+    <span class="auth-modal-ornament" aria-hidden="true">॥</span>
+    <h2 class="auth-modal-title" id="auth-modal-title">
+      <span class="lang-hi">ब्रज काव्यलोक में आपका स्वागत है</span>
+      <span class="lang-en">Welcome to Braj Kavyalok</span>
+    </h2>
+    <p class="auth-modal-subtitle">
+      <span class="lang-hi">लॉग इन करें और अपनी पसंदीदा कविताएँ सहेजें</span>
+      <span class="lang-en">Sign in to save your favourite poems and poets</span>
+    </p>
+
+    <!-- Google sign-in -->
+    <button class="auth-google-btn" id="auth-google-btn">
+      <!-- Google G logo -->
+      <svg class="auth-google-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        <path fill="none" d="M0 0h48v48H0z"/>
+      </svg>
+      Continue with Google
+    </button>
+
+    <!-- Divider -->
+    <div class="auth-divider"><span>or continue with email</span></div>
+
+    <!-- Email magic link -->
+    <input
+      type="email"
+      id="auth-email-input"
+      class="auth-email-input"
+      placeholder="your@email.com"
+      autocomplete="email"
+    >
+    <button class="auth-email-btn" id="auth-email-btn">
+      <span class="lang-hi">लॉगिन लिंक भेजें</span>
+      <span class="lang-en">Send Login Link</span>
+    </button>
+
+    <!-- Status message -->
+    <p class="auth-message" id="auth-message"></p>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     MAIN CONTENT
+     ════════════════════════════════════════════════════ -->
 <main class="main-content">
   {{ block "main" . }}{{ end }}
 </main>
 
+<!-- ════════════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════════════ -->
 <footer class="site-footer">
   <span class="lang-hi">ब्रज अवधी काव्यलोक</span>
   <span class="lang-en">Braj Awadhi Kavyalok</span>
 </footer>
 
+<!-- Dictionary data -->
 {{ $dict := index .Site.Data "dictionary" }}
 {{ if $dict }}
 <script>
@@ -161,10 +200,12 @@
 </script>
 {{ end }}
 
+<!-- Scripts -->
 <script src="/js/dictionary.js"></script>
 <script src="/js/lang.js"></script>
 <script src="/js/fuse.min.js"></script>
 <script src="/js/search.js"></script>
+<script src="/js/supabase-auth.js"></script>
 
 <!-- YouTube IFrame API + Custom Player -->
 <script src="https://www.youtube.com/iframe_api"></script>
@@ -220,34 +261,6 @@ function syncIcons(el, state) {
   el.querySelector('.icon-play').classList.toggle('hidden', playing);
   el.querySelector('.icon-pause').classList.toggle('hidden', !playing);
 }
-
-/* ── Mobile nav ── */
-function openMobileNav() {
-  document.getElementById('mobile-nav').classList.add('is-open');
-  document.getElementById('mobile-nav-overlay').classList.add('is-open');
-  document.getElementById('hamburger').setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeMobileNav() {
-  document.getElementById('mobile-nav').classList.remove('is-open');
-  document.getElementById('mobile-nav-overlay').classList.remove('is-open');
-  document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('hamburger').addEventListener('click', function() {
-  this.getAttribute('aria-expanded') === 'true' ? closeMobileNav() : openMobileNav();
-});
-document.getElementById('mobile-nav-close').addEventListener('click', closeMobileNav);
-document.getElementById('mobile-nav-overlay').addEventListener('click', closeMobileNav);
-
-/* Keep mobile lang-toggle label in sync */
-document.addEventListener('DOMContentLoaded', function() {
-  var lang = localStorage.getItem('braj_lang') || 'hi';
-  var mlt = document.querySelector('.mobile-lang-toggle');
-  if (mlt) mlt.textContent = lang === 'hi' ? 'English' : 'हिंदी';
-});
 </script>
 
 </body>

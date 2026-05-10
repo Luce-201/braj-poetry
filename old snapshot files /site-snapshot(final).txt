@@ -1,0 +1,4818 @@
+
+================================================================
+FILE: ./archetypes/collections.md
+================================================================
+
+---
+title: "{{ replace .Name "-" " " | title }}"
+image: ""
+description: ""
+date: {{ .Date }}
+draft: false
+---
+
+<!-- Optional longer description of this collection -->
+
+
+================================================================
+FILE: ./archetypes/default.md
+================================================================
+
+---
+date: '{{ .Date }}'
+draft: true
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+---
+
+
+================================================================
+FILE: ./archetypes/poems.md
+================================================================
+
+---
+title: "{{ replace .Name "-" " " | title }}"
+poet: ""
+poet_en: ""
+themes: []
+audio_url: ""
+notes: ""
+date: {{ .Date }}
+draft: false
+---
+
+<!-- Write the poem below this line. Use two blank lines between verses. -->
+
+================================================================
+FILE: ./archetypes/poets.md
+================================================================
+
+---
+title: "{{ replace .Name "-" " " | title }}"
+title_en: ""
+dates: ""
+region: ""
+image: ""
+date: {{ .Date }}
+draft: false
+---
+
+================================================================
+FILE: ./content/collections/2026-02-27-rasleen-ke-savaiye.md
+================================================================
+
+---
+title: Rasleen Ke Savaiye
+description: This is a collection of the savaiyas of Rasleen.
+poems:
+  - "काय बचो मन ते बसी"
+  - "मानुस हौं तो वही रसखान"
+---
+
+
+================================================================
+FILE: ./content/collections/2026-02-27-tulsidas-ke-savaiye.md
+================================================================
+
+---
+title: "Tulsidas ke Savaiye "
+image: /uploads/tulsidas02.png
+description: This is a collection of the savaiyas of Tulsidas which are
+  relatively lesser known.
+poems:
+  - "अवधेस के द्वारे सकारे गई।"
+  - "पग नूपुर औ पहुँची"
+  - "तनकी दुति स्याम"
+  - "कबहूँ ससि मागत आरि करैं"
+  - "वर दंत की पंगति कुंदकली"
+  - "पदकंजनि मंजु बनीं"
+  - "सरजू बर तीरहि तीर फिरैं"
+---
+
+
+================================================================
+FILE: ./content/collections/_index.md
+================================================================
+
+---
+title: "संग्रह / Collections"
+---
+
+================================================================
+FILE: ./content/poems/2026-02-26-kay-bacho-man-te-basi.md
+================================================================
+
+---
+title: "काय बचो मन ते बसी "
+poet: Rasleen
+form: सवैया
+draft: false
+---
+काय बचो मन ते बसी हौं जिय संग निकारइ जो कछु तेरे ।
+
+हाथ के माथे धरे कुच संभु के काय के सौंह को देत सबेरे।
+
+नाभि के कुंड में सोरी के सौंह को मो मन हौं रसलीन जो तेरे ।
+
+बात की जा परतीति नही मुख को ए धरो अब जीभ में मेरे ॥
+
+================================================================
+FILE: ./content/poems/2026-02-26-.md
+================================================================
+
+---
+title: मानुस हौं तो वही रसखान
+poet: "Raskhan "
+form: सवैया
+themes:
+  - Krishna
+draft: false
+---
+मानुस हौं तो वही रसखान, बसौं मिलि गोकुल गाँव के ग्वारन।  
+जो पसु हौं तो कहा बस मेरो, चरौं नित नंद की धेनु मँझारन॥  
+पाहन हौं तो वही गिरि को, जो धर्यो कर छत्र पुरंदर धारन।  
+जो खग हौं तो बसेरो करौं मिलि कालिंदीकूल कदम्ब की डारन॥
+
+================================================================
+FILE: ./content/poems/2026-02-27--1.md
+================================================================
+
+---
+title: तनकी दुति स्याम
+poet: Tulsidas
+form: सवैया
+draft: false
+---
+तनकी दुति स्याम सरोरूह लोचन कंजकी मंजुलताई हरैं।  
+अति सुंदर सोहत धूरि भरे छबि भूरि अनंगकी दुरि धरैं।  
+दमकैं दँतियाँ दुति दामिनि-ज्यों किलकैं कल बाल-बिनोद करैं।  
+अवधेस के बालक चारि सदा तुलसी-मन -मंदिरमें बिहरैं।
+
+================================================================
+FILE: ./content/poems/2026-02-27-.md
+================================================================
+
+---
+title: पग नूपुर औ पहुँची
+poet: Tulsidas
+form: सवैया
+draft: false
+---
+पग नूपुर औ पहुँची करकंजनि मंजु बनी मनिमाल हिएँ।  
+नवनीत कलेवर पीत झँगा झलकै पुलकैं नृपु गोद लिएँ।  
+अरबिंदु से आननु रूप मरंदु अनंदित लोचन -भृंग पिएँ।  
+मनमो न बस्यौ अस बालकु जौं तुलसी जगमें फलु कौन जिएँ।
+
+================================================================
+FILE: ./content/poems/2026-02-27-padkanjini-manju-bani.md
+================================================================
+
+---
+title: पदकंजनि मंजु बनीं
+poet: Tulsidas
+form: सवैया
+themes: Ram
+draft: false
+---
+पदकंजनि मंजु बनीं पनहीं धनुहीं सर पंकज-पानि लिएँ।  
+लरिका सँग खेलत डोलत हैं सरजू-तट चौहट हाट हिएँ।  
+तुलसी अस बालक सों नहिं नेहु कहा जप जाग समाधि किएँ।  
+नर वे खर सूकर स्वान समान कहैा जगमें फलु कौन जिएँ।
+
+================================================================
+FILE: ./content/poems/2026-02-27-saraju-bar-teerahi.md
+================================================================
+
+---
+title: सरजू बर तीरहि तीर फिरैं
+poet: Tulsidas
+form: सवैया
+draft: false
+---
+सरजू बर तीरहि तीर फिरैं रघुबीर, सखा अरु बीर सबै।  
+धनुहीं करतीर, निषंग कसे कटि, पीत दुकूल नवीन फबै॥
+
+तुलसी तेहि औसर लावनिता दस चारि नौ तीन इकील सबै।  
+मति भारति पंगु भई जो निहारि, विचारि फिरी उपमा न पवै॥
+
+================================================================
+FILE: ./content/poems/2026-02-27-tanaki-duti-syam.md
+================================================================
+
+---
+title: "तनकी दुति स्याम "
+poet: Tulsidas
+form: सवैया
+draft: false
+---
+तनकी दुति स्याम सरोरूह लोचन कंजकी मंजुलताई हरैं।  
+अति सुंदर सोहत धूरि भरे छबि भूरि अनंगकी दुरि धरैं।  
+दमकैं दँतियाँ दुति दामिनि-ज्यों किलकैं कल बाल-बिनोद करैं।  
+अवधेस के बालक चारि सदा तुलसी-मन -मंदिरमें बिहरैं।
+
+================================================================
+FILE: ./content/poems/tulsidas-awdhes-ke-dware.md
+================================================================
+
+---
+title: अवधेस के द्वारे सकारे गई।
+poet: Tulsidas
+form: सवैया
+audio_url: <iframe src="https://archive.org/embed/Kavitawali" width="500"
+  height="30" frameborder="0" webkitallowfullscreen="true"
+  mozallowfullscreen="true" allowfullscreen></iframe>
+draft: false
+---
+अवधेस के द्वारे सकारे गई सुत गोद में भूपति लै निकसे ।  
+अवलोकि हौं सोच बिमोचन को ठगि-सी रही, जे न ठगे धिक-से ॥  
+'तुलसी' मन-रंजन रंजित-अंजन नैन सुखंजन जातक-से ।  
+सजनी ससि में समसील उभै नवनील सरोरुह-से बिकसे ॥
+
+तन की दुति श्याम सरोरुह लोचन कंज की मंजुलताई हरैं ।  
+अति सुंदर सोहत धूरि भरे छबि भूरि अनंग की दूरि धरैं ॥  
+दमकैं दँतियाँ दुति दामिनि ज्यों किलकैं कल बाल बिनोद करैं ।  
+अवधेस के बालक चारि सदा 'तुलसी' मन मंदिर में बिहरैं ॥
+
+सीस जटा, उर बाहु बिसाल, बिलोचन लाल, तिरीछी सी भौंहैं ।  
+तून सरासन-बान धरें तुलसी बन मारग में सुठि सोहैं ॥  
+सादर बारहिं बार सुभायँ, चितै तुम्ह त्यों हमरो मनु मोहैं ।  
+पूँछति ग्राम बधु सिय सों, कहो साँवरे-से सखि रावरे को हैं ॥
+
+सुनि सुंदर बैन सुधारस-साने, सयानी हैं जानकी जानी भली ।  
+तिरछै करि नैन, दे सैन, तिन्हैं, समुझाइ कछु मुसुकाइ चली ॥  
+'तुलसी' तेहि औसर सोहैं सबै, अवलोकति लोचन लाहू अली ।  
+अनुराग तड़ाग में भानु उदै, बिगसीं मनो मंजुल कंजकली ॥
+
+================================================================
+FILE: ./content/poems/tulsidas-kabahu-sasi-magat.md
+================================================================
+
+---
+title: कबहूँ ससि मागत आरि करैं
+poet: Tulsidas
+form: सवैया
+audio_url: https://archive.org/embed/kabahu-sasi-mangat-aari-kare
+draft: false
+---
+कबहूँ ससि मागत आरि करैं कबहूँ प्रतिबिंब निहारि डरैं।
+
+कबहूँ करताल बजाइकै नाचत मातु सबै मन मोद भरैं।
+
+कबहूँ रिसिआइ कहैं हठिकै पुनि लेत सोई जेहि लागि अरैं।
+
+अवधेस के बालक चारि सदा तुलसी-मन-मंदिर में बिहरैं॥
+
+================================================================
+FILE: ./content/poems/tulsidas-meen-viyog.md
+================================================================
+
+---
+title: मीन वियोग न सहि सकै
+poet: Surdas
+poet_en: Surdas
+form: दोहा
+draft: false
+---
+मीन वियोग न सहि सकै, नीर न पूछै बात।
+
+देखि जु तू ताकी गतिहि, रति न घटै तन जात॥
+
+================================================================
+FILE: ./content/poems/tulsidas-var-dant.md
+================================================================
+
+---
+title: वर दंत की पंगति कुंदकली
+poet: Tulsidas
+form: सवैया
+draft: false
+---
+वर दंत की पंगति कुंदकली, अधराधर-पल्लव खोलन की।
+
+चपला चमकै घन बीच, जगै छबि मोति माल अमोलन की॥
+
+घुँघरारी लटैं लटकैं मुख ऊपर, कुंडल लोल कपोलन की।
+
+निवछावरि प्रान करै तुलसी, बलि जाउँ लला इन बोलन की॥
+
+================================================================
+FILE: ./content/poets/2026-02-20-tulsidas.md
+================================================================
+
+---
+title: Tulsidas
+title_en: Tulsidas
+dates: 1511-1623
+region: Modern Uttar Pradesh
+image: /uploads/tulsidas.png
+---
+गोस्वामी तुलसीदास (लगभग 1532–1623) हिंदी साहित्य के महान भक्तिकालीन कवि थे, जिनका नाम रामभक्ति की परंपरा में अत्यंत आदर से लिया जाता है। उनका जन्म उत्तर प्रदेश के बाँदा जनपद (राजापुर) में माना जाता है। बाल्यावस्था में ही अनाथ हो जाने के कारण उनका जीवन प्रारम्भ से ही संघर्षपूर्ण रहा, परंतु गुरु नरहरिदास के सान्निध्य में उन्हें आध्यात्मिक दिशा मिली।
+
+तुलसीदास ने अवधी भाषा में रचित _रामचरितमानस_ के माध्यम से भगवान राम के आदर्श जीवन, मर्यादा और धर्म की ऐसी प्रस्तुति दी, जिसने जन-जन के हृदय में भक्ति की नई चेतना जगाई। उन्होंने संस्कृत की गूढ़ परंपरा को लोकभाषा में ढालकर धर्म और साहित्य को जनता के निकट ला दिया। _विनयपत्रिका_, _कवितावली_, _दोहावली_ और _गीतावली_ उनकी अन्य प्रमुख कृतियाँ हैं।
+
+तुलसीदास का काव्य केवल भक्ति का ही नहीं, बल्कि नीति, समाज और मानवीय मूल्यों का भी गहन दर्पण है। वे भारतीय संस्कृति में मर्यादा, समन्वय और श्रद्धा के अमर गायक माने जाते हैं।
+
+================================================================
+FILE: ./content/poets/2026-02-21-.md
+================================================================
+
+---
+title: Surdas
+title_en: "Surdas"
+dates: 1478-1583
+region: Modern Uttar Pradesh
+image: /uploads/surdas.png
+---
+सूरदास (लगभग 1478–1583) भक्तिकाल के महान कृष्णभक्त कवि थे, जिनका स्थान हिंदी साहित्य में अत्यंत ऊँचा माना जाता है। उनका जन्म प्रायः उत्तर प्रदेश के रुनकता या सीही गाँव में माना जाता है। वे जन्मांध थे—ऐसी मान्यता प्रचलित है—परंतु उनकी अंतर्दृष्टि और काव्यदृष्टि अद्भुत थी।
+
+सूरदास वल्लभाचार्य द्वारा प्रवर्तित पुष्टिमार्ग से जुड़े और श्रीकृष्ण की बाल एवं किशोर लीलाओं का अत्यंत सजीव, कोमल और भावपूर्ण चित्रण किया। उनकी प्रमुख कृति _सूरसागर_ है, जिसमें कृष्ण की बाल-लीलाओं, गोपियों के प्रेम और वात्सल्य-भाव का अनूठा संसार रचा गया है। इसके अतिरिक्त _सूरसारावली_ और _साहित्यलहरी_ भी उनकी उल्लेखनीय रचनाएँ हैं।
+
+सूरदास की भाषा ब्रजभाषा है, जिसमें माधुर्य, सरलता और संगीतात्मकता का अद्भुत संगम मिलता है। उनके पद आज भी भजन-कीर्तन और शास्त्रीय संगीत की परंपरा में गाए जाते हैं। वे भक्ति, प्रेम और करुणा के अमर गायक के रूप में भारतीय साहित्य में सदा स्मरणीय रहेंगे।
+
+================================================================
+FILE: ./content/poets/2026-02-26-raskhan.md
+================================================================
+
+---
+title: "Raskhan "
+dates: 1548-1628
+image: /uploads/raskhan.png
+---
+रसखान (लगभग 16वीं शताब्दी) भक्तिकाल के अद्वितीय कवि थे, जो मुस्लिम परिवार में जन्म लेकर भी श्रीकृष्ण की अनन्य भक्ति में लीन हो गए। उनका वास्तविक नाम सैयद इब्राहीम माना जाता है। उनका जीवन इस सत्य का सजीव उदाहरण है कि प्रेम और भक्ति किसी जाति, धर्म या संप्रदाय की सीमाओं में बंधे नहीं होते।
+
+रसखान ने ब्रजभाषा में श्रीकृष्ण की बाल-लीलाओं, वृंदावन की रमणीयता और गोप-गोपियों के सहज प्रेम का अत्यंत कोमल और सरस चित्रण किया। उनकी प्रमुख कृतियों में _सुजान रसखान_ और _प्रेमवाटिका_ उल्लेखनीय हैं। उनकी कविता में माधुर्य-भाव, वात्सल्य और दार्शनिक गहराई का सुंदर समन्वय मिलता है।
+
+रसखान की प्रसिद्ध पंक्तियाँ—“मानुस हौं तो वही रसखान…”—उनकी कृष्ण-प्रेम में पूर्ण समर्पण की झलक देती हैं। वे भारतीय भक्ति-साहित्य में सांस्कृतिक समन्वय और प्रेम की सार्वभौमिकता के प्रतीक माने जाते हैं।
+
+================================================================
+FILE: ./content/poets/2026-02-26-rasleen.md
+================================================================
+
+---
+title: Rasleen
+dates: 1689-1750
+region: Bilgram, Hardoi, Uttar Pradesh
+---
+
+
+================================================================
+FILE: ./content/search/index.md
+================================================================
+
+---
+title: "खोज / Search"
+---
+
+
+================================================================
+FILE: ./content/tools/meter-analyzer.md
+================================================================
+
+---
+title: "Meter Analyzer"
+name_hi: "छंद विश्लेषक"
+icon: "◎"
+date: 2024-01-01
+draft: false
+---
+
+<div class="tool-intro">
+  <p class="lang-hi">
+    ब्रज और अवधी काव्य में छंद की पहचान अत्यंत महत्त्वपूर्ण है। ये उपकरण किसी भी पद की मात्राएँ गिनने, छंद का नाम पहचानने और सवैया जैसे विशिष्ट छंदों की जाँच करने में सहायता करते हैं। कवित्त, दोहा, सवैया — प्रत्येक रूप की अपनी लय और गणना होती है, जिसे ये उपकरण सरल बना देते हैं। ये ब्रज काव्य के अध्येताओं, विद्यार्थियों और काव्य-प्रेमियों के लिए बनाए गए हैं।
+  </p>
+  <p class="lang-en">
+    Metrical analysis sits at the heart of Braj and Avadhi poetry. These tools help you count syllable weights (mātrās), identify classical metres, and verify specific forms like the Savaiya. Every form — Kavitt, Doha, Savaiya — carries its own rhythm and count; these tools make that rigour accessible to scholars, students, and lovers of Braj poetry alike.
+  </p>
+</div>
+
+<p class="tool-section-label">
+  <span class="lang-hi">उपलब्ध उपकरण</span>
+  <span class="lang-en">Available Tools</span>
+</p>
+
+<div class="tool-cards-grid">
+
+  <a href="https://matrikmeter.streamlit.app/" target="_blank" rel="noopener" class="tool-card">
+    <div class="tool-card-top">
+      <div class="tool-card-glyph">मा</div>
+      <svg class="tool-card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+      </svg>
+    </div>
+    <h2 class="tool-card-name">
+      <span class="name-hi lang-hi">मात्रिक छंद परीक्षक</span>
+      <span class="name-en lang-en">Mātr̥ik Chhand Checker</span>
+    </h2>
+    <p class="tool-card-desc lang-hi">
+      किसी भी हिंदी या ब्रजभाषा पद की मात्राएँ स्वतः गिनें। प्रत्येक अक्षर का भार — लघु (1) या गुरु (2) — स्पष्ट रूप से दर्शाता है और मात्रिक छंद-प्रकार पहचानने में सहायता करता है।
+    </p>
+    <p class="tool-card-desc lang-en">
+      Automatically count syllable weights (mātrās) in any Hindi or Braj verse. The tool marks each syllable as light (laghu, 1) or heavy (guru, 2) and helps identify the classical metrical form.
+    </p>
+    <div class="tool-card-footer">
+      <span class="tool-card-badge">Streamlit App</span>
+      <span class="tool-card-cta">
+        <span class="lang-hi">उपकरण खोलें</span>
+        <span class="lang-en">Open Tool</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </div>
+  </a>
+
+  <a href="https://savaiya-checker02.streamlit.app/" target="_blank" rel="noopener" class="tool-card">
+    <div class="tool-card-top">
+      <div class="tool-card-glyph">स</div>
+      <svg class="tool-card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+      </svg>
+    </div>
+    <h2 class="tool-card-name">
+      <span class="name-hi lang-hi">सवैया परीक्षक</span>
+      <span class="name-en lang-en">Savaiya Checker</span>
+    </h2>
+    <p class="tool-card-desc lang-hi">
+      सवैया छंद की विशेष जाँच के लिए समर्पित उपकरण। किसी भी पद को सवैया की कसौटी पर परखें — वर्ण-गणना और छंद-संरचना की सटीक पड़ताल एक ही स्थान पर।
+    </p>
+    <p class="tool-card-desc lang-en">
+      A dedicated checker built specifically for the Savaiya metre. Verify any verse against the Savaiya's syllable count and structural rules — precise analysis in one place.
+    </p>
+    <div class="tool-card-footer">
+      <span class="tool-card-badge">Streamlit App</span>
+      <span class="tool-card-cta">
+        <span class="lang-hi">उपकरण खोलें</span>
+        <span class="lang-en">Open Tool</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </div>
+  </a>
+
+</div>
+
+<div class="tool-coming-soon">
+  <span class="tool-coming-soon-icon">◌</span>
+  <span class="lang-hi">और उपकरण शीघ्र आ रहे हैं — कवित्त परीक्षक, दोहा विश्लेषक, और अधिक।</span>
+  <span class="lang-en">More tools coming soon — Kavitt checker, Doha analyser, and more.</span>
+</div>
+
+
+================================================================
+FILE: ./content/tools/rhyme-dictionary.md
+================================================================
+
+---
+title: "Rhyme Dictionary"
+layout: "rhyme-dictionary"
+...
+---
+
+
+================================================================
+FILE: ./data/dictionary.json
+================================================================
+
+{
+  "नयन": "eyes",
+  "प्रेम": "love, affection",
+  "बरसात": "rain, rainfall",
+  "मुरली": "flute",
+  "गोपी": "cowherd woman, devotee of Krishna",
+  "विरह": "separation, longing",
+  "सुत": "son, child"
+}
+
+
+================================================================
+FILE: ./layouts/collections/list.html
+================================================================
+
+{{ define "main" }}
+<div class="list-page">
+  <header class="list-header">
+    <h1>संग्रह <span class="en">Collections</span></h1>
+    <p>{{ len .Pages }} संग्रह / collections</p>
+  </header>
+
+  <div class="collection-grid">
+    {{ range .Pages }}
+    {{ partial "collection-card.html" . }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+
+================================================================
+FILE: ./layouts/collections/single.html
+================================================================
+
+{{ define "main" }}
+<article class="collection-page">
+
+  <header class="collection-header">
+    {{ with .Params.image }}
+    <div class="collection-cover">
+      <img src="{{ . }}" alt="{{ $.Title }}">
+    </div>
+    {{ end }}
+    <div class="collection-meta">
+      <p class="breadcrumb"><a href="/collections/">सभी संग्रह / All Collections</a></p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.description }}
+      <p class="collection-desc">{{ . }}</p>
+      {{ end }}
+    </div>
+  </header>
+
+  {{ with .Content }}
+  <div class="collection-body">{{ . }}</div>
+  {{ end }}
+
+  <section class="collection-poems">
+    <h2>इस संग्रह की कविताएँ <span class="en">Poems in this Collection</span></h2>
+
+    {{ $poemList := slice }}
+    {{ if .Params.poems }}
+      {{ if reflect.IsSlice .Params.poems }}
+        {{ $poemList = .Params.poems }}
+      {{ else }}
+        {{ $poemList = slice (string .Params.poems) }}
+      {{ end }}
+    {{ end }}
+
+    {{ if gt (len $poemList) 0 }}
+      <span class="count-badge" style="margin-bottom:1rem;display:inline-block;">{{ len $poemList }}</span>
+      <div class="poem-grid">
+        {{ range $poemList }}
+          {{ $poemTitle := string . }}
+          {{ $found := where $.Site.RegularPages "Title" $poemTitle }}
+          {{ if $found }}
+            {{ range $found }}{{ partial "poem-card.html" . }}{{ end }}
+          {{ else }}
+            <p class="empty-msg">⚠ "{{ $poemTitle }}" — title not matched</p>
+          {{ end }}
+        {{ end }}
+      </div>
+    {{ else }}
+      <p class="empty-msg">इस संग्रह में अभी कोई कविता नहीं है। / No poems added yet.</p>
+    {{ end }}
+
+  </section>
+</article>
+{{ end }}
+
+
+================================================================
+FILE: ./layouts/_default/baseof.html
+================================================================
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Params.siteName }}</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+  
+  <!-- Apply saved language BEFORE render to prevent flash -->
+  <script>
+    (function() {
+      var lang = localStorage.getItem('braj_lang') || 'hi';
+      document.documentElement.setAttribute('data-lang', lang);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/search.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo">
+      <span class="logo-hi">{{ .Site.Params.siteName }}</span>
+      <span class="logo-en">{{ .Site.Params.siteNameEn }}</span>
+    </a>
+    <nav class="main-nav">
+      <a href="/poems/">
+        <span class="lang-hi">कविताएँ</span>
+        <span class="lang-en">Poems</span>
+      </a>
+      <a href="/poets/">
+        <span class="lang-hi">कवि</span>
+        <span class="lang-en">Poets</span>
+      </a>
+      <a href="/themes/">
+        <span class="lang-hi">विषय</span>
+        <span class="lang-en">Themes</span>
+      </a>
+      <a href="/collections/">
+        <span class="lang-hi">संग्रह</span>
+        <span class="lang-en">Collections</span>
+      </a>
+      <a href="/tools/meter-analyzer/">
+        <span class="lang-hi">छंद विश्लेषक</span>
+        <span class="lang-en">Meter Analyzer</span>
+      </a>
+      <a href="/tools/rhyme-dictionary/">
+        <span class="lang-hi">तुक शब्दकोश</span>
+        <span class="lang-en">Rhyme Dictionary</span>
+      </a>
+      <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">English</button>
+    </nav>
+    <div class="header-search" id="header-search-form">
+      <div class="header-search-wrap">
+        <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="search"
+          id="header-search-input"
+          class="header-search-input"
+          placeholder="खोजें / Search…"
+          autocomplete="off"
+        >
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="word-tooltip" class="word-tooltip hidden">
+  <span class="tooltip-word"></span>
+  <span class="tooltip-meaning"></span>
+  <button class="tooltip-close" onclick="closeTooltip()">✕</button>
+</div>
+
+<main class="main-content">
+  {{ block "main" . }}{{ end }}
+</main>
+
+<footer class="site-footer">
+  <span class="lang-hi">ब्रज काव्य कोश</span>
+  <span class="lang-en">Braj Kavya Kosha</span>
+</footer>
+
+{{ $dict := index .Site.Data "dictionary" }}
+{{ if $dict }}
+<script>
+  window.BRAJ_DICTIONARY = {{ $dict | jsonify }};
+</script>
+{{ end }}
+
+<script src="/js/dictionary.js"></script>
+<script src="/js/lang.js"></script>
+<script src="/js/fuse.min.js"></script>
+<script src="/js/search.js"></script>
+</body>
+</html>
+
+
+================================================================
+FILE: ./layouts/_default/list.html
+================================================================
+
+{{ define "main" }}
+<div class="list-page">
+  <header class="list-header">
+    <h1>{{ .Title }}</h1>
+    <p>{{ len .Pages }} items</p>
+  </header>
+  <div class="poem-grid">
+    {{ range .Pages }}
+    {{ if eq .Type "poems" }}
+      {{ partial "poem-card.html" . }}
+    {{ else if eq .Type "poets" }}
+      {{ partial "poet-card.html" . }}
+    {{ else }}
+      <div class="generic-card">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </div>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+================================================================
+FILE: ./layouts/_default/search.html
+================================================================
+
+{{ define "main" }}
+<div class="search-page">
+
+  <header class="list-header">
+    <h1>खोज <span class="en">Search</span></h1>
+    <p>कविताएँ, कवि और विषय खोजें / Search poems, poets and themes</p>
+  </header>
+
+  <div class="search-main-bar">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="search"
+        id="search-input"
+        class="search-input-large"
+        placeholder="यहाँ टाइप करें... / Type here..."
+        autocomplete="off"
+        autofocus
+      >
+      <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
+    </div>
+
+    <div class="search-filters">
+      <span class="filter-label">फ़िल्टर / Filter:</span>
+      <button class="filter-btn active" data-filter="all">सभी / All</button>
+      <button class="filter-btn" data-filter="poem">कविताएँ / Poems</button>
+      <button class="filter-btn" data-filter="poet">कवि / Poets</button>
+    </div>
+  </div>
+
+  <div class="search-stats" id="search-stats"></div>
+  <div id="search-results" class="search-results"></div>
+
+  <div id="search-empty" class="search-empty">
+    <div class="search-empty-icon">🔍</div>
+    <p>खोज शुरू करने के लिए कुछ टाइप करें</p>
+    <p class="en">Start typing to search the collection</p>
+  </div>
+
+  <div id="search-no-results" class="search-no-results hidden">
+    <div class="search-empty-icon">😔</div>
+    <p id="search-no-results-text">कोई परिणाम नहीं मिला</p>
+    <p class="en">No results found. Try different keywords.</p>
+  </div>
+
+</div>
+
+<script>
+window.SEARCH_INDEX_URL = "{{ "/index.json" | absURL }}";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
+<script src="/js/search.js"></script>
+{{ end }}
+
+
+================================================================
+FILE: ./layouts/index.html
+================================================================
+
+{{ define "main" }}
+
+<!-- ══════════════════════════════════════════════════════
+     HERO — Featured Verse
+     ══════════════════════════════════════════════════════ -->
+<section class="rk-hero">
+  <div class="rk-hero-inner">
+    <p class="rk-hero-label">
+      <span class="lang-hi">आज का पद</span>
+      <span class="lang-en">Verse of the Day</span>
+    </p>
+    <blockquote class="rk-hero-verse">
+      मानुस हौं तो वही रसखान, बसौं मिलि गोकुल गाँव के ग्वारन।<br>
+      जो पसु हौं तो कहा बस मेरो, चरौं नित नंद की धेनु मँझारन॥
+    </blockquote>
+    <p class="rk-hero-attribution">
+      — <a href="/poets/raskhan/">रसखान</a>
+      <span class="rk-hero-form">सवैया</span>
+    </p>
+    <div class="rk-hero-actions">
+      <a href="/poems/" class="rk-btn-primary">
+        <span class="lang-hi">सभी कविताएँ पढ़ें</span>
+        <span class="lang-en">Read All Poems</span>
+      </a>
+      <a href="/search/" class="rk-btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span class="lang-hi">खोजें</span>
+        <span class="lang-en">Search</span>
+      </a>
+    </div>
+  </div>
+  <div class="rk-hero-ornament" aria-hidden="true">॥</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     STATS STRIP  (poems · poets · collections only)
+     ══════════════════════════════════════════════════════ -->
+<div class="rk-stats-strip">
+  <div class="rk-stats-inner">
+    <div class="rk-stat">
+      <span class="rk-stat-num">{{ len (where .Site.RegularPages "Type" "poems") }}</span>
+      <span class="rk-stat-label lang-hi">कविताएँ</span>
+      <span class="rk-stat-label lang-en">Poems</span>
+    </div>
+    <div class="rk-stat-divider"></div>
+    <div class="rk-stat">
+      <span class="rk-stat-num">{{ len (where .Site.RegularPages "Type" "poets") }}</span>
+      <span class="rk-stat-label lang-hi">कवि</span>
+      <span class="rk-stat-label lang-en">Poets</span>
+    </div>
+    <div class="rk-stat-divider"></div>
+    <div class="rk-stat">
+      <span class="rk-stat-num">{{ len (where .Site.RegularPages "Type" "collections") }}</span>
+      <span class="rk-stat-label lang-hi">संग्रह</span>
+      <span class="rk-stat-label lang-en">Collections</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN CONTENT GRID
+     ══════════════════════════════════════════════════════ -->
+<div class="rk-layout">
+
+  <!-- ── LEFT / MAIN COLUMN ── -->
+  <div class="rk-main-col">
+
+    <!-- RECENT POEMS -->
+    <section class="rk-section">
+      <div class="rk-section-head">
+        <h2 class="rk-section-title">
+          <span class="lang-hi">नवीनतम कविताएँ</span>
+          <span class="lang-en">Recent Poems</span>
+        </h2>
+        <a href="/poems/" class="rk-see-all">
+          <span class="lang-hi">सभी देखें</span>
+          <span class="lang-en">See all</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="rk-poem-list">
+        {{ range first 6 (where .Site.RegularPages "Type" "poems") }}
+        <a href="{{ .Permalink }}" class="rk-poem-row">
+          <div class="rk-poem-row-text">
+            <h3 class="rk-poem-row-title">{{ .Title }}</h3>
+            {{ with .Params.poet }}
+            <p class="rk-poem-row-poet">{{ . }}</p>
+            {{ end }}
+          </div>
+          <div class="rk-poem-row-right">
+            {{ with .Params.form }}
+            <span class="rk-form-badge">{{ . }}</span>
+            {{ end }}
+            {{ if .Params.audio_url }}
+            <span class="rk-audio-dot" title="Audio available">🎵</span>
+            {{ end }}
+            <svg class="rk-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </section>
+
+    <!-- FEATURED COLLECTION -->
+    {{ $collections := where .Site.RegularPages "Type" "collections" }}
+    {{ with index $collections 0 }}
+    <section class="rk-section rk-featured-collection">
+      <div class="rk-section-head">
+        <h2 class="rk-section-title">
+          <span class="lang-hi">विशेष संग्रह</span>
+          <span class="lang-en">Featured Collection</span>
+        </h2>
+      </div>
+      <a href="{{ .Permalink }}" class="rk-collection-banner">
+        {{ with .Params.image }}
+        <div class="rk-collection-banner-img" style="background-image: url('{{ . }}')"></div>
+        {{ else }}
+        <div class="rk-collection-banner-img rk-collection-banner-gradient"></div>
+        {{ end }}
+        <div class="rk-collection-banner-body">
+          <p class="rk-collection-eyebrow lang-hi">संग्रह</p>
+          <p class="rk-collection-eyebrow lang-en">Collection</p>
+          <h3 class="rk-collection-banner-title">{{ .Title }}</h3>
+          {{ with .Params.description }}
+          <p class="rk-collection-banner-desc">{{ . }}</p>
+          {{ end }}
+          <span class="rk-collection-banner-cta lang-hi">संग्रह खोलें →</span>
+          <span class="rk-collection-banner-cta lang-en">Open Collection →</span>
+        </div>
+      </a>
+    </section>
+    {{ end }}
+
+    <!-- THEMES -->
+    <section class="rk-section">
+      <div class="rk-section-head">
+        <h2 class="rk-section-title">
+          <span class="lang-hi">विषय के अनुसार</span>
+          <span class="lang-en">Browse by Theme</span>
+        </h2>
+      </div>
+      <div class="rk-theme-cloud">
+        {{ range .Site.Taxonomies.themes }}
+        <a href="{{ .Page.Permalink }}" class="rk-theme-pill">
+          <span class="lang-hi">{{ .Page.Title }}</span>
+          <span class="lang-en">{{ .Page.Params.title_en | default .Page.Title }}</span>
+          <span class="rk-theme-count">{{ .Count }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </section>
+
+  </div><!-- /rk-main-col -->
+
+  <!-- ── RIGHT / SIDEBAR ── -->
+  <aside class="rk-sidebar">
+
+    <!-- WORD OF THE DAY -->
+    <div class="rk-widget rk-wotd">
+      <p class="rk-widget-label lang-hi">शब्द का अर्थ</p>
+      <p class="rk-widget-label lang-en">Word of the Day</p>
+      <div class="rk-wotd-word">विरह</div>
+      <div class="rk-wotd-meaning lang-en">separation · longing</div>
+      <div class="rk-wotd-meaning lang-hi">बिछड़ना, प्रिय से दूरी</div>
+      <a href="/search/?q=विरह" class="rk-wotd-link lang-hi">इस शब्द की कविताएँ →</a>
+      <a href="/search/?q=विरह" class="rk-wotd-link lang-en">Poems with this word →</a>
+    </div>
+
+    <!-- RECOMMENDED POETS -->
+    <div class="rk-widget">
+      <div class="rk-section-head" style="margin-bottom:1rem">
+        <h2 class="rk-section-title" style="font-size:1rem">
+          <span class="lang-hi">कवि परिचय</span>
+          <span class="lang-en">Meet the Poets</span>
+        </h2>
+        <a href="/poets/" class="rk-see-all">
+          <span class="lang-hi">सभी</span>
+          <span class="lang-en">All</span>
+        </a>
+      </div>
+      <div class="rk-poet-stack">
+        {{ range first 4 (where .Site.RegularPages "Type" "poets") }}
+        <a href="{{ .Permalink }}" class="rk-poet-row">
+          {{ with .Params.image }}
+          <img src="{{ . }}" alt="{{ $.Title }}" class="rk-poet-avatar">
+          {{ else }}
+          <div class="rk-poet-avatar rk-poet-avatar-fallback">{{ substr .Title 0 1 }}</div>
+          {{ end }}
+          <div class="rk-poet-row-info">
+            <span class="rk-poet-row-name">{{ .Title }}</span>
+            {{ with .Params.dates }}<span class="rk-poet-row-dates">{{ . }}</span>{{ end }}
+          </div>
+          <svg class="rk-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- FORMS GLOSSARY -->
+    <div class="rk-widget rk-forms-widget">
+      <p class="rk-widget-label lang-hi">काव्य-रूप</p>
+      <p class="rk-widget-label lang-en">Poetic Forms</p>
+      <ul class="rk-forms-list">
+        <li>
+          <span class="rk-form-name">सवैया</span>
+          <span class="rk-form-en">Savaiya</span>
+          <p class="rk-form-desc lang-en">A classical Hindi metre with 22–26 syllables per line</p>
+          <p class="rk-form-desc lang-hi">बाईस से छब्बीस वर्ण का छंद</p>
+        </li>
+        <li>
+          <span class="rk-form-name">दोहा</span>
+          <span class="rk-form-en">Doha</span>
+          <p class="rk-form-desc lang-en">A rhyming couplet, 24 + 22 matras</p>
+          <p class="rk-form-desc lang-hi">दो पंक्तियों का छंद, 24 + 22 मात्रा</p>
+        </li>
+        <li>
+          <span class="rk-form-name">पद</span>
+          <span class="rk-form-en">Pad</span>
+          <p class="rk-form-desc lang-en">Devotional lyric, often set to music</p>
+          <p class="rk-form-desc lang-hi">भक्ति गीत, संगीतात्मक</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- COLLECTIONS MINI LIST -->
+    <div class="rk-widget">
+      <div class="rk-section-head" style="margin-bottom:1rem">
+        <h2 class="rk-section-title" style="font-size:1rem">
+          <span class="lang-hi">संग्रह</span>
+          <span class="lang-en">Collections</span>
+        </h2>
+        <a href="/collections/" class="rk-see-all">
+          <span class="lang-hi">सभी</span>
+          <span class="lang-en">All</span>
+        </a>
+      </div>
+      {{ range first 3 (where .Site.RegularPages "Type" "collections") }}
+      <a href="{{ .Permalink }}" class="rk-mini-collection-row">
+        <div class="rk-mini-coll-thumb">
+          {{ with .Params.image }}<img src="{{ . }}" alt="">{{ else }}<span>{{ substr .Title 0 1 }}</span>{{ end }}
+        </div>
+        <div class="rk-mini-coll-info">
+          <span class="rk-mini-coll-title">{{ .Title }}</span>
+          {{ with .Params.description }}<span class="rk-mini-coll-desc">{{ . | truncate 50 }}</span>{{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+
+  </aside>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     INTERLUDE QUOTE BREAK
+     ══════════════════════════════════════════════════════ -->
+<section class="rk-interlude">
+  <div class="rk-interlude-inner">
+    <div class="rk-interlude-deco" aria-hidden="true">❧</div>
+    <p class="rk-interlude-verse">
+      अवधेस के बालक चारि सदा तुलसी-मन-मंदिर में बिहरैं॥
+    </p>
+    <p class="rk-interlude-attr">— तुलसीदास <span class="rk-interlude-attr-en">/ Tulsidas</span></p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ABOUT STRIP
+     ══════════════════════════════════════════════════════ -->
+<section class="rk-about-strip">
+  <div class="rk-about-inner">
+    <div class="rk-about-text">
+      <h2 class="lang-hi">ब्रज काव्य कोश के बारे में</h2>
+      <h2 class="lang-en">About Braj Kavya Kosha</h2>
+      <p class="lang-hi">
+        यह संग्रह ब्रज भाषा की काव्य-परंपरा को संजोने का एक प्रयास है — 
+        तुलसीदास, सूरदास, रसखान और रसलीन जैसे महाकवियों की रचनाएँ एक स्थान पर।
+      </p>
+      <p class="lang-en">
+        A digital sanctuary for Braj language poetry — preserving the works 
+        of Tulsidas, Surdas, Raskhan, Rasleen and the great poets of the Bhakti tradition.
+      </p>
+    </div>
+    <div class="rk-about-links">
+      <a href="/poems/"       class="rk-about-link"><span class="lang-hi">कविताएँ</span><span class="lang-en">Poems</span>      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="/poets/"       class="rk-about-link"><span class="lang-hi">कवि</span><span class="lang-en">Poets</span>          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="/search/"      class="rk-about-link"><span class="lang-hi">खोज</span><span class="lang-en">Search</span>        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="/collections/" class="rk-about-link"><span class="lang-hi">संग्रह</span><span class="lang-en">Collections</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     HOME PAGE STYLES
+     ══════════════════════════════════════════════════════ -->
+<style>
+/* ─── HERO ────────────────────────────────────────────── */
+.rk-hero {
+  background: linear-gradient(160deg, #0d0400 0%, #2a0808 45%, #1a0505 100%);
+  color: #f0e0c8;
+  padding: 5rem 2rem 4.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: -2rem -1.5rem 0;
+}
+.rk-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(192,57,43,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.rk-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,184,122,0.3), transparent);
+}
+.rk-hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.rk-hero-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  font-family: var(--font-en);
+  margin-bottom: 2rem;
+}
+.rk-hero-verse {
+  font-family: var(--font-hi);
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  line-height: 2.2;
+  color: #fdf3e0;
+  border: none;
+  margin: 0 0 1.75rem;
+  font-style: normal;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+}
+.rk-hero-attribution {
+  font-size: 1rem;
+  color: var(--gold-dim);
+  margin-bottom: 2.75rem;
+}
+.rk-hero-attribution a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: bold;
+}
+.rk-hero-attribution a:hover { color: var(--gold-light); }
+.rk-hero-form {
+  display: inline-block;
+  margin-left: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(232,184,122,0.1);
+  border: 1px solid rgba(232,184,122,0.25);
+  border-radius: 20px;
+  padding: 0.15rem 0.7rem;
+  font-family: var(--font-en);
+  color: var(--gold-dim);
+}
+.rk-hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.rk-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.75rem;
+  font-size: 0.95rem;
+  font-family: var(--font-hi);
+  transition: background 0.2s, transform 0.15s;
+  border: 2px solid transparent;
+}
+.rk-btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+.rk-btn-ghost {
+  background: transparent;
+  color: var(--gold-light);
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+  font-family: var(--font-hi);
+  border: 2px solid rgba(232,184,122,0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.rk-btn-ghost:hover { border-color: rgba(232,184,122,0.7); background: rgba(232,184,122,0.06); }
+.rk-hero-ornament {
+  position: absolute;
+  bottom: -0.5rem;
+  right: 3rem;
+  font-size: 8rem;
+  color: rgba(232,184,122,0.04);
+  line-height: 1;
+  font-family: var(--font-hi);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── STATS STRIP ─────────────────────────────────────── */
+.rk-stats-strip {
+  background: #110600;
+  border-bottom: 1px solid var(--border);
+  margin: 0 -1.5rem 2.5rem;
+}
+.rk-stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2rem;
+}
+.rk-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 3rem;
+}
+.rk-stat-num {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--gold);
+  line-height: 1;
+  font-family: var(--font-en);
+}
+.rk-stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-top: 0.25rem;
+  font-family: var(--font-en);
+  text-transform: uppercase;
+}
+.rk-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border-light);
+  flex-shrink: 0;
+}
+
+/* ─── LAYOUT GRID ─────────────────────────────────────── */
+.rk-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+/* ─── SECTION HEADERS ─────────────────────────────────── */
+.rk-section { margin-bottom: 2.5rem; }
+.rk-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.6rem;
+}
+.rk-section-title {
+  font-size: 1.05rem;
+  color: var(--gold);
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+.rk-see-all {
+  font-size: 0.8rem;
+  color: var(--gold-dim);
+  text-decoration: none;
+  font-family: var(--font-en);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s;
+}
+.rk-see-all:hover { color: var(--gold); }
+
+/* ─── POEM LIST ───────────────────────────────────────── */
+.rk-poem-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.rk-poem-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s, padding-left 0.2s;
+  gap: 1rem;
+}
+.rk-poem-row:last-child { border-bottom: none; }
+.rk-poem-row:hover { background: #2c1408; padding-left: 1.6rem; }
+.rk-poem-row-text { flex: 1; min-width: 0; }
+.rk-poem-row-title {
+  font-size: 1.05rem;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rk-poem-row-poet { font-size: 0.82rem; color: var(--text-light); }
+.rk-poem-row-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.rk-form-badge {
+  font-size: 0.68rem;
+  background: rgba(232,184,122,0.08);
+  color: var(--gold-dim);
+  border: 1px solid rgba(232,184,122,0.18);
+  border-radius: 20px;
+  padding: 0.12rem 0.6rem;
+  font-family: var(--font-hi);
+  white-space: nowrap;
+}
+.rk-audio-dot { font-size: 0.85rem; }
+.rk-arrow     { color: var(--text-dim); flex-shrink: 0; }
+
+/* ─── FEATURED COLLECTION ────────────────────────────── */
+.rk-collection-banner {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s, border-color 0.2s;
+  min-height: 180px;
+}
+.rk-collection-banner:hover {
+  box-shadow: 0 6px 28px rgba(0,0,0,0.6);
+  border-color: var(--border-light);
+}
+.rk-collection-banner-img {
+  width: 200px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+.rk-collection-banner-gradient {
+  background: linear-gradient(135deg, #3b0a0a 0%, #1a0505 100%);
+}
+.rk-collection-banner-body {
+  padding: 1.5rem 1.75rem;
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+.rk-collection-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+  margin-bottom: 0.4rem;
+}
+.rk-collection-banner-title { font-size: 1.3rem; color: var(--gold); margin-bottom: 0.5rem; }
+.rk-collection-banner-desc  { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; margin-bottom: 1rem; }
+.rk-collection-banner-cta   { font-size: 0.88rem; color: var(--gold-dim); font-weight: bold; }
+.rk-collection-banner:hover .rk-collection-banner-cta { color: var(--gold); }
+
+/* ─── THEME CLOUD ─────────────────────────────────────── */
+.rk-theme-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.rk-theme-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 30px;
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.rk-theme-pill:hover { background: #3b0a0a; color: var(--gold); border-color: var(--border-light); }
+.rk-theme-count {
+  font-size: 0.68rem;
+  background: rgba(232,184,122,0.08);
+  color: var(--gold-dim);
+  border-radius: 20px;
+  padding: 0.05rem 0.4rem;
+  font-family: var(--font-en);
+}
+
+/* ─── SIDEBAR WIDGETS ─────────────────────────────────── */
+.rk-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+.rk-widget {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+.rk-widget-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+  margin-bottom: 0.5rem;
+}
+
+/* WOTD */
+.rk-wotd {
+  background: linear-gradient(145deg, #150800, #220d05);
+  border-color: #3d1a0a;
+}
+.rk-wotd .rk-widget-label { color: var(--gold-dim); opacity: 0.7; }
+.rk-wotd-word {
+  font-size: 2.4rem;
+  font-family: var(--font-hi);
+  color: var(--gold);
+  margin: 0.5rem 0 0.35rem;
+  line-height: 1.2;
+}
+.rk-wotd-meaning {
+  font-size: 0.88rem;
+  color: rgba(240,224,200,0.6);
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+.rk-wotd-meaning.lang-en { font-family: var(--font-en); font-style: italic; }
+.rk-wotd-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--gold-dim);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,144,106,0.3);
+  padding-bottom: 1px;
+  font-family: var(--font-en);
+  transition: color 0.2s, border-color 0.2s;
+}
+.rk-wotd-link:hover { color: var(--gold); border-color: var(--gold-dim); }
+
+/* POET STACK */
+.rk-poet-stack { display: flex; flex-direction: column; gap: 0.2rem; }
+.rk-poet-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.rk-poet-row:hover { background: rgba(232,184,122,0.06); }
+.rk-poet-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-light);
+  flex-shrink: 0;
+}
+.rk-poet-avatar-fallback {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #3b0a0a;
+  color: var(--gold);
+  border: 2px solid var(--border-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  font-family: var(--font-hi);
+  flex-shrink: 0;
+}
+.rk-poet-row-info { flex: 1; min-width: 0; }
+.rk-poet-row-name {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--gold);
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rk-poet-row-dates { font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-en); }
+
+/* FORMS WIDGET */
+.rk-forms-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.rk-forms-list li { padding-bottom: 0.9rem; border-bottom: 1px solid var(--border); }
+.rk-forms-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.rk-form-name { font-size: 1.05rem; color: var(--gold); font-family: var(--font-hi); display: block; }
+.rk-form-en   { font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-en); font-style: italic; display: block; margin-bottom: 0.2rem; }
+.rk-form-desc { font-size: 0.78rem; color: var(--text-light); line-height: 1.5; }
+
+/* MINI COLLECTION ROWS */
+.rk-mini-collection-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.6rem 0;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.15s;
+}
+.rk-mini-collection-row:last-child { border-bottom: none; }
+.rk-mini-collection-row:hover .rk-mini-coll-title { color: var(--gold); }
+.rk-mini-coll-thumb {
+  width: 48px; height: 48px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #3b0a0a;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border-light);
+}
+.rk-mini-coll-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.rk-mini-coll-thumb span { color: rgba(232,184,122,0.4); font-size: 1.4rem; font-family: var(--font-hi); }
+.rk-mini-coll-info  { flex: 1; min-width: 0; }
+.rk-mini-coll-title { display: block; font-size: 0.88rem; color: var(--text); font-weight: bold; }
+.rk-mini-coll-desc  { display: block; font-size: 0.75rem; color: var(--text-dim); }
+
+/* ─── INTERLUDE ───────────────────────────────────────── */
+.rk-interlude {
+  background: linear-gradient(135deg, #110600 0%, #1e0a04 50%, #110600 100%);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin: 0 -1.5rem 0;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.rk-interlude::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(192,57,43,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.rk-interlude-inner { max-width: 700px; margin: 0 auto; position: relative; }
+.rk-interlude-deco {
+  font-size: 1.5rem;
+  color: var(--gold-dim);
+  opacity: 0.4;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+.rk-interlude-verse {
+  font-family: var(--font-hi);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  line-height: 2.1;
+  color: var(--gold-light);
+  margin-bottom: 1.25rem;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+.rk-interlude-attr { font-size: 0.9rem; color: var(--gold-dim); font-family: var(--font-en); font-style: italic; }
+.rk-interlude-attr-en { opacity: 0.6; }
+
+/* ─── ABOUT STRIP ─────────────────────────────────────── */
+.rk-about-strip {
+  background: linear-gradient(135deg, #0d0400 0%, #1a0808 100%);
+  border-top: 1px solid var(--border-light);
+  padding: 3.5rem 2rem 4rem;
+  margin: 0 -1.5rem -4rem;
+}
+.rk-about-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+}
+.rk-about-text h2  { font-size: 1.3rem; color: var(--gold); margin-bottom: 0.75rem; }
+.rk-about-text p   { font-size: 0.95rem; color: var(--text-light); line-height: 1.8; max-width: 520px; }
+.rk-about-links    { display: flex; flex-direction: column; gap: 0.6rem; min-width: 180px; }
+.rk-about-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-family: var(--font-hi);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  background: rgba(232,184,122,0.03);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.rk-about-link:hover { background: rgba(232,184,122,0.08); color: var(--gold); border-color: rgba(232,184,122,0.3); }
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .rk-layout { grid-template-columns: 1fr; }
+  .rk-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+}
+@media (max-width: 640px) {
+  .rk-hero { padding: 3.5rem 1.25rem 3rem; margin: -2rem -1.5rem 0; }
+  .rk-stats-inner { justify-content: space-around; padding: 1rem; }
+  .rk-stat { padding: 0 1rem; }
+  .rk-collection-banner-img { width: 110px; }
+  .rk-sidebar { grid-template-columns: 1fr; }
+  .rk-about-inner { grid-template-columns: 1fr; }
+  .rk-about-links { flex-direction: row; flex-wrap: wrap; }
+  .rk-about-link { flex: 1; min-width: 120px; }
+  .rk-hero-ornament { display: none; }
+  .rk-interlude { padding: 2.5rem 1.25rem; }
+}
+</style>
+
+{{ end }}
+
+
+================================================================
+FILE: ./layouts/index.json
+================================================================
+
+{{- $index := slice -}}
+
+{{- range where .Site.RegularPages "Type" "poems" -}}
+  {{- $entry := dict
+    "type"    "poem"
+    "title"   .Title
+    "url"     .Permalink
+    "poet"    (.Params.poet | default "")
+    "themes"  (.Params.themes | default slice)
+    "form"    (.Params.form | default "")
+    "body"    (.Plain | truncate 500)
+  -}}
+  {{- $index = $index | append $entry -}}
+{{- end -}}
+
+{{- range where .Site.RegularPages "Type" "poets" -}}
+  {{- $entry := dict
+    "type"   "poet"
+    "title"  .Title
+    "url"    .Permalink
+    "dates"  (.Params.dates | default "")
+    "region" (.Params.region | default "")
+    "body"   (.Plain | truncate 300)
+  -}}
+  {{- $index = $index | append $entry -}}
+{{- end -}}
+
+{{- $index | jsonify -}}
+
+
+================================================================
+FILE: ./layouts/partials/collection-card.html
+================================================================
+
+<div class="collection-card">
+  <a href="{{ .Permalink }}" class="collection-card-link">
+    <div class="collection-card-image">
+      {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+      {{ else }}
+      <div class="collection-img-placeholder">
+        <span>{{ substr $.Title 0 1 }}</span>
+      </div>
+      {{ end }}
+    </div>
+    <div class="collection-card-body">
+      <h3>{{ .Title }}</h3>
+      {{ with .Params.description }}
+      <p class="collection-card-desc">{{ . }}</p>
+      {{ end }}
+      <span class="poem-count">
+        {{ with .Params.poems }}{{ len . }}{{ else }}0{{ end }} कविताएँ / poems
+      </span>
+    </div>
+  </a>
+</div>
+
+
+================================================================
+FILE: ./layouts/partials/poem-card.html
+================================================================
+
+<div class="poem-card">
+  <a href="{{ .Permalink }}" class="poem-card-link">
+    <h3 class="card-title">{{ .Title }}</h3>
+    {{ with .Params.poet }}
+    <p class="card-poet">{{ . }}</p>
+    {{ end }}
+    {{ if .Params.themes }}
+      {{ $themes := .Params.themes }}
+      {{ if not (reflect.IsSlice $themes) }}
+        {{ $themes = slice (string $themes) }}
+      {{ end }}
+      <div class="card-themes">
+        {{ range first 2 $themes }}
+        <span class="theme-tag mini">{{ . }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ if .Params.audio_url }}
+    <span class="audio-badge">🎵 पाठ उपलब्ध</span>
+    {{ end }}
+  </a>
+</div>
+
+
+================================================================
+FILE: ./layouts/partials/poet-card.html
+================================================================
+
+<div class="poet-card">
+  <a href="{{ .Permalink }}">
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="{{ $.Title }}" class="poet-thumb" loading="lazy">
+    {{ else }}
+    <div class="poet-thumb-placeholder">{{ substr $.Title 0 1 }}</div>
+    {{ end }}
+    <h3>
+      <span class="lang-hi">{{ .Title }}</span>
+      <span class="lang-en">{{ .Params.title_en | default .Title }}</span>
+    </h3>
+    {{ with .Params.dates }}<p class="dates">{{ . }}</p>{{ end }}
+  </a>
+</div>
+
+================================================================
+FILE: ./layouts/poems/list.html
+================================================================
+
+{{ define "main" }}
+<article class="collection-page">
+
+  <header class="collection-header">
+    {{ with .Params.image }}
+    <div class="collection-cover">
+      <img src="{{ . }}" alt="{{ $.Title }}">
+    </div>
+    {{ end }}
+    <div class="collection-meta">
+      <p class="breadcrumb"><a href="/collections/">सभी संग्रह / All Collections</a></p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.description }}
+      <p class="collection-desc">{{ . }}</p>
+      {{ end }}
+    </div>
+  </header>
+
+  {{ with .Content }}
+  <div class="collection-body">{{ . }}</div>
+  {{ end }}
+
+  <section class="collection-poems">
+    <h2>
+      इस संग्रह की कविताएँ <span class="en">Poems in this Collection</span>
+    </h2>
+
+    {{/* Safely convert poems field to a slice regardless of how PageCMS saved it */}}
+    {{ $poemList := slice }}
+    {{ if .Params.poems }}
+      {{ if reflect.IsSlice .Params.poems }}
+        {{ $poemList = .Params.poems }}
+      {{ else }}
+        {{ $poemList = slice (string .Params.poems) }}
+      {{ end }}
+    {{ end }}
+
+    {{ if gt (len $poemList) 0 }}
+
+      <span class="count-badge" style="margin-bottom:1rem;display:inline-block;">
+        {{ len $poemList }}
+      </span>
+
+      <div class="poem-grid">
+        {{ range $poemList }}
+          {{ $poemTitle := string . }}
+          {{ $found := where $.Site.RegularPages "Title" $poemTitle }}
+          {{ if $found }}
+            {{ range $found }}
+              {{ partial "poem-card.html" . }}
+            {{ end }}
+          {{ else }}
+            <p class="empty-msg">⚠ "{{ $poemTitle }}" — title not matched</p>
+          {{ end }}
+        {{ end }}
+      </div>
+
+    {{ else }}
+      <p class="empty-msg">
+        इस संग्रह में अभी कोई कविता नहीं है। / No poems added yet.
+      </p>
+    {{ end }}
+
+  </section>
+
+</article>
+{{ end }}
+
+
+================================================================
+FILE: ./layouts/poems/single.html
+================================================================
+
+{{ define "main" }}
+<article class="poem-page">
+
+  <header class="poem-header">
+    <h1 class="poem-title">{{ .Title }}</h1>
+
+    {{ with .Params.poet }}
+    <p class="poem-poet">
+      <a href="/poets/{{ . | urlize }}/">{{ . }}</a>
+    </p>
+    {{ end }}
+
+    {{ if .Params.themes }}
+      {{ $themes := .Params.themes }}
+      {{ if not (reflect.IsSlice $themes) }}
+        {{ $themes = slice (string $themes) }}
+      {{ end }}
+      <div class="poem-themes">
+        {{ range $themes }}
+        <a href="/themes/{{ . | urlize }}/" class="theme-tag">{{ . }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </header>
+
+  <div class="poem-body" id="poem-text">
+    {{ .Content }}
+  </div>
+
+  {{ with .Params.audio_url }}
+  <section class="poem-audio">
+    <h3>पाठ सुनें <span class="en">Listen</span></h3>
+    <iframe src="{{ . }}" width="100%" height="80" frameborder="0" allowfullscreen></iframe>
+  </section>
+  {{ end }}
+
+  {{ with .Params.notes }}
+  <section class="poem-notes">
+    <h3>टिप्पणी <span class="en">Notes</span></h3>
+    <p>{{ . }}</p>
+  </section>
+  {{ end }}
+
+</article>
+{{ end }}
+
+
+================================================================
+FILE: ./layouts/poets/single.html
+================================================================
+
+{{ define "main" }}
+<article class="poet-page">
+  
+  <header class="poet-header">
+    {{ with .Params.image }}
+    <div class="poet-image">
+      <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+    </div>
+    {{ end }}
+    
+    <div class="poet-meta">
+      <h1>
+        <span class="lang-hi">{{ .Title }}</span>
+        <span class="lang-en">{{ .Params.title_en | default .Title }}</span>
+      </h1>
+      {{ with .Params.dates }}<p class="dates">{{ . }}</p>{{ end }}
+      {{ with .Params.region }}<p class="region">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+
+  <div class="poet-bio">
+    {{ .Content }}
+  </div>
+
+  {{ $poet := .Title }}
+  {{ $poems := where .Site.RegularPages "Params.poet" $poet }}
+  {{ if $poems }}
+  <section class="poet-poems">
+    <h2>
+      <span class="lang-hi">रचनाएँ</span>
+      <span class="lang-en">Works</span>
+    </h2>
+    <div class="poem-grid">
+      {{ range $poems }}
+      {{ partial "poem-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+</article>
+{{ end }}
+
+================================================================
+FILE: ./layouts/search/search.md
+================================================================
+
+---
+title: "खोज / Search"
+layout: "search"
+---
+
+================================================================
+FILE: ./layouts/search/single.html
+================================================================
+
+{{ define "main" }}
+<div class="search-page">
+
+  <header class="list-header">
+    <h1>खोज <span class="en">Search</span></h1>
+    <p>कविताएँ, कवि और विषय खोजें / Search poems, poets and themes</p>
+  </header>
+
+  <div class="search-main-bar">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="search"
+        id="search-input"
+        class="search-input-large"
+        placeholder="यहाँ टाइप करें... / Type here..."
+        autocomplete="off"
+        autofocus
+      >
+      <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
+    </div>
+
+    <div class="search-filters">
+      <span class="filter-label">फ़िल्टर / Filter:</span>
+      <button class="filter-btn active" data-filter="all">सभी / All</button>
+      <button class="filter-btn" data-filter="poem">कविताएँ / Poems</button>
+      <button class="filter-btn" data-filter="poet">कवि / Poets</button>
+    </div>
+  </div>
+
+  <div class="search-stats" id="search-stats"></div>
+  <div id="search-results" class="search-results"></div>
+
+  <div id="search-empty" class="search-empty">
+    <div class="search-empty-icon">🔍</div>
+    <p>खोज शुरू करने के लिए कुछ टाइप करें</p>
+    <p class="en">Start typing to search the collection</p>
+  </div>
+
+  <div id="search-no-results" class="search-no-results hidden">
+    <div class="search-empty-icon">😔</div>
+    <p id="search-no-results-text">कोई परिणाम नहीं मिला</p>
+    <p class="en">No results found. Try different keywords.</p>
+  </div>
+
+</div>
+
+<script>
+window.SEARCH_INDEX_URL = "/index.json";
+</script>
+{{ end }}
+
+
+================================================================
+FILE: ./layouts/tools/rhyme-dictionary.html
+================================================================
+
+{{ define "main" }}
+<div class="rd-page">
+
+  <header class="rd-header">
+    <div class="rd-header-icon" aria-hidden="true">◈</div>
+    <div class="rd-header-text">
+      <h1 class="rd-title">
+        <span class="lang-hi">तुक शब्दकोश</span>
+        <span class="lang-en">Rhyme Dictionary</span>
+      </h1>
+      <p class="rd-subtitle lang-hi">कविता-कोश से तुकबंदी खोजें</p>
+      <p class="rd-subtitle lang-en">Find rhyming words drawn from the Braj poetry corpus</p>
+    </div>
+  </header>
+
+  <!-- Search bar -->
+  <div class="rd-search-zone">
+    <div class="rd-input-wrap">
+      <span class="rd-input-ornament" aria-hidden="true">॥</span>
+      <input
+        type="text"
+        id="rd-input"
+        class="rd-input"
+        placeholder="शब्द लिखें… e.g. मँझारन"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <button class="rd-clear" id="rd-clear" aria-label="Clear">✕</button>
+    </div>
+    <p class="rd-hint lang-hi">किसी भी ब्रज काव्य शब्द को टाइप करें — तुक-मिलान स्वतः होगा</p>
+    <p class="rd-hint lang-en">Type any Braj poetry word — rhyme depth is detected automatically</p>
+  </div>
+
+  <!-- Depth indicator -->
+  <div class="rd-depth-bar" id="rd-depth-bar" style="display:none">
+    <span class="rd-depth-label lang-hi">तुक की गहराई:</span>
+    <span class="rd-depth-label lang-en">Rhyme depth:</span>
+    <div class="rd-depth-pills" id="rd-depth-pills"></div>
+  </div>
+
+  <!-- Stats -->
+  <div class="rd-stats" id="rd-stats"></div>
+
+  <!-- Results -->
+  <div id="rd-results" class="rd-results"></div>
+
+  <!-- Empty / no results states -->
+  <div id="rd-empty" class="rd-empty-state">
+    <div class="rd-empty-glyph" aria-hidden="true">◈</div>
+    <p class="lang-hi">तुक खोजने के लिए एक शब्द टाइप करें</p>
+    <p class="lang-en">Type a word to discover its rhymes in the corpus</p>
+    <div class="rd-example-chips">
+      <span class="rd-chip-label lang-hi">उदाहरण:</span>
+      <span class="rd-chip-label lang-en">Try:</span>
+      <button class="rd-example-chip" data-word="मँझारन">मँझारन</button>
+      <button class="rd-example-chip" data-word="बिहरैं">बिहरैं</button>
+      <button class="rd-example-chip" data-word="नयन">नयन</button>
+      <button class="rd-example-chip" data-word="करैं">करैं</button>
+    </div>
+  </div>
+
+  <div id="rd-no-results" class="rd-empty-state rd-no-results hidden">
+    <div class="rd-empty-glyph" aria-hidden="true">😔</div>
+    <p class="lang-hi" id="rd-no-results-text">इस शब्द की तुक नहीं मिली</p>
+    <p class="lang-en">No rhymes found in the corpus for this word.</p>
+    <p class="rd-no-results-hint lang-en">The corpus is drawn from the poems currently in the collection.</p>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     INJECT POEM CORPUS as JSON for client-side processing
+     ══════════════════════════════════════════════════════ -->
+<script>
+window.BRAJ_CORPUS = [
+  {{ range where .Site.RegularPages "Type" "poems" }}
+  {
+    title: {{ .Title | jsonify }},
+    url:   {{ .Permalink | jsonify }},
+    poet:  {{ (.Params.poet | default "") | jsonify }},
+    text:  {{ .Plain | jsonify }}
+  },
+  {{ end }}
+];
+</script>
+
+<script src="/js/rhyme-dictionary.js"></script>
+
+<!-- ══════════════════════════════════════════════════════
+     RHYME DICTIONARY STYLES
+     ══════════════════════════════════════════════════════ -->
+<style>
+/* ── PAGE LAYOUT ──────────────────────────────── */
+.rd-page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+/* ── HEADER ───────────────────────────────────── */
+.rd-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+.rd-header-icon {
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: 0.6;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+}
+.rd-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--gold);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+.rd-subtitle {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-family: var(--font-en);
+}
+
+/* ── SEARCH ZONE ──────────────────────────────── */
+.rd-search-zone {
+  margin-bottom: 1.75rem;
+}
+.rd-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.rd-input-ornament {
+  position: absolute;
+  left: 1.1rem;
+  font-size: 1.4rem;
+  color: var(--gold-dim);
+  opacity: 0.5;
+  pointer-events: none;
+  font-family: var(--font-hi);
+  line-height: 1;
+}
+.rd-input {
+  width: 100%;
+  background: var(--bg-card);
+  border: 2px solid var(--border-light);
+  border-radius: 14px;
+  color: var(--text);
+  font-family: var(--font-hi);
+  font-size: 1.5rem;
+  padding: 0.9rem 3rem 0.9rem 3rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  letter-spacing: 0.02em;
+}
+.rd-input:focus {
+  border-color: var(--gold-dim);
+  box-shadow: 0 0 0 4px rgba(232,184,122,0.07), 0 2px 20px rgba(0,0,0,0.4);
+  background: #281208;
+}
+.rd-input::placeholder {
+  color: rgba(160,120,88,0.45);
+  font-size: 1.1rem;
+}
+.rd-clear {
+  position: absolute;
+  right: 0.9rem;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 1rem;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+.rd-clear:hover { background: var(--border); color: var(--text); }
+.rd-hint {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+  padding-left: 0.25rem;
+}
+
+/* ── DEPTH BAR ────────────────────────────────── */
+.rd-depth-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.rd-depth-label {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.rd-depth-pills {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.rd-depth-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 0.2rem 0.85rem;
+  font-size: 0.8rem;
+  font-family: var(--font-hi);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.rd-depth-pill:hover { border-color: var(--gold-dim); color: var(--gold); }
+.rd-depth-pill.active {
+  background: #3b0a0a;
+  border-color: var(--border-light);
+  color: var(--gold);
+}
+.rd-depth-pill .pill-deva {
+  font-family: var(--font-hi);
+  font-size: 0.9rem;
+}
+.rd-depth-pill .pill-phon {
+  font-family: var(--font-en);
+  font-size: 0.68rem;
+  opacity: 0.55;
+  font-style: italic;
+  margin-left: 0.2rem;
+}
+.rd-depth-pill .pill-count {
+  font-size: 0.65rem;
+  font-family: var(--font-en);
+  background: rgba(232,184,122,0.1);
+  border-radius: 10px;
+  padding: 0.05rem 0.35rem;
+  margin-left: 0.3rem;
+  opacity: 0.8;
+}
+
+/* ── STATS ────────────────────────────────────── */
+.rd-stats {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+  margin-bottom: 1.5rem;
+  min-height: 1.2em;
+}
+
+/* ── STATS BAR ────────────────────────────────── */
+.stats-dot { margin: 0 0.5rem; opacity: 0.35; }
+.stats-suffix { display: inline-flex; align-items: baseline; gap: 0.35rem; }
+.stats-deva { font-family: var(--font-hi); color: var(--gold-dim); font-size: 0.9rem; }
+.stats-phon { font-family: var(--font-en); font-style: italic; font-size: 0.78rem; color: var(--text-dim); }
+
+/* ── GROUP HEADING ─────────────────────────────── */
+.group-ending-deva {
+  font-family: var(--font-hi);
+  color: var(--gold-dim);
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ── RESULTS GRID ─────────────────────────────── */
+.rd-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* Each rhyme result card */
+.rd-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  display: flex;
+  align-items: stretch;
+}
+.rd-card:hover {
+  border-color: var(--border-light);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+  transform: translateY(-1px);
+}
+
+/* Coloured left accent bar */
+.rd-card-accent {
+  width: 4px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, var(--accent) 0%, #3b0a0a 100%);
+  opacity: 0.6;
+}
+
+.rd-card-body {
+  padding: 1rem 1.25rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.rd-card-left { flex: 1; min-width: 0; }
+
+.rd-word {
+  font-family: var(--font-hi);
+  font-size: 1.3rem;
+  color: var(--gold);
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+/* Highlight the rhyming suffix */
+.rd-word .rhyme-suffix {
+  color: var(--accent-light);
+  font-weight: bold;
+  border-bottom: 2px solid rgba(224,85,64,0.4);
+}
+
+.rd-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.3rem;
+}
+.rd-source-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.73rem;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+  background: rgba(232,184,122,0.04);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.1rem 0.55rem;
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+}
+.rd-source-tag:hover { color: var(--gold-dim); border-color: var(--border-light); }
+.rd-source-tag .poet-name { opacity: 0.6; }
+
+.rd-card-right {
+  flex-shrink: 0;
+  text-align: right;
+}
+.rd-ending-badge {
+  display: inline-block;
+  font-family: var(--font-hi);
+  font-size: 0.88rem;
+  color: var(--accent-light);
+  background: rgba(192,57,43,0.1);
+  border: 1px solid rgba(192,57,43,0.2);
+  border-radius: 6px;
+  padding: 0.2rem 0.65rem;
+  letter-spacing: 0.02em;
+}
+
+/* ── GROUP HEADINGS ───────────────────────────── */
+.rd-group {
+  margin-bottom: 0.5rem;
+}
+.rd-group-heading {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+  padding: 0.4rem 0;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.rd-group-heading .group-ending {
+  font-family: var(--font-hi);
+  color: var(--gold-dim);
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.rd-group-count {
+  font-size: 0.65rem;
+  background: rgba(232,184,122,0.08);
+  color: var(--gold-dim);
+  border-radius: 20px;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid rgba(232,184,122,0.15);
+}
+
+/* ── EMPTY / NO-RESULTS ───────────────────────── */
+.rd-empty-state {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  color: var(--text-light);
+}
+.rd-empty-glyph {
+  font-size: 3.5rem;
+  color: var(--gold-dim);
+  opacity: 0.2;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+.rd-empty-state p {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.7;
+}
+.rd-no-results-hint {
+  font-size: 0.82rem !important;
+  color: var(--text-dim) !important;
+  font-family: var(--font-en);
+  margin-top: 0.5rem !important;
+}
+
+/* ── EXAMPLE CHIPS ────────────────────────────── */
+.rd-example-chips {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.rd-chip-label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+}
+.rd-example-chip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  color: var(--gold-dim);
+  cursor: pointer;
+  font-family: var(--font-hi);
+  font-size: 0.95rem;
+  padding: 0.3rem 1rem;
+  transition: all 0.18s;
+}
+.rd-example-chip:hover {
+  background: #3b0a0a;
+  border-color: var(--border-light);
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.hidden { display: none !important; }
+
+/* ── LOADING INDICATOR ────────────────────────── */
+.rd-loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+  font-size: 0.9rem;
+}
+.rd-loading::after {
+  content: '…';
+  animation: ellipsis 1.2s infinite;
+}
+@keyframes ellipsis {
+  0%,100% { opacity: 0.2; }
+  50%      { opacity: 1; }
+}
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 580px) {
+  .rd-input { font-size: 1.1rem; }
+  .rd-word  { font-size: 1.1rem; }
+  .rd-card-body { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .rd-card-right { text-align: left; }
+}
+</style>
+
+{{ end }}
+
+
+================================================================
+FILE: ./layouts/tools/single.html
+================================================================
+
+{{ define "main" }}
+<article class="tool-page">
+
+  <header class="tool-page-header">
+    <div class="tool-page-icon" aria-hidden="true">{{ .Params.icon | default "◉" }}</div>
+    <div class="tool-page-heading-text">
+      <h1 class="tool-page-title">
+        <span class="lang-hi">{{ .Params.name_hi | default .Title }}</span>
+        <span class="lang-en">{{ .Title }}</span>
+      </h1>
+    </div>
+  </header>
+
+  <div class="tool-page-content">
+    {{ .Content }}
+  </div>
+
+</article>
+
+<style>
+/* ─── TOOL PAGE SHELL ──────────────────────────────────────── */
+.tool-page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.tool-page-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.tool-page-icon {
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: 0.6;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+}
+
+.tool-page-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--gold);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+/* ─── INTRO BLOCK ──────────────────────────────────────────── */
+.tool-intro {
+  background: linear-gradient(145deg, #150800, #1e0d04);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-intro::before {
+  content: '॥';
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 6rem;
+  color: var(--gold);
+  opacity: 0.035;
+  font-family: var(--font-hi);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.tool-intro p {
+  font-size: 0.97rem;
+  color: var(--text-light);
+  line-height: 1.9;
+  max-width: 680px;
+}
+
+/* ─── SECTION DIVIDER LABEL ────────────────────────────────── */
+.tool-section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.tool-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ─── TOOL CARDS GRID ──────────────────────────────────────── */
+.tool-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ─── INDIVIDUAL TOOL CARD ─────────────────────────────────── */
+.tool-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(232,184,122,0.04) 0%, transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.tool-card:hover {
+  border-color: var(--border-light);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  background: #2a1508;
+}
+
+.tool-card:hover::before {
+  opacity: 1;
+}
+
+.tool-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tool-card-glyph {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3b1208, #220a04);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-hi);
+  font-size: 1.25rem;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.tool-card-arrow {
+  color: var(--text-dim);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.tool-card:hover .tool-card-arrow {
+  color: var(--gold);
+  transform: translate(2px, -2px);
+}
+
+.tool-card-name {
+  font-size: 1.15rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.tool-card-name .name-hi {
+  display: block;
+  font-family: var(--font-hi);
+}
+
+.tool-card-name .name-en {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 0.82rem;
+  color: var(--gold-dim);
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 0.15rem;
+}
+
+.tool-card-desc {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.tool-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.tool-card-badge {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(232,184,122,0.06);
+  color: var(--gold-dim);
+  border: 1px solid rgba(232,184,122,0.14);
+  border-radius: 20px;
+  padding: 0.2rem 0.75rem;
+  font-family: var(--font-en);
+}
+
+.tool-card-cta {
+  font-size: 0.82rem;
+  color: var(--gold-dim);
+  font-family: var(--font-en);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s;
+}
+
+.tool-card:hover .tool-card-cta {
+  color: var(--gold);
+}
+
+/* ─── COMING SOON STRIP ────────────────────────────────────── */
+.tool-coming-soon {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.1rem 1.4rem;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+
+.tool-coming-soon-icon {
+  font-size: 1.2rem;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+/* ─── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .tool-page-header  { padding: 1.75rem 0 1.5rem; }
+  .tool-page-icon    { font-size: 2.2rem; }
+  .tool-cards-grid   { grid-template-columns: 1fr; }
+  .tool-intro        { padding: 1.25rem 1.25rem; }
+}
+</style>
+
+{{ end }}
+
+
+================================================================
+FILE: ./old snapshot files /hugo.yaml
+================================================================
+
+baseURL: "https://braj-poetry.netlify.app/"
+languageCode: "hi"
+title: "ब्रज काव्य कोश"
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+defaultContentLanguage: "hi"
+
+# Taxonomies — this creates your category/filter system
+taxonomies:
+  theme: themes
+  poet: poets_tax
+
+# Pagination
+pagination:
+  pagerSize: 20
+
+# Build settings
+enableRobotsTXT: true
+enableEmoji: true
+
+params:
+  siteName: "ब्रज काव्य कोश"
+  siteNameEn: "Braj Kavya Kosha"
+  description: "A digital anthology of Braj language poetry"
+  descriptionHi: "ब्रज भाषा काव्य का डिजिटल संग्रह"
+  accentColor: "#8B1A1A"   # deep red, like rekhta — change if you want
+  bgColor: "#FDF6E3"        # warm cream background
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true   # allows HTML in markdown — needed for audio embeds
+
+
+================================================================
+FILE: ./old snapshot files /netlify.toml
+================================================================
+
+[build]
+  command = "hugo --minify"
+  publish = "public"
+
+[context.production.environment]
+  HUGO_VERSION = "0.154.5"
+  HUGO_ENV = "production"
+
+
+================================================================
+FILE: ./old snapshot files /pages.config.yml
+================================================================
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "poems"
+    label: "Poems"
+    folder: "content/poems"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+================================================================
+FILE: ./.pages.yml
+================================================================
+
+media:
+  input: "static/uploads"
+  output: "/uploads"
+
+content:
+  - name: "poems"
+    label: "कविताएँ / Poems"
+    type: "collection"
+    path: "content/poems"
+    view:
+      fields: ["title", "poet", "form"]
+    fields:
+      - { label: "शीर्षक / Title", name: "title", type: "string" }
+      - { label: "कवि / Poet", name: "poet", type: "string" }
+      - name: "form"
+        label: "रूप / Form"
+        type: "select"
+        options:
+          values: ["दोहा", "पद", "सवैया", "कवित्त", "छंद", "भजन", "अन्य"]
+      - name: "themes"
+        label: "विषय / Themes"
+        type: "list"
+        hint: "Add themes one by one (e.g. भक्ति, श्रृंगार, प्रकृति)"
+      - name: "audio_url"
+        label: "पाठ लिंक / Audio URL"
+        type: "string"
+        required: false
+      - name: "notes"
+        label: "टिप्पणी / Notes"
+        type: "rich-text"
+        required: false
+      - name: "body"
+        label: "कविता / Poem Text"
+        type: "rich-text"
+      - { label: "Draft", name: "draft", type: "boolean", default: false }
+      - { label: "Date", name: "date", type: "date" }
+
+  - name: "poets"
+    label: "कवि / Poets"
+    type: "collection"
+    path: "content/poets"
+    fields:
+      - { label: "नाम / Name", name: "title", type: "string" }
+      - { label: "काल / Dates", name: "dates", type: "string", required: false }
+      - { label: "क्षेत्र / Region", name: "region", type: "string", required: false }
+      - name: "image"
+        label: "चित्र / Photo"
+        type: "image"
+        required: false
+      - name: "body"
+        label: "जीवन परिचय / Biography"
+        type: "rich-text"
+      - { label: "Date", name: "date", type: "date" }
+
+  - name: "collections"
+    label: "संग्रह / Collections"
+    type: "collection"
+    path: "content/collections"
+    fields:
+      - { label: "शीर्षक / Title", name: "title", type: "string" }
+      - name: "image"
+        label: "संग्रह चित्र / Cover Image"
+        type: "image"
+        required: false
+      - name: "description"
+        label: "विवरण / Description"
+        type: "string"
+        required: false
+      - name: "poems"
+        label: "कविताएँ / Poems in this Collection"
+        type: "list"
+        hint: "Type each poem title exactly as it appears in PageCMS, one per line"
+      - name: "body"
+        label: "विस्तृत विवरण / Full Description"
+        type: "rich-text"
+        required: false
+      - { label: "Date", name: "date", type: "date" }
+
+================================================================
+FILE: ./static/css/main.css
+================================================================
+
+/* ============================================
+   BRAJ KAVYA KOSHA — Main Stylesheet
+   Dark Gold Theme
+   ============================================ */
+
+:root {
+  --accent:        #c0392b;        /* deep red — primary actions */
+  --accent-light:  #e05540;        /* hover red */
+  --gold:          #e8b87a;        /* primary gold */
+  --gold-light:    #f5d9a0;        /* lighter gold for headings */
+  --gold-dim:      #c9906a;        /* muted gold */
+
+  --bg:            #1a0e08;        /* near-black dark brown */
+  --bg-card:       #221208;        /* card background */
+  --bg-elevated:   #2c1810;        /* slightly lighter panels */
+  --bg-header:     #120804;        /* header — darkest */
+
+  --text:          #f0e0c8;        /* warm off-white body text */
+  --text-light:    #a07858;        /* muted warm tan */
+  --text-dim:      #7a5c44;        /* very muted */
+
+  --border:        #3d2215;        /* dark border */
+  --border-light:  #5a3020;        /* slightly lighter border */
+
+  --font-hi:       'Tiro Devanagari Hindi', serif;
+  --font-en:       'Lora', Georgia, serif;
+}
+
+/* ============================================
+   LANGUAGE SWITCHER
+   ============================================ */
+[data-lang="hi"] .lang-en { display: none; }
+[data-lang="en"] .lang-hi { display: none; }
+html:not([data-lang]) .lang-en { display: none; }
+
+.lang-toggle {
+  background: rgba(232,184,122,0.12);
+  color: var(--gold);
+  border: 1px solid rgba(232,184,122,0.3);
+  border-radius: 20px;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: var(--font-en);
+  margin-left: 1.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-toggle:hover {
+  background: rgba(232,184,122,0.22);
+  color: var(--gold-light);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-hi);
+  line-height: 1.8;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.site-header {
+  background: var(--bg-header);
+  color: var(--text);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.site-logo {
+  text-decoration: none;
+  color: var(--gold-light);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.logo-hi { font-size: 1.3rem; font-weight: bold; color: var(--gold-light); }
+.logo-en { font-size: 0.75rem; opacity: 0.6; font-family: var(--font-en); color: var(--gold-dim); }
+
+.main-nav a {
+  color: rgba(240,224,200,0.7);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+.main-nav a:hover { color: var(--gold); }
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ============================================
+   HERO (old, kept for non-home pages that might use it)
+   ============================================ */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--gold); margin-bottom: 0.5rem; }
+.hero-sub { font-family: var(--font-en); font-style: italic; color: var(--gold-dim); font-size: 1.2rem; margin-bottom: 1rem; }
+.hero-desc { color: var(--text-light); max-width: 600px; margin: 0 auto; }
+
+/* ============================================
+   HOME SECTIONS (legacy, used on inner pages)
+   ============================================ */
+.home-section { margin-bottom: 3rem; }
+.home-section h2 {
+  font-size: 1.5rem;
+  color: var(--gold);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.home-section h2 .en {
+  font-family: var(--font-en);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: normal;
+  margin-left: 0.5rem;
+}
+
+/* ============================================
+   GRIDS
+   ============================================ */
+.poem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.poet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ============================================
+   POEM CARD
+   ============================================ */
+.poem-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+.poem-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transform: translateY(-2px);
+  border-color: var(--border-light);
+}
+.poem-card-link {
+  display: block;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+.card-title { font-size: 1.1rem; color: var(--gold); margin-bottom: 0.4rem; }
+.card-poet  { font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.5rem; }
+.audio-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--gold-dim);
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   POET CARD
+   ============================================ */
+.poet-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-align: center;
+  padding: 1.25rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.poet-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.5); border-color: var(--border-light); }
+.poet-card a { text-decoration: none; color: inherit; }
+.poet-thumb {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border-light);
+  margin-bottom: 0.75rem;
+}
+.poet-thumb-placeholder {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: #3b0a0a;
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 0.75rem;
+  border: 2px solid var(--border-light);
+}
+.poet-card h3   { font-size: 1rem; color: var(--gold); }
+.poet-card .dates { font-size: 0.8rem; color: var(--text-light); margin-top: 0.25rem; }
+
+/* ============================================
+   THEME TAGS
+   ============================================ */
+.theme-tag {
+  display: inline-block;
+  background: rgba(232,184,122,0.08);
+  color: var(--gold-dim);
+  border: 1px solid rgba(232,184,122,0.2);
+  border-radius: 20px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.85rem;
+  text-decoration: none;
+  margin: 0.2rem;
+  transition: background 0.2s, color 0.2s;
+}
+.theme-tag:hover { background: rgba(232,184,122,0.18); color: var(--gold-light); }
+.theme-tag.small { font-size: 0.75rem; }
+.theme-tag.mini  { font-size: 0.7rem; padding: 0.1rem 0.5rem; }
+.theme-cloud { line-height: 2.2; }
+
+/* ============================================
+   POEM PAGE
+   ============================================ */
+.poem-page { max-width: 700px; margin: 0 auto; }
+.poem-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.poem-title { font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--gold); margin-bottom: 0.75rem; }
+.poem-poet  { color: var(--text-light); margin-bottom: 0.75rem; }
+.poem-poet a { color: var(--gold-dim); text-decoration: none; }
+.poem-poet a:hover { color: var(--gold); }
+
+.poem-body {
+  font-size: 1.2rem;
+  line-height: 2.2;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-hi);
+  color: var(--text);
+}
+.poem-body p { margin-bottom: 1.5rem; }
+
+.poem-word {
+  cursor: pointer;
+  border-bottom: 1px dashed transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.poem-word:hover { border-bottom-color: var(--gold-dim); color: var(--gold); }
+
+/* ============================================
+   WORD TOOLTIP
+   ============================================ */
+.word-tooltip {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0d0604;
+  color: var(--text);
+  border: 1px solid var(--border-light);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.7);
+  z-index: 1000;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+.word-tooltip.hidden { display: none; }
+.tooltip-word    { font-weight: bold; font-family: var(--font-hi); color: var(--gold); }
+.tooltip-word::after { content: ":"; margin-right: 0.25rem; }
+.tooltip-meaning { font-family: var(--font-en); font-style: italic; color: var(--text-light); }
+.tooltip-close {
+  background: none; border: none; color: var(--text-dim);
+  cursor: pointer; margin-left: auto; font-size: 1rem; padding: 0 0.25rem;
+}
+.tooltip-close:hover { color: var(--text); }
+
+/* ============================================
+   AUDIO & NOTES
+   ============================================ */
+.poem-audio, .poem-notes {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.poem-audio h3, .poem-notes h3 {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+.poem-audio iframe { border-radius: 4px; }
+
+/* ============================================
+   POET PAGE
+   ============================================ */
+.poet-page { max-width: 800px; margin: 0 auto; }
+.poet-header {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.poet-image img {
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-light);
+}
+.poet-meta h1     { font-size: 2rem; color: var(--gold); }
+.poet-meta .dates, .poet-meta .region { color: var(--text-light); font-size: 0.9rem; margin-top: 0.25rem; }
+.poet-bio  { margin-bottom: 2rem; line-height: 1.9; color: var(--text); }
+.poet-poems h2 { font-size: 1.4rem; color: var(--gold); margin-bottom: 1.25rem; }
+
+/* ============================================
+   LIST PAGES
+   ============================================ */
+.list-header { margin-bottom: 2rem; }
+.list-header h1 { font-size: 2rem; color: var(--gold); }
+.list-header p  { color: var(--text-light); }
+
+.filter-bar {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+.filter-bar span { color: var(--text-light); margin-right: 0.5rem; }
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-all {
+  display: inline-block;
+  color: var(--gold-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-all:hover { color: var(--gold); border-color: var(--gold-dim); }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-en);
+  background: var(--bg-header);
+}
+
+/* ============================================
+   ENGLISH TEXT
+   ============================================ */
+.en {
+  font-family: var(--font-en);
+  font-weight: normal;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 600px) {
+  .main-nav a { margin-left: 0.75rem; font-size: 0.8rem; }
+  .poet-header { flex-direction: column; align-items: center; text-align: center; }
+  .poem-body { font-size: 1.1rem; }
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+.pagination {
+  display: flex; justify-content: center; gap: 0.5rem;
+  margin-top: 2rem;
+}
+.pagination a, .pagination span {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--gold-dim);
+  background: var(--bg-card);
+}
+.pagination .active {
+  background: #3b0a0a;
+  color: var(--gold);
+  border-color: var(--border-light);
+}
+
+/* ============================================
+   FORM TABS
+   ============================================ */
+.form-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+.form-tab {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  color: var(--text-light);
+  font-family: var(--font-hi);
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.form-tab:hover { border-color: var(--gold-dim); color: var(--gold); }
+.form-tab.active { background: #3b0a0a; color: var(--gold); border-color: var(--border-light); }
+.form-tab .count { font-size: 0.75rem; opacity: 0.8; }
+.form-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.1rem 0.5rem;
+  margin-bottom: 0.4rem;
+  background: var(--bg-card);
+}
+
+/* ============================================
+   COLLECTIONS — LIST
+   ============================================ */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.collection-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+.collection-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  transform: translateY(-3px);
+  border-color: var(--border-light);
+}
+.collection-card-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+.collection-card-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: var(--border);
+}
+.collection-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.collection-card:hover .collection-card-image img { transform: scale(1.04); }
+
+.collection-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3b0a0a 0%, #1a0505 100%);
+  color: rgba(232,184,122,0.3);
+  font-size: 4rem;
+  font-family: var(--font-hi);
+}
+
+.collection-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+.collection-card-body h3 { font-size: 1.15rem; color: var(--gold); line-height: 1.3; }
+.collection-card-desc  { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+.poem-count {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-family: var(--font-en);
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================
+   COLLECTIONS — SINGLE PAGE
+   ============================================ */
+.collection-page { max-width: 900px; margin: 0 auto; }
+
+.collection-header {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.collection-cover {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid var(--border-light);
+  aspect-ratio: 4/3;
+}
+.collection-cover img { width: 100%; height: 100%; object-fit: cover; }
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-en);
+}
+.breadcrumb a { color: var(--gold-dim); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold); }
+
+.collection-meta h1 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.collection-desc { color: var(--text-light); font-size: 1rem; line-height: 1.7; }
+.collection-body { margin-bottom: 2rem; line-height: 1.9; color: var(--text); }
+
+.collection-poems h2 {
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+.count-badge {
+  background: #3b0a0a;
+  color: var(--gold);
+  border: 1px solid var(--border-light);
+  font-size: 0.8rem;
+  font-family: var(--font-en);
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+  font-weight: normal;
+}
+.empty-msg { color: var(--text-dim); font-style: italic; padding: 2rem 0; }
+
+@media (max-width: 680px) {
+  .collection-header { grid-template-columns: 1fr; }
+  .collection-cover  { max-height: 220px; }
+}
+
+
+================================================================
+FILE: ./static/css/nav-dropdown.css
+================================================================
+
+/* ============================================
+   TOOLS DROPDOWN NAV — append to main.css
+   ============================================ */
+
+/* Dropdown container — sits inline with other nav links */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 1.5rem;
+}
+
+/* The toggle button — styled to match nav links */
+.nav-dropdown-toggle {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-hi);
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle[aria-expanded="true"] {
+  color: #fff;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  position: relative;
+  top: 1px;
+}
+.nav-dropdown-toggle[aria-expanded="true"] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* The dropdown panel */
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 20px); /* gap = header padding below button */
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(44,24,16,0.15);
+  min-width: 210px;
+  overflow: hidden;
+  z-index: 200;
+  animation: dropIn 0.15s ease;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-dropdown-menu.is-open {
+  display: block;
+}
+
+/* Each tool link inside the dropdown */
+.nav-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.1rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.15s;
+  border-bottom: 1px solid var(--border);
+  margin-left: 0 !important; /* override .main-nav a rule */
+  font-size: 1rem !important;
+  color: inherit !important;
+}
+.nav-dropdown-menu a:last-child {
+  border-bottom: none;
+}
+.nav-dropdown-menu a:hover {
+  background: rgba(139,26,26,0.05);
+  color: var(--accent);
+}
+.nav-dropdown-menu a:hover .tool-name,
+.nav-dropdown-menu a:hover .tool-name-hi {
+  color: var(--accent);
+}
+
+/* Icon column */
+.tool-icon {
+  font-size: 1.3rem;
+  color: var(--accent);
+  opacity: 0.75;
+  flex-shrink: 0;
+  width: 1.5rem;
+  text-align: center;
+}
+
+/* Text column — stacked name (English top, Hindi bottom) */
+.tool-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.tool-name {
+  font-family: var(--font-en);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.tool-name-hi {
+  font-family: var(--font-hi);
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* ─── TOOL PAGE SHELL ──────────────────────────── */
+
+.tool-page {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.tool-page-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.tool-page-icon {
+  font-size: 2.5rem;
+  color: var(--accent);
+  opacity: 0.7;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.tool-page-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.tool-page-subtitle {
+  font-family: var(--font-en);
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.tool-coming-soon {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg-card);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  color: var(--text-light);
+}
+
+.tool-coming-soon .coming-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.tool-coming-soon h2 {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  font-weight: normal;
+  margin-bottom: 0.75rem;
+}
+
+/* ─── RESPONSIVE ───────────────────────────────── */
+
+@media (max-width: 600px) {
+  .nav-dropdown {
+    margin-left: 0.75rem;
+  }
+  .nav-dropdown-toggle {
+    font-size: 0.8rem;
+  }
+  .nav-dropdown-menu {
+    right: -0.5rem;
+    min-width: 190px;
+  }
+}
+
+
+================================================================
+FILE: ./static/css/search.css
+================================================================
+
+/* ============================================
+   SEARCH FEATURE — Dark Gold Theme
+   ============================================ */
+
+/* ── HEADER SEARCH BAR ──────────────────────────────────────────────── */
+.header-search { margin-left: 1.5rem; }
+.header-search-wrap { position: relative; display: flex; align-items: center; }
+
+.header-search-icon {
+  position: absolute;
+  left: 0.6rem;
+  width: 16px; height: 16px;
+  color: rgba(232,184,122,0.4);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+.header-search-input {
+  background: rgba(232,184,122,0.07);
+  border: 1px solid rgba(232,184,122,0.2);
+  border-radius: 20px;
+  color: var(--text);
+  font-family: var(--font-hi);
+  font-size: 0.85rem;
+  height: 34px;
+  padding: 0 1rem 0 2.1rem;
+  width: 200px;
+  transition: width 0.3s ease, background 0.2s, border-color 0.2s;
+  outline: none;
+}
+.header-search-input::placeholder { color: rgba(232,184,122,0.35); }
+.header-search-input:focus {
+  background: rgba(232,184,122,0.12);
+  border-color: rgba(232,184,122,0.45);
+  width: 260px;
+}
+.header-search-input::-webkit-search-cancel-button { display: none; }
+
+/* ── SEARCH PAGE ──────────────────────────────────────────────────── */
+.search-page { max-width: 860px; margin: 0 auto; }
+.search-main-bar { margin-bottom: 1.5rem; }
+
+.search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  width: 22px; height: 22px;
+  color: var(--text-light);
+  pointer-events: none;
+}
+.search-input-large {
+  width: 100%;
+  border: 2px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--bg-card);
+  color: var(--text);
+  font-family: var(--font-hi);
+  font-size: 1.25rem;
+  padding: 0.85rem 3rem 0.85rem 3.25rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-input-large:focus {
+  border-color: var(--gold-dim);
+  box-shadow: 0 0 0 3px rgba(232,184,122,0.08);
+}
+.search-input-large::placeholder { color: var(--text-dim); opacity: 0.7; }
+.search-input-large::-webkit-search-cancel-button { display: none; }
+
+.search-clear {
+  position: absolute;
+  right: 0.85rem;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 1rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+.search-clear:hover { background: var(--border-light); color: var(--text); }
+
+/* Filter buttons */
+.search-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.filter-label { color: var(--text-light); font-size: 0.85rem; margin-right: 0.25rem; }
+.filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  color: var(--text-light);
+  cursor: pointer;
+  font-family: var(--font-hi);
+  font-size: 0.82rem;
+  padding: 0.25rem 0.9rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.filter-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+.filter-btn.active { background: #3b0a0a; border-color: var(--border-light); color: var(--gold); }
+
+/* Stats bar */
+.search-stats {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+  min-height: 1.2em;
+  font-family: var(--font-en);
+}
+
+/* ── RESULT CARDS ─────────────────────────────────────────────────── */
+.search-results { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.search-result-card {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.15s, border-color 0.2s;
+}
+.search-result-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transform: translateY(-1px);
+  border-color: var(--border-light);
+}
+
+.result-type-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-family: var(--font-en);
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.poem-badge {
+  background: rgba(232,184,122,0.08);
+  color: var(--gold-dim);
+  border: 1px solid rgba(232,184,122,0.2);
+}
+.poet-badge {
+  background: rgba(180,120,80,0.1);
+  color: var(--gold-dim);
+  border: 1px solid rgba(180,120,80,0.25);
+}
+
+.result-title  { font-size: 1.15rem; color: var(--gold); margin-bottom: 0.4rem; line-height: 1.4; }
+.result-poet   { font-size: 0.88rem; color: var(--text-light); margin-bottom: 0.35rem; }
+.result-form   { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.35rem; }
+.result-meta   { font-size: 0.83rem; color: var(--text-light); margin-bottom: 0.25rem; font-family: var(--font-en); }
+.result-themes { margin-top: 0.5rem; margin-bottom: 0.4rem; }
+.result-snippet {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  margin-top: 0.6rem;
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+  padding-top: 0.6rem;
+  font-style: italic;
+}
+
+.search-result-card mark {
+  background: rgba(232,184,122,0.15);
+  color: var(--gold);
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* ── EMPTY / NO RESULTS ────────────────────────────────────────────── */
+.search-empty, .search-no-results {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text-light);
+}
+.search-empty-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.4; }
+.search-empty p, .search-no-results p { margin-bottom: 0.4rem; font-size: 1rem; }
+.search-empty .en, .search-no-results .en { font-size: 0.9rem; opacity: 0.6; }
+.hidden { display: none !important; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .header-search { display: none; }
+  .search-input-large { font-size: 1rem; padding: 0.75rem 2.75rem 0.75rem 3rem; }
+}
+
+
+================================================================
+FILE: ./static/js/dictionary.js
+================================================================
+
+// ============================================
+// Braj Kavya Dictionary — Word Click Feature
+// ============================================
+
+const raw = window.BRAJ_DICTIONARY || '{}';
+const dictionary = typeof raw === 'string' ? JSON.parse(raw) : raw;
+
+// This function wraps each word in the poem in a clickable <span>
+function makePoemWordsClickable() {
+  const poemBody = document.getElementById('poem-text');
+  if (!poemBody) return; // Not on a poem page — do nothing
+
+  // Walk through all text nodes inside the poem
+  const walker = document.createTreeWalker(
+    poemBody,
+    NodeFilter.SHOW_TEXT,
+    null
+  );
+
+  const textNodes = [];
+  while (walker.nextNode()) {
+    textNodes.push(walker.currentNode);
+  }
+
+  textNodes.forEach(node => {
+    // Split text by spaces/punctuation, wrap each word
+    const text = node.textContent;
+    const parent = node.parentNode;
+    
+    // Don't process if inside a link or heading
+    if (parent.tagName === 'A' || parent.tagName === 'H1' || 
+        parent.tagName === 'H2' || parent.tagName === 'H3') return;
+
+    const fragment = document.createDocumentFragment();
+    // Split on spaces, keeping punctuation attached to words
+    const parts = text.split(/(\s+)/);
+    
+    parts.forEach(part => {
+      if (/^\s+$/.test(part)) {
+        // Pure whitespace — keep as is
+        fragment.appendChild(document.createTextNode(part));
+      } else {
+        // A word — wrap it
+        const cleanWord = part.replace(/[।,;:!?""''।]/g, '').trim();
+        const span = document.createElement('span');
+        span.textContent = part;
+        span.className = 'poem-word';
+        span.dataset.word = cleanWord;
+        span.addEventListener('click', onWordClick);
+        fragment.appendChild(span);
+      }
+    });
+
+    parent.replaceChild(fragment, node);
+  });
+}
+
+// Called when a word is clicked
+function onWordClick(event) {
+  const word = event.target.dataset.word;
+  if (!word) return;
+
+  // Try direct match first
+  let meaning = dictionary[word];
+
+  // If not found, try without diacritics variations
+  // (Handles cases like "नयनों" when dictionary has "नयन")
+  if (!meaning) {
+    // Try stripping common Hindi suffixes for lookup
+    const stripped = stripSuffix(word);
+    if (stripped !== word) meaning = dictionary[stripped];
+  }
+
+  if (meaning) {
+    showTooltip(word, meaning);
+  } else {
+    showTooltip(word, '(अर्थ उपलब्ध नहीं / meaning not in dictionary)');
+  }
+}
+
+// Show the tooltip
+function showTooltip(word, meaning) {
+  const tooltip = document.getElementById('word-tooltip');
+  tooltip.querySelector('.tooltip-word').textContent = word;
+  tooltip.querySelector('.tooltip-meaning').textContent = meaning;
+  tooltip.classList.remove('hidden');
+}
+
+// Close the tooltip
+function closeTooltip() {
+  document.getElementById('word-tooltip').classList.add('hidden');
+}
+
+// Close tooltip when clicking outside the poem
+document.addEventListener('click', function(e) {
+  if (!e.target.classList.contains('poem-word') && 
+      !e.target.closest('#word-tooltip')) {
+    closeTooltip();
+  }
+});
+
+// Close with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeTooltip();
+});
+
+// Simple suffix stripper for Hindi words
+// This helps find "राम" when the word is "रामने" etc.
+function stripSuffix(word) {
+  const suffixes = ['ने', 'को', 'से', 'में', 'पर', 'के', 'की', 'का', 'ों', 'ाँ', 'ी', 'ा', 'े'];
+  for (const suffix of suffixes) {
+    if (word.endsWith(suffix) && word.length > suffix.length + 1) {
+      return word.slice(0, -suffix.length);
+    }
+  }
+  return word;
+}
+
+// Run when page loads
+document.addEventListener('DOMContentLoaded', makePoemWordsClickable);
+
+================================================================
+FILE: ./static/js/lang.js
+================================================================
+
+// ============================================
+// Braj Kavya — Language Switcher
+// ============================================
+
+const LANG_KEY = 'braj_lang';
+
+function getLang() {
+  return localStorage.getItem(LANG_KEY) || 'hi';
+}
+
+function setLang(lang) {
+  localStorage.setItem(LANG_KEY, lang);
+  document.documentElement.setAttribute('data-lang', lang);
+  updateToggleButton(lang);
+}
+
+function toggleLang() {
+  setLang(getLang() === 'hi' ? 'en' : 'hi');
+}
+
+function updateToggleButton(lang) {
+  const btn = document.getElementById('lang-toggle');
+  if (btn) btn.textContent = lang === 'hi' ? 'English' : 'हिंदी';
+}
+
+// Apply immediately on load
+document.addEventListener('DOMContentLoaded', () => {
+  const lang = getLang();
+  document.documentElement.setAttribute('data-lang', lang);
+  updateToggleButton(lang);
+});
+
+================================================================
+FILE: ./static/js/nav.js
+================================================================
+
+// ============================================
+// Braj Kavya — Nav Dropdown (Tools menu)
+// ============================================
+
+(function () {
+  const toggle = document.querySelector('.nav-dropdown-toggle');
+  const menu   = document.querySelector('.nav-dropdown-menu');
+
+  if (!toggle || !menu) return;
+
+  // Open / close on button click
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const isOpen = menu.classList.contains('is-open');
+    closeMenu();          // close any already-open state
+    if (!isOpen) openMenu();
+  });
+
+  // Close when clicking anywhere outside
+  document.addEventListener('click', function () {
+    closeMenu();
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // Keyboard: allow arrow-key navigation inside the menu
+  menu.addEventListener('keydown', function (e) {
+    const items = Array.from(menu.querySelectorAll('a'));
+    const idx   = items.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      items[(idx + 1) % items.length].focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      items[(idx - 1 + items.length) % items.length].focus();
+    }
+  });
+
+  function openMenu() {
+    menu.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    // Move focus to first item for keyboard users
+    const first = menu.querySelector('a');
+    if (first) first.focus();
+  }
+
+  function closeMenu() {
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+})();
+
+
+================================================================
+FILE: ./static/js/rhyme-dictionary.js
+================================================================
+
+// ============================================
+// Braj Kavya Kosha — Rhyme Dictionary Engine v2
+// Phonetic matching with:
+//   • Homophone normalisation  (ण→न, ष→श)
+//   • Word-final schwa deletion (राम→raam not raama)
+//   • Reversed-key grouping    (Walker's Dictionary technique)
+//   • Auto-depth detection     (longest suffix with ≥2 matches)
+// ============================================
+
+(function () {
+
+  // ── DOM ──────────────────────────────────────────────────────────────────────
+  const inputEl      = document.getElementById('rd-input');
+  const clearBtn     = document.getElementById('rd-clear');
+  const resultsEl    = document.getElementById('rd-results');
+  const statsEl      = document.getElementById('rd-stats');
+  const emptyEl      = document.getElementById('rd-empty');
+  const noResultsEl  = document.getElementById('rd-no-results');
+  const noResultsTxt = document.getElementById('rd-no-results-text');
+  const depthBar     = document.getElementById('rd-depth-bar');
+  const depthPills   = document.getElementById('rd-depth-pills');
+
+  if (!inputEl) return;
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SECTION 1 — DEVANAGARI → PHONETIC CONVERSION
+  //
+  // Strategy: convert each Devanagari word into an array of phoneme tokens
+  // (small Roman strings like 'k', 'aa', 'jh', 'n', …). This lets us:
+  //   a) normalise homophones by mapping them to the same token
+  //   b) delete the word-final implicit schwa correctly
+  //   c) compare word endings purely on sound, not spelling
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // Consonants — KEY NORMALISATIONS:
+  //   ण → 'n'  (same sound as न in Braj/Hindi)
+  //   ष → 'sh' (same sound as श)
+  const CONS = {
+    'क':'k',  'ख':'kh', 'ग':'g',  'घ':'gh', 'ङ':'n',
+    'च':'ch', 'छ':'chh','ज':'j',  'झ':'jh', 'ञ':'n',
+    'ट':'t',  'ठ':'th', 'ड':'d',  'ढ':'dh', 'ण':'n',
+    'त':'t',  'थ':'th', 'द':'d',  'ध':'dh', 'न':'n',
+    'प':'p',  'फ':'ph', 'ब':'b',  'भ':'bh', 'म':'m',
+    'य':'y',  'र':'r',  'ल':'l',  'व':'v',
+    'श':'sh', 'ष':'sh',
+    'स':'s',  'ह':'h',  'ळ':'l',
+  };
+
+  const MATRA = {
+    'ा':'aa','ि':'i', 'ी':'ii','ु':'u', 'ू':'uu',
+    'ृ':'ri','े':'e', 'ै':'ai','ो':'o', 'ौ':'au',
+    'ॅ':'e', 'ॉ':'o',
+  };
+
+  const VOWEL = {
+    'अ':'a', 'आ':'aa','इ':'i', 'ई':'ii','उ':'u',
+    'ऊ':'uu','ऋ':'ri','ए':'e', 'ऐ':'ai','ओ':'o','औ':'au',
+  };
+
+  const VIRAMA       = '\u094D';
+  const ANUSVARA     = '\u0902';
+  const CHANDRABINDU = '\u0901';
+  const VISARGA      = '\u0903';
+  const NUKTA        = '\u093C';
+
+  // ── Split word into Devanagari syllable clusters ─────────────────────────────
+  // Each cluster groups a (possibly conjunct) consonant + its matra/diacritics.
+  // e.g. ग्वारन → ["ग्वा", "र", "न"]
+  //      मँझारन → ["मँ", "झा", "र", "न"]
+  function splitIntoClusters(word) {
+    const isMatra     = c => (c >= '\u093E' && c <= '\u094C') || c==='\u094E' || c==='\u094F';
+    const isDiacritic = c => c===ANUSVARA || c===CHANDRABINDU || c===NUKTA;
+    const chars = [...word];
+    const clusters = [];
+    let i = 0;
+    while (i < chars.length) {
+      let cluster = chars[i]; i++;
+      while (i < chars.length && chars[i]===VIRAMA && i+1 < chars.length) {
+        cluster += chars[i] + chars[i+1]; i += 2;
+      }
+      while (i < chars.length && (isMatra(chars[i]) || isDiacritic(chars[i]) || chars[i]===VISARGA)) {
+        cluster += chars[i]; i++;
+      }
+      clusters.push(cluster);
+    }
+    return clusters;
+  }
+
+  // ── Convert one cluster → phoneme token array ─────────────────────────────────
+  // SCHWA DELETION: a bare consonant (no matra) gets implicit 'a'
+  // UNLESS it is the final cluster of the word.
+  function processCluster(clusterStr, isWordFinal) {
+    const chars = [...clusterStr];
+    const consonants = [];
+    let vowelSound = null;
+    let hasNasal   = false;
+    let hasVisarga = false;
+
+    for (const c of chars) {
+      if (c===VIRAMA || c===NUKTA) continue;
+      if (CONS[c])                                  { consonants.push(CONS[c]); }
+      else if (MATRA[c])                            { vowelSound = MATRA[c]; }
+      else if (VOWEL[c])                            { vowelSound = VOWEL[c]; }
+      else if (c===ANUSVARA || c===CHANDRABINDU)    { hasNasal   = true; }
+      else if (c===VISARGA)                         { hasVisarga = true; }
+    }
+
+    const tokens = [...consonants];
+
+    if (vowelSound) {
+      tokens.push(vowelSound);
+    } else if (consonants.length > 0 && !isWordFinal) {
+      tokens.push('a'); // implicit schwa — present everywhere except word-final
+    }
+    // word-final bare consonant: schwa deleted (nothing pushed)
+
+    if (hasNasal)   tokens.push('n');
+    if (hasVisarga) tokens.push('h');
+
+    return tokens;
+  }
+
+  // ── Convert full word → phoneme tokens + cluster mapping ─────────────────────
+  function wordToPhonetic(word) {
+    const clusters = splitIntoClusters(word);
+    const allTokens = [];
+    const clusterTokenCounts = [];
+    for (let i = 0; i < clusters.length; i++) {
+      const t = processCluster(clusters[i], i === clusters.length - 1);
+      clusterTokenCounts.push(t.length);
+      allTokens.push(...t);
+    }
+    return { tokens: allTokens, clusterTokenCounts, clusters };
+  }
+
+  // Memoisation cache
+  const phoneticCache = new Map();
+  function getPhonetics(word) {
+    if (!phoneticCache.has(word)) phoneticCache.set(word, wordToPhonetic(word));
+    return phoneticCache.get(word);
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SECTION 2 — PHONEMIC SUFFIX OPERATIONS
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // Last `depth` tokens joined → comparison string, e.g. "aaran"
+  function getPhoneticSuffix(tokens, depth) {
+    return tokens.slice(Math.max(0, tokens.length - depth)).join('');
+  }
+
+  // Which cluster index does the suffix start at?
+  // (We include a cluster if even part of it falls within the suffix boundary,
+  //  so highlighting is always correct even for conjuncts like ग्व.)
+  function getSuffixStartCluster(clusterTokenCounts, depth) {
+    let remaining = depth;
+    for (let i = clusterTokenCounts.length - 1; i >= 0; i--) {
+      remaining -= clusterTokenCounts[i];
+      if (remaining <= 0) return i;
+    }
+    return 0;
+  }
+
+  // The Devanagari text corresponding to the phonetic suffix
+  function getDevaSuffix(word, depth) {
+    const { clusterTokenCounts, clusters } = getPhonetics(word);
+    const startIdx = getSuffixStartCluster(clusterTokenCounts, depth);
+    return clusters.slice(startIdx).join('');
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SECTION 3 — CORPUS INDEX
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  function cleanWord(word) {
+    return word
+      .replace(/[।,.!?;:""''॥–—\-\u200c\u200d\ufeff]/g, '')
+      .replace(/\s+/g, '')
+      .trim();
+  }
+
+  function tokenise(text) {
+    return text
+      .split(/[\s\n\r]+/)
+      .map(cleanWord)
+      .filter(w => w.length >= 2 && /[\u0900-\u097F]/.test(w));
+  }
+
+  const wordIndex = new Map(); // word → [{title, url, poet}]
+
+  function buildIndex() {
+    for (const poem of (window.BRAJ_CORPUS || [])) {
+      const ref = { title: poem.title, url: poem.url, poet: poem.poet };
+      for (const w of tokenise(poem.text + ' ' + poem.title)) {
+        if (!wordIndex.has(w)) wordIndex.set(w, []);
+        const refs = wordIndex.get(w);
+        if (!refs.find(r => r.url === poem.url)) refs.push(ref);
+      }
+    }
+  }
+
+  buildIndex();
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SECTION 4 — RHYME FINDING
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  function findRhymes(queryWord, depth) {
+    const qp = getPhonetics(queryWord);
+    if (!qp || qp.tokens.length === 0) return [];
+    const querySuffix = getPhoneticSuffix(qp.tokens, depth);
+
+    const results = [];
+    for (const [word, refs] of wordIndex.entries()) {
+      if (word === queryWord) continue;
+      const wp = getPhonetics(word);
+      if (!wp || wp.tokens.length === 0) continue;
+      if (getPhoneticSuffix(wp.tokens, depth) === querySuffix) {
+        results.push({ word, refs });
+      }
+    }
+
+    // Sort: words where the suffix is a larger proportion of the whole word
+    // appear first (purer rhymes)
+    results.sort((a, b) => {
+      const aR = depth / (getPhonetics(a.word).tokens.length || 1);
+      const bR = depth / (getPhonetics(b.word).tokens.length || 1);
+      if (Math.abs(aR - bR) > 0.1) return bR - aR;
+      return a.word.localeCompare(b.word);
+    });
+
+    return results;
+  }
+
+  const MIN_DEPTH   = 1;
+  const MAX_DEPTH   = 8;
+  const MIN_MATCHES = 2;
+
+  function autoDetectDepth(queryWord) {
+    const qp = getPhonetics(queryWord);
+    if (!qp) return MIN_DEPTH;
+    for (let d = Math.min(MAX_DEPTH, qp.tokens.length); d >= MIN_DEPTH; d--) {
+      if (findRhymes(queryWord, d).length >= MIN_MATCHES) return d;
+    }
+    return MIN_DEPTH;
+  }
+
+  function getAvailableDepths(queryWord) {
+    const qp = getPhonetics(queryWord);
+    if (!qp) return [];
+    const depths = [];
+    for (let d = MIN_DEPTH; d <= Math.min(MAX_DEPTH, qp.tokens.length); d++) {
+      const count = findRhymes(queryWord, d).length;
+      if (count > 0) {
+        depths.push({
+          depth: d,
+          phoneticSuffix: getPhoneticSuffix(qp.tokens, d),
+          devaSuffix:     getDevaSuffix(queryWord, d),
+          count,
+        });
+      }
+    }
+    return depths;
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SECTION 5 — RENDERING
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  function escapeHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function truncate(str, n) {
+    return str.length > n ? str.slice(0, n) + '…' : str;
+  }
+
+  // Render word with the rhyming suffix highlighted.
+  // Split on Devanagari clusters to avoid breaking conjuncts.
+  function renderWord(word, depth) {
+    const { clusterTokenCounts, clusters } = getPhonetics(word);
+    const startIdx = getSuffixStartCluster(clusterTokenCounts, depth);
+    const stem   = clusters.slice(0, startIdx).join('');
+    const suffix = clusters.slice(startIdx).join('');
+    if (!stem) return `<span class="rhyme-suffix">${escapeHtml(suffix)}</span>`;
+    return `${escapeHtml(stem)}<span class="rhyme-suffix">${escapeHtml(suffix)}</span>`;
+  }
+
+  let currentDepth    = null;
+  let currentQuery    = '';
+  let availableDepths = [];
+
+  function renderDepthPills(queryWord) {
+    availableDepths = getAvailableDepths(queryWord);
+    depthPills.innerHTML = availableDepths.map(({ depth, devaSuffix, phoneticSuffix, count }) => `
+      <button
+        class="rd-depth-pill${depth === currentDepth ? ' active' : ''}"
+        data-depth="${depth}"
+        title="Phonetic: -${escapeHtml(phoneticSuffix)}"
+      >
+        <span class="pill-deva">${escapeHtml(devaSuffix)}</span>
+        <span class="pill-phon">-${escapeHtml(phoneticSuffix)}</span>
+        <span class="pill-count">${count}</span>
+      </button>
+    `).join('');
+
+    depthPills.querySelectorAll('.rd-depth-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentDepth = parseInt(btn.dataset.depth, 10);
+        renderResults(currentQuery);
+        depthPills.querySelectorAll('.rd-depth-pill').forEach(b =>
+          b.classList.toggle('active', parseInt(b.dataset.depth, 10) === currentDepth)
+        );
+      });
+    });
+
+    depthBar.style.display = availableDepths.length > 0 ? 'flex' : 'none';
+  }
+
+  function renderResults(queryWord) {
+    if (!queryWord) { showEmpty(); return; }
+
+    const results  = findRhymes(queryWord, currentDepth);
+    const qp       = getPhonetics(queryWord);
+    const suffix   = getPhoneticSuffix(qp.tokens, currentDepth);
+    const devaSuf  = getDevaSuffix(queryWord, currentDepth);
+
+    if (results.length === 0) {
+      resultsEl.innerHTML = '';
+      statsEl.innerHTML   = '';
+      noResultsTxt.textContent = `"${queryWord}" की तुक नहीं मिली`;
+      noResultsEl.classList.remove('hidden');
+      emptyEl.classList.add('hidden');
+      return;
+    }
+
+    noResultsEl.classList.add('hidden');
+    emptyEl.classList.add('hidden');
+
+    statsEl.innerHTML = `
+      <span>${results.length} तुक / ${results.length} rhyme${results.length !== 1 ? 's' : ''}</span>
+      <span class="stats-dot">·</span>
+      <span class="stats-suffix">
+        <span class="stats-deva" title="Devanagari ending">${escapeHtml(devaSuf)}</span>
+        <span class="stats-phon" title="How it sounds">-${escapeHtml(suffix)}</span>
+      </span>
+    `;
+
+    // Group by Devanagari spelling of the ending
+    // (Homophones like ण and न will now appear in the same group
+    //  because they match phonetically — but may be in separate sub-groups
+    //  by spelling, which lets poets see both spellings clearly)
+    const groups = new Map();
+    for (const r of results) {
+      const key = getDevaSuffix(r.word, currentDepth);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(r);
+    }
+
+    let html = '';
+    for (const [groupDeva, words] of groups.entries()) {
+      html += `
+        <div class="rd-group">
+          <div class="rd-group-heading">
+            <span class="group-ending-deva">${escapeHtml(groupDeva)}</span>
+            <span class="rd-group-count">${words.length}</span>
+          </div>
+          ${words.map(({ word, refs }) => `
+            <div class="rd-card">
+              <div class="rd-card-accent"></div>
+              <div class="rd-card-body">
+                <div class="rd-card-left">
+                  <div class="rd-word">${renderWord(word, currentDepth)}</div>
+                  <div class="rd-sources">
+                    ${refs.map(ref => `
+                      <a href="${ref.url}" class="rd-source-tag" title="${escapeHtml(ref.title)}">
+                        ${escapeHtml(truncate(ref.title, 22))}
+                        ${ref.poet ? `<span class="poet-name">— ${escapeHtml(ref.poet)}</span>` : ''}
+                      </a>
+                    `).join('')}
+                  </div>
+                </div>
+                <div class="rd-card-right">
+                  <span class="rd-ending-badge">${escapeHtml(getDevaSuffix(word, currentDepth))}</span>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    resultsEl.innerHTML = html;
+  }
+
+  function showEmpty() {
+    resultsEl.innerHTML = '';
+    statsEl.innerHTML   = '';
+    emptyEl.classList.remove('hidden');
+    noResultsEl.classList.add('hidden');
+    depthBar.style.display = 'none';
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SECTION 6 — EVENTS & INIT
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  let debounceTimer = null;
+
+  function runSearch(raw) {
+    const query = cleanWord(raw.trim());
+    currentQuery = query;
+    clearBtn.style.display = raw.length > 0 ? 'flex' : 'none';
+    if (!query || !/[\u0900-\u097F]/.test(query)) { showEmpty(); return; }
+    currentDepth = autoDetectDepth(query);
+    renderDepthPills(query);
+    renderResults(query);
+  }
+
+  inputEl.addEventListener('input', function () {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => runSearch(this.value), 120);
+  });
+
+  clearBtn.addEventListener('click', function () {
+    inputEl.value = '';
+    inputEl.focus();
+    showEmpty();
+    this.style.display = 'none';
+  });
+
+  document.querySelectorAll('.rd-example-chip').forEach(chip => {
+    chip.addEventListener('click', function () {
+      inputEl.value = this.dataset.word;
+      inputEl.focus();
+      runSearch(this.dataset.word);
+    });
+  });
+
+  // Support ?q= URL parameter
+  const qParam = new URLSearchParams(window.location.search).get('q');
+  if (qParam) { inputEl.value = qParam; runSearch(qParam); }
+
+})();
+
+
+================================================================
+FILE: ./static/js/search.js
+================================================================
+
+// ============================================
+// Braj Kavya Kosha — Search Feature
+// Powered by Fuse.js (fuzzy search with Unicode/Hindi support)
+// ============================================
+
+(function () {
+  // ── Only runs on the /search/ page ─────────────────────────────────────────
+  const searchInput   = document.getElementById('search-input');
+  const searchClear   = document.getElementById('search-clear');
+  const resultsEl     = document.getElementById('search-results');
+  const statsEl       = document.getElementById('search-stats');
+  const emptyEl       = document.getElementById('search-empty');
+  const noResultsEl   = document.getElementById('search-no-results');
+  const noResultsText = document.getElementById('search-no-results-text');
+  const filterBtns    = document.querySelectorAll('.filter-btn');
+
+  if (!searchInput) return; // Not on the search page
+
+  let fuse        = null;
+  let allData     = [];
+  let currentFilter = 'all';
+  let debounceTimer = null;
+
+  // ── Fuse.js config ──────────────────────────────────────────────────────────
+  // Keys and their weights: higher weight = more relevant when matched
+  const FUSE_OPTIONS = {
+    includeScore:     true,
+    includeMatches:   true,
+    threshold:        0.35,   // 0 = exact match only, 1 = match anything
+    ignoreLocation:   true,   // Important: Hindi words can be anywhere in the body
+    minMatchCharLength: 2,
+    keys: [
+      { name: 'title',  weight: 4.0 },  // poem/poet name — highest priority
+      { name: 'poet',   weight: 3.0 },  // poet name on a poem entry
+      { name: 'themes', weight: 2.0 },  // theme tags
+      { name: 'form',   weight: 1.5 },  // poetic form (दोहा, पद, etc.)
+      { name: 'region', weight: 1.5 },  // poet's region
+      { name: 'body',   weight: 1.0 },  // poem/bio text (truncated)
+    ],
+  };
+
+  // ── Load the search index ───────────────────────────────────────────────────
+  async function loadIndex() {
+    try {
+      const url = window.SEARCH_INDEX_URL || '/index.json';
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('Failed to load search index');
+      allData = await res.json();
+      fuse = new Fuse(allData, FUSE_OPTIONS);
+
+      // If there's a query param already (e.g. from header search bar redirect)
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get('q');
+      if (q) {
+        searchInput.value = q;
+        runSearch(q);
+      }
+    } catch (err) {
+      console.error('Search index error:', err);
+      statsEl.textContent = 'खोज अनुक्रमणिका लोड नहीं हो सकी / Could not load search index.';
+    }
+  }
+
+  // ── Run search ──────────────────────────────────────────────────────────────
+  function runSearch(query) {
+    query = query.trim();
+
+    // Clear button visibility
+    searchClear.style.display = query.length > 0 ? 'flex' : 'none';
+
+    if (!query) {
+      showEmpty();
+      updateURL('');
+      return;
+    }
+
+    if (!fuse) {
+      statsEl.textContent = 'लोड हो रहा है... / Loading...';
+      return;
+    }
+
+    let results = fuse.search(query);
+
+    // Apply filter
+    if (currentFilter !== 'all') {
+      results = results.filter(r => r.item.type === currentFilter);
+    }
+
+    updateURL(query);
+    renderResults(results, query);
+  }
+
+  // ── Render results ──────────────────────────────────────────────────────────
+  function renderResults(results, query) {
+    emptyEl.classList.add('hidden');
+
+    if (results.length === 0) {
+      resultsEl.innerHTML = '';
+      statsEl.innerHTML = '';
+      noResultsText.textContent = `"${query}" के लिए कोई परिणाम नहीं मिला`;
+      noResultsEl.classList.remove('hidden');
+      return;
+    }
+
+    noResultsEl.classList.add('hidden');
+
+    // Stats bar
+    const poemCount = results.filter(r => r.item.type === 'poem').length;
+    const poetCount = results.filter(r => r.item.type === 'poet').length;
+    let statsText = `${results.length} परिणाम`;
+    if (poemCount && poetCount) statsText += ` (${poemCount} कविताएँ, ${poetCount} कवि)`;
+    else if (poemCount)         statsText += ` कविताएँ`;
+    else if (poetCount)         statsText += ` कवि`;
+    statsEl.innerHTML = `<span>${statsText}</span>`;
+
+    // Render cards
+    resultsEl.innerHTML = results.map(({ item, matches }) => {
+      if (item.type === 'poem') return renderPoemResult(item, matches, query);
+      if (item.type === 'poet') return renderPoetResult(item, matches, query);
+      return '';
+    }).join('');
+  }
+
+  function renderPoemResult(item, matches, query) {
+    const themes = (item.themes || [])
+      .slice(0, 3)
+      .map(t => `<span class="theme-tag mini">${t}</span>`)
+      .join('');
+
+    // Try to find a highlighted snippet from the body
+    const bodySnippet = getBodySnippet(item.body, query, matches);
+
+    return `
+      <a href="${item.url}" class="search-result-card search-result-poem">
+        <div class="result-type-badge poem-badge">कविता</div>
+        <h3 class="result-title">${highlight(item.title, query)}</h3>
+        ${item.poet ? `<p class="result-poet">✍ ${highlight(item.poet, query)}</p>` : ''}
+        ${item.form ? `<p class="result-form">📜 ${item.form}</p>` : ''}
+        ${themes ? `<div class="result-themes">${themes}</div>` : ''}
+        ${bodySnippet ? `<p class="result-snippet">${bodySnippet}</p>` : ''}
+      </a>
+    `;
+  }
+
+  function renderPoetResult(item, matches, query) {
+    const bodySnippet = getBodySnippet(item.body, query, matches);
+
+    return `
+      <a href="${item.url}" class="search-result-card search-result-poet">
+        <div class="result-type-badge poet-badge">कवि</div>
+        <h3 class="result-title">${highlight(item.title, query)}</h3>
+        ${item.dates  ? `<p class="result-meta">📅 ${item.dates}</p>` : ''}
+        ${item.region ? `<p class="result-meta">📍 ${item.region}</p>` : ''}
+        ${bodySnippet ? `<p class="result-snippet">${bodySnippet}</p>` : ''}
+      </a>
+    `;
+  }
+
+  // ── Highlight matched query in text ─────────────────────────────────────────
+  function highlight(text, query) {
+    if (!text || !query) return text;
+    // Simple case-insensitive highlight — works for Hindi and English
+    const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`(${escaped})`, 'gi');
+    return text.replace(re, '<mark>$1</mark>');
+  }
+
+  // ── Get a relevant body snippet around the matched text ─────────────────────
+  function getBodySnippet(body, query, matches) {
+    if (!body) return '';
+
+    // Try to find a body match from Fuse
+    const bodyMatch = (matches || []).find(m => m.key === 'body');
+    if (bodyMatch && bodyMatch.indices && bodyMatch.indices.length > 0) {
+      const [start] = bodyMatch.indices[0];
+      const snippetStart = Math.max(0, start - 40);
+      const snippetEnd   = Math.min(body.length, start + 120);
+      let snippet = body.slice(snippetStart, snippetEnd);
+      if (snippetStart > 0) snippet = '…' + snippet;
+      if (snippetEnd < body.length) snippet = snippet + '…';
+      return highlight(snippet, query);
+    }
+
+    // Fallback: first 120 chars
+    return body.slice(0, 120) + (body.length > 120 ? '…' : '');
+  }
+
+  // ── Show empty state ─────────────────────────────────────────────────────────
+  function showEmpty() {
+    resultsEl.innerHTML = '';
+    statsEl.innerHTML   = '';
+    noResultsEl.classList.add('hidden');
+    emptyEl.classList.remove('hidden');
+  }
+
+  // ── Update URL so search is shareable/bookmarkable ──────────────────────────
+  function updateURL(query) {
+    const url = query
+      ? `${window.location.pathname}?q=${encodeURIComponent(query)}`
+      : window.location.pathname;
+    window.history.replaceState({}, '', url);
+  }
+
+  // ── Events ───────────────────────────────────────────────────────────────────
+  searchInput.addEventListener('input', function () {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => runSearch(this.value), 150);
+  });
+
+  searchClear.addEventListener('click', function () {
+    searchInput.value = '';
+    searchInput.focus();
+    showEmpty();
+    updateURL('');
+    this.style.display = 'none';
+  });
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      currentFilter = this.dataset.filter;
+      runSearch(searchInput.value);
+    });
+  });
+
+  // ── Init ─────────────────────────────────────────────────────────────────────
+  loadIndex();
+
+})();
+
+
+// ============================================
+// Header search bar (runs on ALL pages)
+// ============================================
+(function () {
+  const headerForm = document.getElementById('header-search-form');
+  if (!headerForm) return;
+
+  headerForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const q = document.getElementById('header-search-input').value.trim();
+    if (q) {
+      window.location.href = `/search/?q=${encodeURIComponent(q)}`;
+    }
+  });
+
+  // Allow pressing Enter in the input
+  const headerInput = document.getElementById('header-search-input');
+  if (headerInput) {
+    headerInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        headerForm.dispatchEvent(new Event('submit'));
+      }
+    });
+  }
+})();
+

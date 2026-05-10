@@ -18,11 +18,27 @@
         {{ end }}
       </div>
     {{ end }}
+
+    <!-- ── FAVOURITE BUTTON ── -->
+    <button
+      class="fav-btn"
+      data-url="{{ .Permalink }}"
+      data-title="{{ .Title }}"
+      data-type="poem"
+      title="पसंदीदा में जोड़ें / Add to favourites"
+    >
+      <span class="fav-heart">♡</span>
+      <span class="lang-hi">पसंदीदा</span>
+      <span class="lang-en">Favourite</span>
+    </button>
+
   </header>
+
   <div class="poem-body" id="poem-text">
     {{ .Content }}
   </div>
-  {{/* ── Audio / Recitation Section ─────────────────────────── */}}
+
+  {{/* ── Audio / Recitation Section ── */}}
   {{ if .Params.youtube_id }}
     <section class="poem-audio">
       <h3>पाठ सुनें <span class="en">Listen</span></h3>
@@ -58,6 +74,7 @@
       </a>
     </div>
   {{ end }}
+
   {{ with .Params.notes }}
   <section class="poem-notes">
     <h3>टिप्पणी <span class="en">Notes</span></h3>
