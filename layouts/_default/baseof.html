@@ -36,6 +36,7 @@
       <span class="logo-en">{{ .Site.Params.siteNameEn }}</span>
     </a>
 
+    <!-- Desktop nav (hidden on mobile) -->
     <nav class="main-nav">
       <a href="/poems/">
         <span class="lang-hi">कविताएँ</span>
@@ -87,7 +88,7 @@
       </div>
     </nav>
 
-    <!-- Header search bar -->
+    <!-- Header search bar (desktop) -->
     <div class="header-search" id="header-search-form">
       <div class="header-search-wrap">
         <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -103,8 +104,96 @@
       </div>
     </div>
 
+    <!-- Hamburger button (mobile only) -->
+    <button
+      class="hamburger"
+      id="hamburger-btn"
+      aria-expanded="false"
+      aria-label="Open menu"
+    >
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+    </button>
+
   </div>
 </header>
+
+<!-- ════════════════════════════════════════════════════
+     MOBILE NAV OVERLAY + DRAWER
+     ════════════════════════════════════════════════════ -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+
+  <div class="mobile-nav-header">
+    <span class="mobile-nav-title">ब्रज काव्यलोक</span>
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-nav-links">
+    <a href="/poems/" class="mobile-nav-link">
+      <span class="mnl-icon">📜</span>
+      <span class="lang-hi">कविताएँ</span>
+      <span class="lang-en">Poems</span>
+    </a>
+    <a href="/poets/" class="mobile-nav-link">
+      <span class="mnl-icon">✍</span>
+      <span class="lang-hi">कवि</span>
+      <span class="lang-en">Poets</span>
+    </a>
+    <a href="/themes/" class="mobile-nav-link">
+      <span class="mnl-icon">🏷</span>
+      <span class="lang-hi">विषय</span>
+      <span class="lang-en">Themes</span>
+    </a>
+    <a href="/collections/" class="mobile-nav-link">
+      <span class="mnl-icon">📚</span>
+      <span class="lang-hi">संग्रह</span>
+      <span class="lang-en">Collections</span>
+    </a>
+    <a href="/tools/meter-analyzer/" class="mobile-nav-link">
+      <span class="mnl-icon">◎</span>
+      <span class="lang-hi">छंद विश्लेषक</span>
+      <span class="lang-en">Meter Analyzer</span>
+    </a>
+    <a href="/tools/rhyme-dictionary/" class="mobile-nav-link">
+      <span class="mnl-icon">◈</span>
+      <span class="lang-hi">तुक शब्दकोश</span>
+      <span class="lang-en">Rhyme Dictionary</span>
+    </a>
+    <a href="/search/" class="mobile-nav-link">
+      <span class="mnl-icon">🔍</span>
+      <span class="lang-hi">खोज</span>
+      <span class="lang-en">Search</span>
+    </a>
+    <a href="/favourites/" class="mobile-nav-link">
+      <span class="mnl-icon">♡</span>
+      <span class="lang-hi">पसंदीदा</span>
+      <span class="lang-en">Favourites</span>
+    </a>
+  </nav>
+
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle mobile-lang-toggle" id="mobile-lang-toggle" onclick="toggleLang()">English</button>
+
+    <!-- Mobile sign in / user info -->
+    <button class="auth-login-btn" id="mobile-auth-login-btn" style="margin-top:0.75rem;width:100%;justify-content:center;">
+      <span>♡</span>
+      <span class="lang-hi">लॉग इन</span>
+      <span class="lang-en">Sign In</span>
+    </button>
+    <div class="auth-user-menu" id="mobile-auth-user-menu" style="margin-top:0.75rem;margin-left:0;justify-content:center;">
+      <div class="auth-user-avatar" id="mobile-auth-user-avatar">?</div>
+      <span class="auth-user-name" id="mobile-auth-user-name"></span>
+      <button class="auth-logout-btn" id="mobile-auth-logout-btn">
+        <span class="lang-hi">बाहर</span>
+        <span class="lang-en">Sign Out</span>
+      </button>
+    </div>
+  </div>
+
+</div>
 
 <!-- ════════════════════════════════════════════════════
      WORD TOOLTIP (dictionary lookup)
@@ -124,10 +213,8 @@
      ════════════════════════════════════════════════════ -->
 <div class="auth-modal-wrap hidden" id="auth-modal-wrap">
 
-  <!-- Dark overlay — click to close -->
   <div id="auth-modal-overlay"></div>
 
-  <!-- Modal card -->
   <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
 
     <button class="auth-modal-close" id="auth-modal-close" aria-label="Close">✕</button>
@@ -142,9 +229,7 @@
       <span class="lang-en">Sign in to save your favourite poems and poets</span>
     </p>
 
-    <!-- Google sign-in -->
     <button class="auth-google-btn" id="auth-google-btn">
-      <!-- Google G logo -->
       <svg class="auth-google-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
         <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -155,10 +240,8 @@
       Continue with Google
     </button>
 
-    <!-- Divider -->
     <div class="auth-divider"><span>or continue with email</span></div>
 
-    <!-- Email magic link -->
     <input
       type="email"
       id="auth-email-input"
@@ -171,7 +254,6 @@
       <span class="lang-en">Send Login Link</span>
     </button>
 
-    <!-- Status message -->
     <p class="auth-message" id="auth-message"></p>
 
   </div>
@@ -206,6 +288,59 @@
 <script src="/js/fuse.min.js"></script>
 <script src="/js/search.js"></script>
 <script src="/js/supabase-auth.js"></script>
+
+<!-- Mobile nav script -->
+<script>
+(function () {
+  var hamburger = document.getElementById('hamburger-btn');
+  var nav       = document.getElementById('mobile-nav');
+  var overlay   = document.getElementById('mobile-nav-overlay');
+  var closeBtn  = document.getElementById('mobile-nav-close');
+
+  function openNav() {
+    nav.classList.add('is-open');
+    overlay.classList.add('is-open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    nav.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // prevent background scroll
+  }
+
+  function closeNav() {
+    nav.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    nav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger) hamburger.addEventListener('click', openNav);
+  if (closeBtn)  closeBtn.addEventListener('click', closeNav);
+  if (overlay)   overlay.addEventListener('click', closeNav);
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+
+  // Close drawer when a nav link is tapped
+  var links = document.querySelectorAll('.mobile-nav-link');
+  links.forEach(function (link) {
+    link.addEventListener('click', closeNav);
+  });
+
+  // Wire up the mobile login/logout buttons to the same auth functions
+  var mobileLoginBtn  = document.getElementById('mobile-auth-login-btn');
+  var mobileLogoutBtn = document.getElementById('mobile-auth-logout-btn');
+  if (mobileLoginBtn)  mobileLoginBtn.addEventListener('click', function () {
+    closeNav();
+    if (window.BrajAuth) window.BrajAuth.openModal();
+  });
+  if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', function () {
+    closeNav();
+    if (window.BrajAuth) window.BrajAuth.getClient().auth.signOut();
+  });
+})();
+</script>
 
 <!-- YouTube IFrame API + Custom Player -->
 <script src="https://www.youtube.com/iframe_api"></script>
