@@ -1,6 +1,8 @@
 // ============================================
 // Braj Awadhi Kavyalok — Auth & Favourites
 // Powered by Supabase
+// Favourites cached in sessionStorage — only
+// one Supabase fetch per browsing session.
 // ============================================
 
 (function () {
@@ -11,18 +13,51 @@
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
   let currentUser    = null;
-  let userFavourites = new Set(); // stores item_url strings
+  let userFavourites = new Set();
 
   function $(id) { return document.getElementById(id); }
 
+  // ── SESSION CACHE ─────────────────────────────────────────────────────────
+  // Favourites are stored in sessionStorage after the first fetch.
+  // sessionStorage is cleared automatically when the browser tab is closed,
+  // so each new browsing session gets a fresh fetch. Within a session,
+  // all pages share the same cached list — zero extra Supabase calls.
+
+  function cacheKey(userId) {
+    return 'braj_favs_' + userId;
+  }
+
+  function readCache(userId) {
+    try {
+      const raw = sessionStorage.getItem(cacheKey(userId));
+      if (!raw) return null;
+      return new Set(JSON.parse(raw));
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeCache(userId, favouriteSet) {
+    try {
+      sessionStorage.setItem(
+        cacheKey(userId),
+        JSON.stringify([...favouriteSet])
+      );
+    } catch (e) {
+      // sessionStorage full or unavailable — fail silently
+    }
+  }
+
+  function clearCache(userId) {
+    if (userId) sessionStorage.removeItem(cacheKey(userId));
+  }
+
   // ── INITIALISE ────────────────────────────────────────────────────────────
   async function init() {
-    // Check for an existing login session
     const { data: { session } } = await sb.auth.getSession();
     if (session?.user) await onSignedIn(session.user);
     else               onSignedOut();
 
-    // Listen for login / logout events (including OAuth redirect return)
     sb.auth.onAuthStateChange(async (_event, session) => {
       if (session?.user) await onSignedIn(session.user);
       else               onSignedOut();
@@ -33,14 +68,12 @@
   async function onSignedIn(user) {
     currentUser = user;
 
-    // Work out a display name and initial
     const name    = user.user_metadata?.full_name
                  || user.user_metadata?.name
                  || user.email?.split('@')[0]
                  || 'User';
     const initial = name.charAt(0).toUpperCase();
 
-    // Update header UI
     const nameEl   = $('auth-user-name');
     const avatarEl = $('auth-user-avatar');
     const loginBtn = $('auth-login-btn');
@@ -51,7 +84,16 @@
     if (loginBtn) loginBtn.style.display = 'none';
     if (userMenu) userMenu.style.display = 'flex';
 
-    // Load favourites then refresh all heart buttons on the page
+    // Mirror state in mobile nav too
+    const mobileNameEl   = $('mobile-auth-user-name');
+    const mobileAvatarEl = $('mobile-auth-user-avatar');
+    const mobileLoginBtn = $('mobile-auth-login-btn');
+    const mobileUserMenu = $('mobile-auth-user-menu');
+    if (mobileNameEl)   mobileNameEl.textContent   = name;
+    if (mobileAvatarEl) mobileAvatarEl.textContent = initial;
+    if (mobileLoginBtn) mobileLoginBtn.style.display = 'none';
+    if (mobileUserMenu) mobileUserMenu.style.display = 'flex';
+
     await loadFavourites();
     updateFavBtns();
     closeModal();
@@ -59,6 +101,9 @@
 
   // ── SIGNED OUT ────────────────────────────────────────────────────────────
   function onSignedOut() {
+    // Clear the session cache before wiping currentUser
+    if (currentUser) clearCache(currentUser.id);
+
     currentUser = null;
     userFavourites.clear();
 
@@ -67,35 +112,50 @@
     if (loginBtn) loginBtn.style.display = 'flex';
     if (userMenu) userMenu.style.display = 'none';
 
+    const mobileLoginBtn = $('mobile-auth-login-btn');
+    const mobileUserMenu = $('mobile-auth-user-menu');
+    if (mobileLoginBtn) mobileLoginBtn.style.display = 'flex';
+    if (mobileUserMenu) mobileUserMenu.style.display = 'none';
+
     updateFavBtns();
   }
 
-  // ── LOAD FAVOURITES FROM DATABASE ─────────────────────────────────────────
+  // ── LOAD FAVOURITES ───────────────────────────────────────────────────────
+  // Checks the session cache first.
+  // Only hits Supabase if the cache is empty (i.e. first page of this session).
   async function loadFavourites() {
     if (!currentUser) return;
+
+    // 1. Try cache
+    const cached = readCache(currentUser.id);
+    if (cached) {
+      userFavourites = cached;
+      return; // ← no Supabase call needed
+    }
+
+    // 2. Cache miss — fetch from Supabase (happens once per session)
     const { data, error } = await sb
       .from('favourites')
       .select('item_url')
       .eq('user_id', currentUser.id);
+
     if (!error && data) {
       userFavourites = new Set(data.map(r => r.item_url));
+      writeCache(currentUser.id, userFavourites); // save for remaining pages
     }
   }
 
-  // ── TOGGLE A FAVOURITE (add or remove) ───────────────────────────────────
+  // ── TOGGLE A FAVOURITE ────────────────────────────────────────────────────
   async function toggleFavourite(url, title, type) {
-    // Not logged in — open the login modal instead
     if (!currentUser) { openModal(); return; }
 
     if (userFavourites.has(url)) {
-      // Already a favourite — remove it
       await sb.from('favourites')
         .delete()
         .eq('user_id', currentUser.id)
         .eq('item_url', url);
       userFavourites.delete(url);
     } else {
-      // Add as favourite
       await sb.from('favourites').insert({
         user_id:    currentUser.id,
         item_url:   url,
@@ -105,6 +165,8 @@
       userFavourites.add(url);
     }
 
+    // Keep cache in sync so navigating to another page stays accurate
+    writeCache(currentUser.id, userFavourites);
     updateFavBtns();
   }
 
@@ -121,12 +183,11 @@
     });
   }
 
-  // ── MODAL OPEN / CLOSE ────────────────────────────────────────────────────
+  // ── MODAL ─────────────────────────────────────────────────────────────────
   function openModal() {
     const wrap = $('auth-modal-wrap');
     if (!wrap) return;
     wrap.classList.remove('hidden');
-    // Reset state
     const msg        = $('auth-message');
     const emailInput = $('auth-email-input');
     if (msg)        { msg.textContent = ''; msg.style.color = ''; }
@@ -138,7 +199,7 @@
     if (wrap) wrap.classList.add('hidden');
   }
 
-  // ── SIGN IN WITH GOOGLE ───────────────────────────────────────────────────
+  // ── GOOGLE SIGN IN ────────────────────────────────────────────────────────
   async function signInWithGoogle() {
     const { error } = await sb.auth.signInWithOAuth({
       provider: 'google',
@@ -150,7 +211,7 @@
     }
   }
 
-  // ── SIGN IN WITH EMAIL (magic link) ──────────────────────────────────────
+  // ── EMAIL MAGIC LINK ──────────────────────────────────────────────────────
   async function signInWithEmail() {
     const emailInput = $('auth-email-input');
     const emailBtn   = $('auth-email-btn');
@@ -185,7 +246,7 @@
     await sb.auth.signOut();
   }
 
-  // ── BIND ALL EVENT LISTENERS ──────────────────────────────────────────────
+  // ── EVENT LISTENERS ───────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', function () {
     const loginBtn   = $('auth-login-btn');
     const closeBtn   = $('auth-modal-close');
@@ -205,12 +266,10 @@
       if (e.key === 'Enter') signInWithEmail();
     });
 
-    // Escape key closes modal
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeModal();
     });
 
-    // Favourite button clicks — event delegation so it works on any page
     document.addEventListener('click', function (e) {
       const btn = e.target.closest('.fav-btn');
       if (!btn) return;
@@ -218,11 +277,10 @@
       toggleFavourite(btn.dataset.url, btn.dataset.title, btn.dataset.type);
     });
 
-    // Start
     init();
   });
 
-  // ── EXPOSE API FOR THE FAVOURITES PAGE ───────────────────────────────────
+  // ── PUBLIC API (used by favourites page) ──────────────────────────────────
   window.BrajAuth = {
     getClient : () => sb,
     getUser   : () => currentUser,
