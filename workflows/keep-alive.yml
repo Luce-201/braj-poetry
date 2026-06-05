@@ -1,0 +1,15 @@
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    - cron: '0 8 * * *'   # runs every day at 8am UTC
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        run: |
+          curl -s https://xftdcucvvgawcozowyew.supabase.co/rest/v1/ \
+            -H "apikey: sb_publishable_S9uqhD-0Y700NX-mXK9vpA_Cnjm9XFQ" \
+            -o /dev/null
