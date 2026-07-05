@@ -6,7 +6,6 @@
   <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Params.siteName }}</title>
   <meta name="description" content="{{ .Site.Params.description }}">
   
-  <!-- Apply saved language BEFORE render to prevent flash -->
   <script>
     (function() {
       var lang = localStorage.getItem('braj_lang') || 'hi';
@@ -19,15 +18,9 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/search.css">
   <link rel="stylesheet" href="/css/auth.css">
-
-  <!-- Supabase JS client -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════════════
-     HEADER
-     ════════════════════════════════════════════════════ -->
 <header class="site-header">
   <div class="header-inner">
 
@@ -36,7 +29,6 @@
       <span class="logo-en">{{ .Site.Params.siteNameEn }}</span>
     </a>
 
-    <!-- Desktop nav (hidden on mobile) -->
     <nav class="main-nav">
       <a href="/poems/">
         <span class="lang-hi">कविताएँ</span>
@@ -63,17 +55,14 @@
         <span class="lang-en">Rhyme Dictionary</span>
       </a>
 
-      <!-- Language toggle -->
       <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">English</button>
 
-      <!-- ── LOGIN BUTTON (shown when logged out) ── -->
       <button class="auth-login-btn" id="auth-login-btn">
         <span>♡</span>
         <span class="lang-hi">लॉग इन</span>
         <span class="lang-en">Sign In</span>
       </button>
 
-      <!-- ── USER MENU (shown when logged in) ── -->
       <div class="auth-user-menu" id="auth-user-menu">
         <div class="auth-user-avatar" id="auth-user-avatar">?</div>
         <span class="auth-user-name" id="auth-user-name"></span>
@@ -88,7 +77,6 @@
       </div>
     </nav>
 
-    <!-- Header search bar (desktop) -->
     <div class="header-search" id="header-search-form">
       <div class="header-search-wrap">
         <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -104,7 +92,6 @@
       </div>
     </div>
 
-    <!-- Hamburger button (mobile only) -->
     <button
       class="hamburger"
       id="hamburger-btn"
@@ -119,9 +106,6 @@
   </div>
 </header>
 
-<!-- ════════════════════════════════════════════════════
-     MOBILE NAV OVERLAY + DRAWER
-     ════════════════════════════════════════════════════ -->
 <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
 
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
@@ -177,7 +161,6 @@
   <div class="mobile-nav-footer">
     <button class="lang-toggle mobile-lang-toggle" id="mobile-lang-toggle" onclick="toggleLang()">English</button>
 
-    <!-- Mobile sign in / user info -->
     <button class="auth-login-btn" id="mobile-auth-login-btn" style="margin-top:0.75rem;width:100%;justify-content:center;">
       <span>♡</span>
       <span class="lang-hi">लॉग इन</span>
@@ -195,9 +178,6 @@
 
 </div>
 
-<!-- ════════════════════════════════════════════════════
-     WORD TOOLTIP (dictionary lookup)
-     ════════════════════════════════════════════════════ -->
 <div id="word-tooltip" class="word-tooltip hidden">
   <div class="tooltip-header">
     <span class="tooltip-word"></span>
@@ -208,9 +188,6 @@
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════
-     AUTH MODAL
-     ════════════════════════════════════════════════════ -->
 <div class="auth-modal-wrap hidden" id="auth-modal-wrap">
 
   <div id="auth-modal-overlay"></div>
@@ -259,22 +236,15 @@
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════
-     MAIN CONTENT
-     ════════════════════════════════════════════════════ -->
 <main class="main-content">
   {{ block "main" . }}{{ end }}
 </main>
 
-<!-- ════════════════════════════════════════════════════
-     FOOTER
-     ════════════════════════════════════════════════════ -->
 <footer class="site-footer">
   <span class="lang-hi">ब्रज अवधी काव्यलोक</span>
   <span class="lang-en">Braj Awadhi Kavyalok</span>
 </footer>
 
-<!-- Dictionary data -->
 {{ $dict := index .Site.Data "dictionary" }}
 {{ if $dict }}
 <script>
@@ -282,14 +252,15 @@
 </script>
 {{ end }}
 
-<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-auth.js"></script>
+<script src="/js/favorite.js"></script>
 <script src="/js/dictionary.js"></script>
 <script src="/js/lang.js"></script>
 <script src="/js/fuse.min.js"></script>
 <script src="/js/search.js"></script>
-<script src="/js/supabase-auth.js"></script>
+<script src="/js/poem-download.js"></script>
 
-<!-- Mobile nav script -->
 <script>
 (function () {
   var hamburger = document.getElementById('hamburger-btn');
@@ -302,7 +273,7 @@
     overlay.classList.add('is-open');
     hamburger.setAttribute('aria-expanded', 'true');
     nav.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; // prevent background scroll
+    document.body.style.overflow = 'hidden';
   }
 
   function closeNav() {
@@ -317,18 +288,15 @@
   if (closeBtn)  closeBtn.addEventListener('click', closeNav);
   if (overlay)   overlay.addEventListener('click', closeNav);
 
-  // Close on Escape key
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeNav();
   });
 
-  // Close drawer when a nav link is tapped
   var links = document.querySelectorAll('.mobile-nav-link');
   links.forEach(function (link) {
     link.addEventListener('click', closeNav);
   });
 
-  // Wire up the mobile login/logout buttons to the same auth functions
   var mobileLoginBtn  = document.getElementById('mobile-auth-login-btn');
   var mobileLogoutBtn = document.getElementById('mobile-auth-logout-btn');
   if (mobileLoginBtn)  mobileLoginBtn.addEventListener('click', function () {
@@ -342,7 +310,6 @@
 })();
 </script>
 
-<!-- YouTube IFrame API + Custom Player -->
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 var ytPlayers = {};

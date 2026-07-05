@@ -19,18 +19,54 @@
       </div>
     {{ end }}
 
-    <!-- ── FAVOURITE BUTTON ── -->
-    <button
-      class="fav-btn"
-      data-url="{{ .Permalink }}"
-      data-title="{{ .Title }}"
-      data-type="poem"
-      title="पसंदीदा में जोड़ें / Add to favourites"
-    >
-      <span class="fav-heart">♡</span>
-      <span class="lang-hi">पसंदीदा</span>
-      <span class="lang-en">Favourite</span>
-    </button>
+    <!-- ── ACTION BUTTONS ROW ── -->
+    <div class="poem-actions">
+
+      <!-- Favourite button (always shown) -->
+      <button
+        class="fav-btn"
+        data-url="{{ .Permalink }}"
+        data-title="{{ .Title }}"
+        data-type="poem"
+        data-form="{{ .Params.form }}"
+        title="पसंदीदा में जोड़ें / Add to favourites"
+      >
+        <span class="fav-heart">♡</span>
+        <span class="lang-hi">पसंदीदा</span>
+        <span class="lang-en">Favourite</span>
+      </button>
+
+      <!-- Download button — only rendered for poems with 4 lines or fewer -->
+      {{/* Count non-empty lines in the poem body */}}
+      {{ $content := .Content }}
+      {{ $plainText := .Plain }}
+      {{ $lines := split (trim $plainText "\n ") "\n" }}
+      {{ $nonEmptyLines := 0 }}
+      {{ range $lines }}
+        {{ if gt (len (trim . " \t")) 0 }}
+          {{ $nonEmptyLines = add $nonEmptyLines 1 }}
+        {{ end }}
+      {{ end }}
+
+      {{ if le $nonEmptyLines 4 }}
+      <button
+        id="poem-download-btn"
+        class="poem-dl-btn"
+        title="चित्र के रूप में डाउनलोड करें / Download as image"
+      >
+        <span class="dl-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </span>
+        <span class="lang-hi">चित्र डाउनलोड करें</span>
+        <span class="lang-en">Download Image</span>
+      </button>
+      {{ end }}
+
+    </div><!-- /poem-actions -->
 
   </header>
 
@@ -82,4 +118,50 @@
   </section>
   {{ end }}
 </article>
+
+<style>
+/* ── Poem action buttons row ──────────────────────────────────────────── */
+.poem-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* ── Download button ──────────────────────────────────────────────────── */
+.poem-dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: none;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-family: var(--font-hi);
+  padding: 0.38rem 1rem;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.poem-dl-btn:hover:not(:disabled) {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+  background: rgba(232, 184, 122, 0.05);
+}
+.poem-dl-btn:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.dl-icon {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* Keep fav-btn margin consistent now that it's inside .poem-actions */
+.poem-actions .fav-btn {
+  margin-top: 0;
+}
+</style>
 {{ end }}
