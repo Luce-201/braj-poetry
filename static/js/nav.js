@@ -8,28 +8,29 @@
 
   if (!toggle || !menu) return;
 
-  // Open / close on button click
+  // Toggle dropdown on button click
   toggle.addEventListener('click', function (e) {
     e.stopPropagation();
     const isOpen = menu.classList.contains('is-open');
-    closeMenu();          // close any already-open state
+    closeMenu();
     if (!isOpen) openMenu();
   });
 
-  // Close when clicking anywhere outside
+  // Close menu when clicking anywhere outside
   document.addEventListener('click', function () {
     closeMenu();
   });
 
-  // Close on Escape
+  // Close menu on Escape key press
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeMenu();
   });
 
-  // Keyboard: allow arrow-key navigation inside the menu
+  // Keyboard accessibility: allow arrow-key navigation inside menu
   menu.addEventListener('keydown', function (e) {
     const items = Array.from(menu.querySelectorAll('a'));
     const idx   = items.indexOf(document.activeElement);
+
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       items[(idx + 1) % items.length].focus();
@@ -42,7 +43,7 @@
   function openMenu() {
     menu.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');
-    // Move focus to first item for keyboard users
+    // Focus first item for keyboard users
     const first = menu.querySelector('a');
     if (first) first.focus();
   }
