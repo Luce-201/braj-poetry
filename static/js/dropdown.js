@@ -1,42 +1,61 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const dropdownBtn = document.getElementById('tools-dropdown-btn');
-  const dropdownMenu = document.getElementById('tools-dropdown-menu');
+/* ==========================================================================
+   FILE: static/js/dropdown.js
+   PURPOSE: Universal logic for opening/closing all navigation dropdowns
+   ========================================================================== */
 
-  if (!dropdownBtn || !dropdownMenu) return;
+document.addEventListener('click', function(event) {
+    // 1. Check if the user clicked a dropdown toggle button
+    const toggle = event.target.closest('.nav-dropdown-toggle');
+    
+    // 2. If they clicked outside of ANY dropdown, close them all safely
+    if (!toggle) {
+        document.querySelectorAll('.nav-dropdown-menu.show').forEach(menu => {
+            // Only close it if they didn't click inside the open menu itself
+            if (!menu.contains(event.target)) {
+                menu.classList.remove('show');
+                if (menu.previousElementSibling) {
+                    menu.previousElementSibling.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+        return;
+    }
 
-  // Toggle on click
-  dropdownBtn.addEventListener('click', function (event) {
+    // 3. If they DID click a toggle button, execute the toggle logic
+    event.preventDefault();
     event.stopPropagation();
-    const isExpanded = dropdownBtn.getAttribute('aria-expanded') === 'true';
+    
+    const menu = toggle.nextElementSibling;
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
 
-    if (isExpanded) {
-      closeDropdown();
-    } else {
-      openDropdown();
+    // First, close any OTHER open dropdowns on the page
+    document.querySelectorAll('.nav-dropdown-menu.show').forEach(m => {
+        if (m !== menu) {
+            m.classList.remove('show');
+            if (m.previousElementSibling) {
+                m.previousElementSibling.setAttribute('aria-expanded', 'false');
+            }
+        }
+    });
+
+    // Then toggle the targeted menu
+    if (!isExpanded && menu) {
+        menu.classList.add('show');
+        toggle.setAttribute('aria-expanded', 'true');
+    } else if (menu) {
+        menu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
     }
-  });
+});
 
-  // Close when clicking outside
-  document.addEventListener('click', function (event) {
-    if (!dropdownBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-      closeDropdown();
-    }
-  });
-
-  // Close when pressing Escape key
-  document.addEventListener('keydown', function (event) {
+// 4. Accessibility: Close any open dropdowns when pressing the Escape key
+document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
-      closeDropdown();
+        document.querySelectorAll('.nav-dropdown-menu.show').forEach(menu => {
+            menu.classList.remove('show');
+            if (menu.previousElementSibling) {
+                menu.previousElementSibling.setAttribute('aria-expanded', 'false');
+            }
+        });
     }
-  });
-
-  function openDropdown() {
-    dropdownMenu.classList.add('show');
-    dropdownBtn.setAttribute('aria-expanded', 'true');
-  }
-
-  function closeDropdown() {
-    dropdownMenu.classList.remove('show');
-    dropdownBtn.setAttribute('aria-expanded', 'false');
-  }
 });
