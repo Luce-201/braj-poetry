@@ -2,79 +2,188 @@
 // Braj Awadhi Kavyalok — Auth Engine (Supabase)
 // ============================================
 (function () {
-  const SUPABASE_URL = 'https://sktwptunwlnhntwmglvw.supabase.co';
-  const SUPABASE_ANON_KEY = 'sb_publishable_w6u93KdBShe57XH0O2825g_l6RhjFz-';
+    // --- Supabase Credentials ---
+    const SUPABASE_URL = 'https://sktwptunwlnhntwmglvw.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_w6u93KdBShe57XH0O2825g_l6RhjFz-';
 
-  if (!window.supabase) {
-    console.error('Supabase SDK missing. Ensure script tag is in baseof.html');
-    return;
-  }
+    if (!window.supabase) {
+        console.error('Supabase SDK missing. Ensure script tag is in baseof.html');
+        return;
+    }
 
-  // Initialize client and attach to global window object
-  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-  window.BRAJ_SUPABASE = sb;
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    window.BRAJ_SUPABASE = sb;
+    let currentUser = null;
 
-  let currentUser = null;
+    // Helper to grab elements
+    function $(id) { return document.getElementById(id); }
 
-  const modal = document.getElementById('auth-modal');
-  const modalClose = document.getElementById('auth-modal-close');
-  const googleBtn = document.getElementById('auth-google-btn');
-  const magicForm = document.getElementById('auth-magic-form');
-  const magicInput = document.getElementById('auth-magic-email');
-  const magicStatus = document.getElementById('auth-magic-status');
+    // ── MODAL LOGIC ───────────────────────────────────────────────────────────
+    function openModal() {
+        const overlay = $('auth-modal-overlay');
+        if (!overlay) return;
+        
+        // Remove the hidden class to show the modal
+        overlay.classList.remove('auth-modal-hidden');
 
-  function openModal() {
-    if (modal) modal.classList.add('is-open');
-  }
+        // Clear out any old messages or inputs
+        const msg = $('auth-message');
+        const emailInput = $('auth-email-input');
+        if (msg) { msg.textContent = ''; msg.style.color = ''; }
+        if (emailInput) emailInput.value = '';
+    }
 
-  function closeModal() {
-    if (modal) modal.classList.remove('is-open');
-  }
+    function closeModal() {
+        const overlay = $('auth-modal-overlay');
+        if (overlay) {
+            // Add the hidden class back to hide the modal
+            overlay.classList.add('auth-modal-hidden');
+        }
+    }
 
-  if (modalClose) modalClose.addEventListener('click', closeModal);
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
+    // ── UI UPDATES ────────────────────────────────────────────────────────────
+    function updateAuthUI() {
+        const loginBtn = $('auth-login-btn');
+        const logoutBtn = $('auth-logout-btn');
+        
+        if (currentUser) {
+            // User is logged in: Hide Sign In, Show Sign Out
+            if (loginBtn) loginBtn.style.display = 'none';
+            if (logoutBtn) logoutBtn.style.display = 'inline-block';
+        } else {
+            // User is logged out: Show Sign In, Hide Sign Out
+            if (loginBtn) loginBtn.style.display = 'inline-block';
+            if (logoutBtn) logoutBtn.style.display = 'none';
+        }
+    }
+
+    // ── AUTH STATE MANAGEMENT ─────────────────────────────────────────────────
+    function onSignedIn(user) {
+        currentUser = user;
+        updateAuthUI();
+        closeModal(); // Automatically close modal upon successful login
+    }
+
+    function onSignedOut() {
+        currentUser = null;
+        updateAuthUI();
+    }
+
+    async function init() {
+        const { data: { session } } = await sb.auth.getSession();
+        if (session?.user) onSignedIn(session.user);
+        else onSignedOut();
+
+        // Listen for login/logout events happening in other tabs
+        sb.auth.onAuthStateChange((event, session) => {
+            if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+                if (session?.user) onSignedIn(session.user);
+            } else if (event === 'SIGNED_OUT') {
+                onSignedOut();
+            }
+        });
+    }
+
+    // ── SIGN IN METHODS ───────────────────────────────────────────────────────
+    async function signInWithGoogle() {
+        const { error } = await sb.auth.signInWithOAuth({
+            provider: 'google',
+            options: { redirectTo: window.location.origin }
+        });
+        if (error) {
+            const msg = $('auth-message');
+            if (msg) { 
+                msg.textContent = 'Error connecting to Google.'; 
+                msg.style.color = '#c0392b'; 
+            }
+        }
+    }
+
+    async function signInWithEmail() {
+        const emailInput = $('auth-email-input');
+        const emailBtn = $('auth-email-btn');
+        const msg = $('auth-message');
+        const email = emailInput?.value?.trim();
+
+        if (!email) {
+            if (msg) { 
+                msg.textContent = 'Please enter a valid email address.'; 
+                msg.style.color = '#c0392b'; 
+            }
+            return;
+        }
+
+        if (emailBtn) emailBtn.disabled = true;
+        if (msg) { 
+            msg.textContent = 'Sending magic link...'; 
+            msg.style.color = 'inherit'; 
+        }
+
+        const { error } = await sb.auth.signInWithOtp({
+            email: email,
+            options: { emailRedirectTo: window.location.origin }
+        });
+
+        if (emailBtn) emailBtn.disabled = false;
+
+        if (error) {
+            if (msg) { 
+                msg.textContent = error.message; 
+                msg.style.color = '#c0392b'; 
+            }
+        } else {
+            if (msg) { 
+                msg.textContent = 'Magic link sent! Check your inbox.'; 
+                msg.style.color = '#4CAF50'; 
+            }
+            if (emailInput) emailInput.value = '';
+        }
+    }
+
+    async function signOut() {
+        await sb.auth.signOut();
+    }
+
+    // ── EVENT LISTENERS ───────────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginBtn = $('auth-login-btn');
+        const closeBtn = $('auth-modal-close');
+        const overlay = $('auth-modal-overlay');
+        const googleBtn = $('auth-google-btn');
+        const emailBtn = $('auth-email-btn');
+        const logoutBtn = $('auth-logout-btn');
+
+        // Wire up clicks to our functions
+        if (loginBtn) loginBtn.addEventListener('click', openModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (googleBtn) googleBtn.addEventListener('click', signInWithGoogle);
+        if (emailBtn) emailBtn.addEventListener('click', signInWithEmail);
+        if (logoutBtn) logoutBtn.addEventListener('click', signOut);
+
+        // Allow closing the modal by clicking the dark background outside the box
+        if (overlay) {
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeModal();
+            });
+        }
+
+        // Initialize user session on load
+        init();
     });
-  }
 
-  // Google OAuth Sign In
-  if (googleBtn) {
-    googleBtn.addEventListener('click', async () => {
-      const { error } = await sb.auth.signInWithOAuth({
-        provider: 'google',
-        options: { redirectTo: window.location.href }
-      });
-      if (error && magicStatus) {
-        magicStatus.textContent = 'त्रुटि / Error: ' + error.message;
-      }
-    });
-  }
+    // ── PUBLIC API (Used by favourite.js) ─────────────────────────────────────
+    window.BrajAuth = {
+        getClient: () => sb,
+        getUser: () => currentUser,
+        openModal,
+        getFavourites: async () => {
+            if (!currentUser) return [];
+            const { data } = await sb.from('favourites')
+                .select('*')
+                .eq('user_id', currentUser.id)
+                .order('created_at', { ascending: false });
+            return data || [];
+        }
+    };
 
-  // Magic Link Sign In
-  if (magicForm) {
-    magicForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = (magicInput.value || '').trim();
-      if (!email) return;
-
-      if (magicStatus) magicStatus.textContent = 'भेजा जा रहा है... / Sending...';
-      const { error } = await sb.auth.signInWithOtp({ email });
-
-      if (error) {
-        if (magicStatus) magicStatus.textContent = 'त्रुटि / Error: ' + error.message;
-      } else {
-        if (magicStatus) magicStatus.textContent = 'लिंक भेजा गया! / Magic link sent!';
-      }
-    });
-  }
-
-  sb.auth.getSession().then((res) => {
-    currentUser = res.data.session ? res.data.session.user : null;
-  });
-
-  sb.auth.onAuthStateChange((_event, session) => {
-    currentUser = session ? session.user : null;
-    if (currentUser) closeModal();
-  });
 })();
