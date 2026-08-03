@@ -1028,8 +1028,6 @@ body {
   .main-nav { display: none; }
   .hamburger { display: flex; }
 
-  /* Hide search bar in header on mobile */
-  .header-search { display: none; }
 
   /* ── Main content ── */
   .main-content { padding: 1.25rem 1rem 3rem; }

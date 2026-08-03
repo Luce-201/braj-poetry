@@ -197,6 +197,77 @@
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────── */
 @media (max-width: 700px) {
-  .header-search { display: none; }
   .search-input-large { font-size: 1rem; padding: 0.75rem 2.75rem 0.75rem 3rem; }
+}
+
+/* ============================================
+   MOBILE SEARCH FAB (Floating Action Button)
+============================================ */
+@media (max-width: 768px) {
+    /* 1. Position the search container as a fixed element below the header */
+    .header-search {
+        display: block;
+        position: fixed;
+        top: calc(var(--header-h) + 16px); /* Just below the 56px header */
+        right: 16px;
+        z-index: 99;
+        margin-left: 0;
+    }
+
+    .header-search-wrap {
+        display: flex;
+        justify-content: flex-end; /* Keeps the expansion anchored to the right */
+    }
+
+    /* 2. The FAB State (Collapsed) */
+    .header-search-input {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border-radius: 50%;
+        background: var(--accent); /* Deep red background to stand out */
+        border: none;
+        color: transparent;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Hide the placeholder text when collapsed */
+    .header-search-input::placeholder {
+        color: transparent;
+    }
+
+    /* Center the icon perfectly in the circle */
+    .header-search-icon {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff; /* White icon for contrast against the accent color */
+        transition: all 0.3s ease;
+        z-index: 100;
+    }
+
+    /* 3. The Expanded State (When the user taps the FAB) */
+    .header-search-wrap:focus-within .header-search-input {
+        width: calc(100vw - 32px); /* Expand to full screen width minus padding */
+        border-radius: 24px;       /* Pill shape */
+        background: var(--bg-elevated);
+        border: 1px solid var(--gold-dim);
+        color: var(--text);
+        padding: 0 1rem 0 2.8rem;
+        cursor: text;
+    }
+
+    /* Bring placeholder text back */
+    .header-search-wrap:focus-within .header-search-input::placeholder {
+        color: rgba(232,184,122,0.4);
+    }
+
+    /* Move the icon back to the left side of the expanded input */
+    .header-search-wrap:focus-within .header-search-icon {
+        left: 1rem;
+        transform: translateY(-50%);
+        color: var(--gold-dim);
+    }
 }
