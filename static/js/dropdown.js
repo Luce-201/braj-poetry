@@ -1,61 +1,49 @@
 /* ==========================================================================
    FILE: static/js/dropdown.js
-   PURPOSE: Universal logic for opening/closing all navigation dropdowns
+   PURPOSE: Bulletproof explicit logic for navigation dropdowns
    ========================================================================== */
 
-document.addEventListener('click', function(event) {
-    // 1. Check if the user clicked a dropdown toggle button
-    const toggle = event.target.closest('.nav-dropdown-toggle');
-    
-    // 2. If they clicked outside of ANY dropdown, close them all safely
-    if (!toggle) {
-        document.querySelectorAll('.nav-dropdown-menu.show').forEach(menu => {
-            // Only close it if they didn't click inside the open menu itself
-            if (!menu.contains(event.target)) {
-                menu.classList.remove('show');
-                if (menu.previousElementSibling) {
-                    menu.previousElementSibling.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-        return;
-    }
-
-    // 3. If they DID click a toggle button, execute the toggle logic
+// 1. Direct function called explicitly by the Tools button HTML
+window.toggleNavDropdown = function(event) {
     event.preventDefault();
     event.stopPropagation();
     
-    const menu = toggle.nextElementSibling;
-    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    const toggleBtn = event.currentTarget;
+    const menu = toggleBtn.nextElementSibling;
+    const isShowing = menu.classList.contains('show');
 
-    // First, close any OTHER open dropdowns on the page
+    // Close any other open menus first
     document.querySelectorAll('.nav-dropdown-menu.show').forEach(m => {
-        if (m !== menu) {
-            m.classList.remove('show');
-            if (m.previousElementSibling) {
-                m.previousElementSibling.setAttribute('aria-expanded', 'false');
-            }
-        }
+        m.classList.remove('show');
+        if(m.previousElementSibling) m.previousElementSibling.setAttribute('aria-expanded', 'false');
     });
 
-    // Then toggle the targeted menu
-    if (!isExpanded && menu) {
+    // Toggle the clicked menu
+    if (!isShowing) {
         menu.classList.add('show');
-        toggle.setAttribute('aria-expanded', 'true');
-    } else if (menu) {
+        toggleBtn.setAttribute('aria-expanded', 'true');
+    } else {
         menu.classList.remove('show');
-        toggle.setAttribute('aria-expanded', 'false');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+};
+
+// 2. Global listener to close the dropdown if the user clicks anywhere else
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown-menu.show').forEach(menu => {
+            menu.classList.remove('show');
+            if(menu.previousElementSibling) menu.previousElementSibling.setAttribute('aria-expanded', 'false');
+        });
     }
 });
 
-// 4. Accessibility: Close any open dropdowns when pressing the Escape key
+// 3. Accessibility: Close when pressing Escape key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         document.querySelectorAll('.nav-dropdown-menu.show').forEach(menu => {
             menu.classList.remove('show');
-            if (menu.previousElementSibling) {
-                menu.previousElementSibling.setAttribute('aria-expanded', 'false');
-            }
+            if(menu.previousElementSibling) menu.previousElementSibling.setAttribute('aria-expanded', 'false');
         });
     }
 });

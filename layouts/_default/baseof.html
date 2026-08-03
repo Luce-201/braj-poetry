@@ -26,6 +26,7 @@
       <span class="logo-hi">{{ .Site.Params.siteName }}</span>
       <span class="logo-en">{{ .Site.Params.siteNameEn }}</span>
     </a>
+    
     <nav class="main-nav">
       <a href="/poems/">
         <span class="lang-hi">कविताएँ</span>
@@ -45,7 +46,7 @@
       </a>
 
       <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+        <button class="nav-dropdown-toggle" onclick="toggleNavDropdown(event)" aria-expanded="false" aria-haspopup="true">
           <span class="lang-hi">🛠️ उपकरण</span>
           <span class="lang-en">🛠️ Tools</span>
           <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -63,13 +64,17 @@
           </a>
         </div>
       </div>
+
       <a href="/favorites/">
         <span class="lang-hi">पसंदीदा</span>
         <span class="lang-en">Favourites</span>
       </a>
 
+      <div id="auth-slot" class="nav-auth-slot"></div>
+
       <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">English</button>
     </nav>
+    
     <div class="header-search" id="header-search-form">
       <div class="header-search-wrap">
         <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -84,8 +89,6 @@
         >
       </div>
     </div>
-
-    <div id="auth-slot"></div>
   </div>
 </header>
 

@@ -1,6 +1,5 @@
 /* ==========================================================================
    FILE: static/css/dropdown.css
-   PURPOSE: Universal styling for Tools AND Auth User Profile dropdowns
    ========================================================================== */
 
 .nav-dropdown {
@@ -85,19 +84,39 @@
 }
 
 @keyframes dropFade {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ==========================================================================
-   SAFETY FALLBACKS: Restrains Auth buttons that lost CSS styling
+   NAVIGATION AUTH BUTTON FIXES
    ========================================================================== */
+
+.nav-auth-slot {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 4px;
+}
+
+/* Forces the login button inside the nav to be small and neat */
+.nav-auth-slot .auth-login-btn {
+  background-color: transparent;
+  color: var(--text-color, inherit);
+  border: 1px solid currentColor;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-auth-slot .auth-login-btn:hover {
+  background-color: rgba(150, 150, 150, 0.1);
+}
+
+/* Safety Fallback for the big Google Button inside the Modal */
 .auth-google-btn {
   display: flex;
   align-items: center;
@@ -113,16 +132,4 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
-  font-size: 1rem;
-}
-
-.auth-login-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  border-radius: 6px;
-  background: transparent;
-  color: inherit;
-  border: 1px solid currentColor;
-  cursor: pointer;
 }
