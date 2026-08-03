@@ -855,6 +855,152 @@ body {
   margin-bottom: 1.25rem;
 }
 
+
+/* ============================================
+   AUTHENTICATION MODAL & TOOLBAR BUTTONS
+   ============================================ */
+.nav-auth-slot {
+  margin-left: 1.25rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.auth-nav-btn {
+  background: rgba(232,184,122,0.12);
+  color: var(--gold);
+  border: 1px solid rgba(232,184,122,0.3);
+  border-radius: 20px;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: var(--font-en);
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.auth-nav-btn:hover {
+  background: rgba(232,184,122,0.22);
+  color: var(--gold-light);
+}
+
+#auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-modal-hidden {
+  display: none !important;
+}
+
+.auth-modal-content {
+  background: var(--bg-card);
+  color: var(--text);
+  padding: 2.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.auth-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+.auth-close-btn:hover {
+  color: var(--text);
+}
+
+.auth-modal-content h2 {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+.auth-subtitle {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-google-btn, .auth-email-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border-light);
+  color: var(--text);
+  font-family: var(--font-en);
+  transition: border-color 0.2s, background 0.2s;
+}
+.auth-google-btn:hover, .auth-email-btn:hover {
+  border-color: var(--gold-dim);
+  background: var(--bg-elevated);
+}
+
+#auth-email-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-en);
+}
+#auth-email-input:focus {
+  outline: none;
+  border-color: var(--gold-dim);
+}
+
+.auth-divider {
+  margin: 20px 0;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.auth-divider::before, .auth-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border);
+  margin: 0 10px;
+}
+
+.auth-message {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--gold-dim);
+}
+
 /* ============================================
    RESPONSIVE — TABLET (≤900px)
    ============================================ */
