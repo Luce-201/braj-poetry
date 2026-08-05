@@ -4632,7 +4632,6 @@ FILE: ./layouts/_default/baseof.html
   <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Params.siteName }}</title>
   <meta name="description" content="{{ .Site.Params.description }}">
   
-  <!-- Apply saved language BEFORE render to prevent flash -->
   <script>
     (function() {
       var lang = localStorage.getItem('braj_lang') || 'hi';
@@ -4645,15 +4644,9 @@ FILE: ./layouts/_default/baseof.html
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/search.css">
   <link rel="stylesheet" href="/css/auth.css">
-
-  <!-- Supabase JS client -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════════════
-     HEADER
-     ════════════════════════════════════════════════════ -->
 <header class="site-header">
   <div class="header-inner">
 
@@ -4688,17 +4681,14 @@ FILE: ./layouts/_default/baseof.html
         <span class="lang-en">Rhyme Dictionary</span>
       </a>
 
-      <!-- Language toggle -->
       <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">English</button>
 
-      <!-- ── LOGIN BUTTON (shown when logged out) ── -->
       <button class="auth-login-btn" id="auth-login-btn">
         <span>♡</span>
         <span class="lang-hi">लॉग इन</span>
         <span class="lang-en">Sign In</span>
       </button>
 
-      <!-- ── USER MENU (shown when logged in) ── -->
       <div class="auth-user-menu" id="auth-user-menu">
         <div class="auth-user-avatar" id="auth-user-avatar">?</div>
         <span class="auth-user-name" id="auth-user-name"></span>
@@ -4713,7 +4703,6 @@ FILE: ./layouts/_default/baseof.html
       </div>
     </nav>
 
-    <!-- Header search bar -->
     <div class="header-search" id="header-search-form">
       <div class="header-search-wrap">
         <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -4729,12 +4718,92 @@ FILE: ./layouts/_default/baseof.html
       </div>
     </div>
 
+    <button
+      class="hamburger"
+      id="hamburger-btn"
+      aria-expanded="false"
+      aria-label="Open menu"
+    >
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+    </button>
+
   </div>
 </header>
 
-<!-- ════════════════════════════════════════════════════
-     WORD TOOLTIP (dictionary lookup)
-     ════════════════════════════════════════════════════ -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+
+  <div class="mobile-nav-header">
+    <span class="mobile-nav-title">ब्रज काव्यलोक</span>
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-nav-links">
+    <a href="/poems/" class="mobile-nav-link">
+      <span class="mnl-icon">📜</span>
+      <span class="lang-hi">कविताएँ</span>
+      <span class="lang-en">Poems</span>
+    </a>
+    <a href="/poets/" class="mobile-nav-link">
+      <span class="mnl-icon">✍</span>
+      <span class="lang-hi">कवि</span>
+      <span class="lang-en">Poets</span>
+    </a>
+    <a href="/themes/" class="mobile-nav-link">
+      <span class="mnl-icon">🏷</span>
+      <span class="lang-hi">विषय</span>
+      <span class="lang-en">Themes</span>
+    </a>
+    <a href="/collections/" class="mobile-nav-link">
+      <span class="mnl-icon">📚</span>
+      <span class="lang-hi">संग्रह</span>
+      <span class="lang-en">Collections</span>
+    </a>
+    <a href="/tools/meter-analyzer/" class="mobile-nav-link">
+      <span class="mnl-icon">◎</span>
+      <span class="lang-hi">छंद विश्लेषक</span>
+      <span class="lang-en">Meter Analyzer</span>
+    </a>
+    <a href="/tools/rhyme-dictionary/" class="mobile-nav-link">
+      <span class="mnl-icon">◈</span>
+      <span class="lang-hi">तुक शब्दकोश</span>
+      <span class="lang-en">Rhyme Dictionary</span>
+    </a>
+    <a href="/search/" class="mobile-nav-link">
+      <span class="mnl-icon">🔍</span>
+      <span class="lang-hi">खोज</span>
+      <span class="lang-en">Search</span>
+    </a>
+    <a href="/favourites/" class="mobile-nav-link">
+      <span class="mnl-icon">♡</span>
+      <span class="lang-hi">पसंदीदा</span>
+      <span class="lang-en">Favourites</span>
+    </a>
+  </nav>
+
+  <div class="mobile-nav-footer">
+    <button class="lang-toggle mobile-lang-toggle" id="mobile-lang-toggle" onclick="toggleLang()">English</button>
+
+    <button class="auth-login-btn" id="mobile-auth-login-btn" style="margin-top:0.75rem;width:100%;justify-content:center;">
+      <span>♡</span>
+      <span class="lang-hi">लॉग इन</span>
+      <span class="lang-en">Sign In</span>
+    </button>
+    <div class="auth-user-menu" id="mobile-auth-user-menu" style="margin-top:0.75rem;margin-left:0;justify-content:center;">
+      <div class="auth-user-avatar" id="mobile-auth-user-avatar">?</div>
+      <span class="auth-user-name" id="mobile-auth-user-name"></span>
+      <button class="auth-logout-btn" id="mobile-auth-logout-btn">
+        <span class="lang-hi">बाहर</span>
+        <span class="lang-en">Sign Out</span>
+      </button>
+    </div>
+  </div>
+
+</div>
+
 <div id="word-tooltip" class="word-tooltip hidden">
   <div class="tooltip-header">
     <span class="tooltip-word"></span>
@@ -4745,15 +4814,10 @@ FILE: ./layouts/_default/baseof.html
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════
-     AUTH MODAL
-     ════════════════════════════════════════════════════ -->
 <div class="auth-modal-wrap hidden" id="auth-modal-wrap">
 
-  <!-- Dark overlay — click to close -->
   <div id="auth-modal-overlay"></div>
 
-  <!-- Modal card -->
   <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
 
     <button class="auth-modal-close" id="auth-modal-close" aria-label="Close">✕</button>
@@ -4768,9 +4832,7 @@ FILE: ./layouts/_default/baseof.html
       <span class="lang-en">Sign in to save your favourite poems and poets</span>
     </p>
 
-    <!-- Google sign-in -->
     <button class="auth-google-btn" id="auth-google-btn">
-      <!-- Google G logo -->
       <svg class="auth-google-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
         <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -4781,10 +4843,8 @@ FILE: ./layouts/_default/baseof.html
       Continue with Google
     </button>
 
-    <!-- Divider -->
     <div class="auth-divider"><span>or continue with email</span></div>
 
-    <!-- Email magic link -->
     <input
       type="email"
       id="auth-email-input"
@@ -4797,28 +4857,20 @@ FILE: ./layouts/_default/baseof.html
       <span class="lang-en">Send Login Link</span>
     </button>
 
-    <!-- Status message -->
     <p class="auth-message" id="auth-message"></p>
 
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════
-     MAIN CONTENT
-     ════════════════════════════════════════════════════ -->
 <main class="main-content">
   {{ block "main" . }}{{ end }}
 </main>
 
-<!-- ════════════════════════════════════════════════════
-     FOOTER
-     ════════════════════════════════════════════════════ -->
 <footer class="site-footer">
   <span class="lang-hi">ब्रज अवधी काव्यलोक</span>
   <span class="lang-en">Braj Awadhi Kavyalok</span>
 </footer>
 
-<!-- Dictionary data -->
 {{ $dict := index .Site.Data "dictionary" }}
 {{ if $dict }}
 <script>
@@ -4826,14 +4878,64 @@ FILE: ./layouts/_default/baseof.html
 </script>
 {{ end }}
 
-<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-auth.js"></script>
+<script src="/js/favorite.js"></script>
 <script src="/js/dictionary.js"></script>
 <script src="/js/lang.js"></script>
 <script src="/js/fuse.min.js"></script>
 <script src="/js/search.js"></script>
-<script src="/js/supabase-auth.js"></script>
+<script src="/js/poem-download.js"></script>
 
-<!-- YouTube IFrame API + Custom Player -->
+<script>
+(function () {
+  var hamburger = document.getElementById('hamburger-btn');
+  var nav       = document.getElementById('mobile-nav');
+  var overlay   = document.getElementById('mobile-nav-overlay');
+  var closeBtn  = document.getElementById('mobile-nav-close');
+
+  function openNav() {
+    nav.classList.add('is-open');
+    overlay.classList.add('is-open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    nav.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeNav() {
+    nav.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    nav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger) hamburger.addEventListener('click', openNav);
+  if (closeBtn)  closeBtn.addEventListener('click', closeNav);
+  if (overlay)   overlay.addEventListener('click', closeNav);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+
+  var links = document.querySelectorAll('.mobile-nav-link');
+  links.forEach(function (link) {
+    link.addEventListener('click', closeNav);
+  });
+
+  var mobileLoginBtn  = document.getElementById('mobile-auth-login-btn');
+  var mobileLogoutBtn = document.getElementById('mobile-auth-logout-btn');
+  if (mobileLoginBtn)  mobileLoginBtn.addEventListener('click', function () {
+    closeNav();
+    if (window.BrajAuth) window.BrajAuth.openModal();
+  });
+  if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', function () {
+    closeNav();
+    if (window.BrajAuth) window.BrajAuth.getClient().auth.signOut();
+  });
+})();
+</script>
+
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 var ytPlayers = {};
@@ -4891,6 +4993,7 @@ function syncIcons(el, state) {
 
 </body>
 </html>
+
 
 ================================================================
 FILE: ./layouts/_default/list.html
@@ -5042,10 +5145,41 @@ FILE: ./layouts/favourites/single.html
   const empty       = document.getElementById('favs-empty');
   const results     = document.getElementById('favs-results');
 
-  function show(el)  { el.classList.remove('hidden'); }
-  function hide(el)  { el.classList.add('hidden'); }
+  function show(el) { el.classList.remove('hidden'); }
+  function hide(el) { el.classList.add('hidden'); }
 
-  function renderFavourites(favs) {
+  // ── Canonical form order (mirrors poems list page) ──────────────────────
+  const FORM_ORDER = ['सवैया', 'दोहा', 'सोरठा', 'कवित्त', 'पद', 'छंद', 'भजन'];
+
+  // ── Fetch the site search index to look up each poem's form ─────────────
+  let searchIndexCache = null;
+  async function getSearchIndex() {
+    if (searchIndexCache) return searchIndexCache;
+    try {
+      const res = await fetch('/index.json');
+      if (!res.ok) throw new Error('index fetch failed');
+      searchIndexCache = await res.json();
+    } catch (e) {
+      searchIndexCache = [];
+    }
+    return searchIndexCache;
+  }
+
+  // Build a url → form map from the index
+  async function buildFormMap() {
+    const index = await getSearchIndex();
+    const map = {};
+    for (const entry of index) {
+      if (entry.type === 'poem' && entry.url && entry.form) {
+        // Normalise trailing slash variants
+        map[entry.url.replace(/\/$/, '')] = entry.form;
+      }
+    }
+    return map;
+  }
+
+  // ── Main render ──────────────────────────────────────────────────────────
+  async function renderFavourites(favs) {
     hide(loading);
 
     if (!favs || favs.length === 0) {
@@ -5056,50 +5190,83 @@ FILE: ./layouts/favourites/single.html
     const poems = favs.filter(f => f.item_type === 'poem');
     const poets = favs.filter(f => f.item_type === 'poet');
 
+    // Look up form for each poem favourite
+    const formMap = poems.length > 0 ? await buildFormMap() : {};
+
+    // Group poems by form
+    const formGroups = {};   // form label → [fav, ...]
+    for (const fav of poems) {
+      const normUrl = (fav.item_url || '').replace(/\/$/, '');
+      const form    = formMap[normUrl] || 'अन्य';
+      if (!formGroups[form]) formGroups[form] = [];
+      formGroups[form].push(fav);
+    }
+
+    // Sort form groups: canonical order first, then alphabetical for unknowns
+    const sortedForms = Object.keys(formGroups).sort((a, b) => {
+      const ia = FORM_ORDER.indexOf(a);
+      const ib = FORM_ORDER.indexOf(b);
+      if (ia === -1 && ib === -1) return a.localeCompare(b);
+      if (ia === -1) return 1;
+      if (ib === -1) return -1;
+      return ia - ib;
+    });
+
     let html = '';
 
+    // ── POEMS section (with form sub-groups) ────────────────────────────────
     if (poems.length > 0) {
       html += `
-        <p class="favs-section-title">
-          <span class="lang-hi">कविताएँ</span>
-          <span class="lang-en">Poems</span>
-          — ${poems.length}
-        </p>
-        <div class="favs-list">
-          ${poems.map(f => `
-            <a href="${f.item_url}" class="favs-row">
-              <div>
-                <div class="favs-row-title">${f.item_title}</div>
-                <div class="favs-row-meta">poem</div>
+        <div class="favs-type-block">
+          <p class="favs-type-title">
+            <span class="lang-hi">कविताएँ</span>
+            <span class="lang-en">Poems</span>
+            <span class="favs-type-count">${poems.length}</span>
+          </p>
+
+          ${sortedForms.map(form => `
+            <div class="favs-form-group">
+              <p class="favs-form-heading">${form}</p>
+              <div class="favs-list">
+                ${formGroups[form].map(f => `
+                  <a href="${f.item_url}" class="favs-row">
+                    <div>
+                      <div class="favs-row-title">${f.item_title}</div>
+                    </div>
+                    <svg class="favs-row-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                  </a>
+                `).join('')}
               </div>
-              <svg class="favs-row-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
+            </div>
           `).join('')}
         </div>
       `;
     }
 
+    // ── POETS section ────────────────────────────────────────────────────────
     if (poets.length > 0) {
       html += `
-        <p class="favs-section-title">
-          <span class="lang-hi">कवि</span>
-          <span class="lang-en">Poets</span>
-          — ${poets.length}
-        </p>
-        <div class="favs-list">
-          ${poets.map(f => `
-            <a href="${f.item_url}" class="favs-row">
-              <div>
-                <div class="favs-row-title">${f.item_title}</div>
-                <div class="favs-row-meta">poet</div>
-              </div>
-              <svg class="favs-row-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-          `).join('')}
+        <div class="favs-type-block">
+          <p class="favs-type-title">
+            <span class="lang-hi">कवि</span>
+            <span class="lang-en">Poets</span>
+            <span class="favs-type-count">${poets.length}</span>
+          </p>
+          <div class="favs-list">
+            ${poets.map(f => `
+              <a href="${f.item_url}" class="favs-row">
+                <div>
+                  <div class="favs-row-title">${f.item_title}</div>
+                  <div class="favs-row-meta">कवि / poet</div>
+                </div>
+                <svg class="favs-row-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+            `).join('')}
+          </div>
         </div>
       `;
     }
@@ -5108,14 +5275,13 @@ FILE: ./layouts/favourites/single.html
     show(results);
   }
 
-  // Poll until BrajAuth is ready (it loads after DOMContentLoaded)
+  // ── Auth polling (same pattern as before) ───────────────────────────────
   function waitForAuth(attempts) {
     if (attempts <= 0) { hide(loading); return; }
 
     if (window.BrajAuth) {
       const user = window.BrajAuth.getUser();
       if (user === null && attempts > 1) {
-        // Auth initialised but no user
         hide(loading);
         show(notLoggedIn);
         return;
@@ -5126,22 +5292,72 @@ FILE: ./layouts/favourites/single.html
       }
     }
 
-    // Not ready yet — wait a bit
     setTimeout(() => waitForAuth(attempts - 1), 200);
   }
 
-  // Also listen for auth state changes so the page updates if someone
-  // signs in while already on this page
   document.addEventListener('DOMContentLoaded', function () {
-    // Give supabase-auth.js time to initialise
     setTimeout(() => waitForAuth(20), 500);
   });
 
 })();
 </script>
 
-{{ end }}
+<style>
+/* ── Type block (Poems / Poets) ──────────────────────── */
+.favs-type-block {
+  margin-bottom: 2.5rem;
+}
 
+.favs-type-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.15rem;
+  color: var(--gold);
+  font-family: var(--font-hi);
+  font-weight: bold;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border-light);
+  margin-bottom: 1.5rem;
+}
+
+.favs-type-count {
+  font-size: 0.7rem;
+  font-family: var(--font-en);
+  background: rgba(232,184,122,0.1);
+  color: var(--gold-dim);
+  border: 1px solid rgba(232,184,122,0.2);
+  border-radius: 20px;
+  padding: 0.05rem 0.5rem;
+}
+
+/* ── Form sub-group (सवैया, दोहा, …) ─────────────────── */
+.favs-form-group {
+  margin-bottom: 1.75rem;
+}
+
+.favs-form-heading {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-family: var(--font-hi);
+  margin-bottom: 0.65rem;
+  padding-left: 0.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.favs-form-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+</style>
+
+{{ end }}
 
 ================================================================
 FILE: ./layouts/index.html
@@ -5989,40 +6205,6 @@ FILE: ./layouts/index.html
 
 
 ================================================================
-FILE: ./layouts/index.json
-================================================================
-
-{{- $index := slice -}}
-
-{{- range where .Site.RegularPages "Type" "poems" -}}
-  {{- $entry := dict
-    "type"    "poem"
-    "title"   .Title
-    "url"     .Permalink
-    "poet"    (.Params.poet | default "")
-    "themes"  (.Params.themes | default slice)
-    "form"    (.Params.form | default "")
-    "body"    (.Plain | truncate 500)
-  -}}
-  {{- $index = $index | append $entry -}}
-{{- end -}}
-
-{{- range where .Site.RegularPages "Type" "poets" -}}
-  {{- $entry := dict
-    "type"   "poet"
-    "title"  .Title
-    "url"    .Permalink
-    "dates"  (.Params.dates | default "")
-    "region" (.Params.region | default "")
-    "body"   (.Plain | truncate 300)
-  -}}
-  {{- $index = $index | append $entry -}}
-{{- end -}}
-
-{{- $index | jsonify -}}
-
-
-================================================================
 FILE: ./layouts/partials/collection-card.html
 ================================================================
 
@@ -6422,18 +6604,54 @@ FILE: ./layouts/poems/single.html
       </div>
     {{ end }}
 
-    <!-- ── FAVOURITE BUTTON ── -->
-    <button
-      class="fav-btn"
-      data-url="{{ .Permalink }}"
-      data-title="{{ .Title }}"
-      data-type="poem"
-      title="पसंदीदा में जोड़ें / Add to favourites"
-    >
-      <span class="fav-heart">♡</span>
-      <span class="lang-hi">पसंदीदा</span>
-      <span class="lang-en">Favourite</span>
-    </button>
+    <!-- ── ACTION BUTTONS ROW ── -->
+    <div class="poem-actions">
+
+      <!-- Favourite button (always shown) -->
+      <button
+        class="fav-btn"
+        data-url="{{ .Permalink }}"
+        data-title="{{ .Title }}"
+        data-type="poem"
+        data-form="{{ .Params.form }}"
+        title="पसंदीदा में जोड़ें / Add to favourites"
+      >
+        <span class="fav-heart">♡</span>
+        <span class="lang-hi">पसंदीदा</span>
+        <span class="lang-en">Favourite</span>
+      </button>
+
+      <!-- Download button — only rendered for poems with 4 lines or fewer -->
+      {{/* Count non-empty lines in the poem body */}}
+      {{ $content := .Content }}
+      {{ $plainText := .Plain }}
+      {{ $lines := split (trim $plainText "\n ") "\n" }}
+      {{ $nonEmptyLines := 0 }}
+      {{ range $lines }}
+        {{ if gt (len (trim . " \t")) 0 }}
+          {{ $nonEmptyLines = add $nonEmptyLines 1 }}
+        {{ end }}
+      {{ end }}
+
+      {{ if le $nonEmptyLines 4 }}
+      <button
+        id="poem-download-btn"
+        class="poem-dl-btn"
+        title="चित्र के रूप में डाउनलोड करें / Download as image"
+      >
+        <span class="dl-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </span>
+        <span class="lang-hi">चित्र डाउनलोड करें</span>
+        <span class="lang-en">Download Image</span>
+      </button>
+      {{ end }}
+
+    </div><!-- /poem-actions -->
 
   </header>
 
@@ -6485,6 +6703,52 @@ FILE: ./layouts/poems/single.html
   </section>
   {{ end }}
 </article>
+
+<style>
+/* ── Poem action buttons row ──────────────────────────────────────────── */
+.poem-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* ── Download button ──────────────────────────────────────────────────── */
+.poem-dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: none;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-family: var(--font-hi);
+  padding: 0.38rem 1rem;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.poem-dl-btn:hover:not(:disabled) {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+  background: rgba(232, 184, 122, 0.05);
+}
+.poem-dl-btn:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.dl-icon {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* Keep fav-btn margin consistent now that it's inside .poem-actions */
+.poem-actions .fav-btn {
+  margin-top: 0;
+}
+</style>
 {{ end }}
 
 ================================================================
@@ -9666,6 +9930,91 @@ FILE: ./static/css/search.css
 
 
 ================================================================
+FILE: ./static/js/auth.js
+================================================================
+
+// ============================================
+// Braj Awadhi Kavyalok — Auth Engine (Supabase)
+// ============================================
+(function () {
+  const SUPABASE_URL = 'https://sktwptunwlnhntwmglvw.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_w6u93KdBShe57XH0O2825g_l6RhjFz-';
+
+  if (!window.supabase) {
+    console.error('Supabase SDK missing. Ensure script tag is in baseof.html');
+    return;
+  }
+
+  // Initialize client and attach to global window object
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  window.BRAJ_SUPABASE = sb;
+
+  let currentUser = null;
+
+  const modal = document.getElementById('auth-modal');
+  const modalClose = document.getElementById('auth-modal-close');
+  const googleBtn = document.getElementById('auth-google-btn');
+  const magicForm = document.getElementById('auth-magic-form');
+  const magicInput = document.getElementById('auth-magic-email');
+  const magicStatus = document.getElementById('auth-magic-status');
+
+  function openModal() {
+    if (modal) modal.classList.add('is-open');
+  }
+
+  function closeModal() {
+    if (modal) modal.classList.remove('is-open');
+  }
+
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  // Google OAuth Sign In
+  if (googleBtn) {
+    googleBtn.addEventListener('click', async () => {
+      const { error } = await sb.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: window.location.href }
+      });
+      if (error && magicStatus) {
+        magicStatus.textContent = 'त्रुटि / Error: ' + error.message;
+      }
+    });
+  }
+
+  // Magic Link Sign In
+  if (magicForm) {
+    magicForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = (magicInput.value || '').trim();
+      if (!email) return;
+
+      if (magicStatus) magicStatus.textContent = 'भेजा जा रहा है... / Sending...';
+      const { error } = await sb.auth.signInWithOtp({ email });
+
+      if (error) {
+        if (magicStatus) magicStatus.textContent = 'त्रुटि / Error: ' + error.message;
+      } else {
+        if (magicStatus) magicStatus.textContent = 'लिंक भेजा गया! / Magic link sent!';
+      }
+    });
+  }
+
+  sb.auth.getSession().then((res) => {
+    currentUser = res.data.session ? res.data.session.user : null;
+  });
+
+  sb.auth.onAuthStateChange((_event, session) => {
+    currentUser = session ? session.user : null;
+    if (currentUser) closeModal();
+  });
+})();
+
+================================================================
 FILE: ./static/js/dictionary.js
 ================================================================
 
@@ -10045,6 +10394,188 @@ document.addEventListener('keydown', function(e) {
 document.addEventListener('DOMContentLoaded', makePoemWordsClickable);
 
 ================================================================
+FILE: ./static/js/favorite.js
+================================================================
+
+// ============================================
+// Braj Awadhi Kavyalok — Favourites Engine
+// ============================================
+(function () {
+  const CACHE_KEY = 'braj_favorites_cache';
+
+  // Helper to get active Supabase client
+  function getSupabaseClient() {
+    return window.BRAJ_SUPABASE || window.supabaseClient;
+  }
+
+  async function getCurrentUser() {
+    const client = getSupabaseClient();
+    if (!client || !client.auth) return null;
+    const { data } = await client.auth.getSession();
+    return data.session ? data.session.user : null;
+  }
+
+  function readCache() {
+    try {
+      return JSON.parse(sessionStorage.getItem(CACHE_KEY)) || null;
+    } catch {
+      return null;
+    }
+  }
+
+  function writeCache(list) {
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify(list));
+  }
+
+  function clearCache() {
+    sessionStorage.removeItem(CACHE_KEY);
+  }
+
+  async function fetchFavorites(user) {
+    if (!user) return [];
+    const cached = readCache();
+    if (cached) return cached;
+
+    const client = getSupabaseClient();
+    if (!client) return [];
+
+    const { data, error } = await client
+      .from('favorites')
+      .select('*')
+      .eq('user_id', user.id);
+
+    if (error) {
+      console.error('Favorites fetch error:', error);
+      return [];
+    }
+    writeCache(data);
+    return data;
+  }
+
+  async function isFavorited(user, url) {
+    const list = await fetchFavorites(user);
+    return list.find(f => f.item_url === url) || null;
+  }
+
+  async function addFavorite(user, { url, title, type, form }) {
+    const client = getSupabaseClient();
+    if (!client) return null;
+
+    const { data, error } = await client
+      .from('favorites')
+      .insert({
+        user_id: user.id,
+        item_url: url,
+        item_title: title,
+        item_type: type,
+        form: form || null
+      })
+      .select();
+
+    if (error) {
+      console.error('Add favorite error:', error);
+      return null;
+    }
+
+    const list = readCache() || [];
+    if (data && data[0]) {
+      list.push(data[0]);
+      writeCache(list);
+    }
+    return data ? data[0] : null;
+  }
+
+  async function removeFavorite(user, url) {
+    const client = getSupabaseClient();
+    if (!client) return;
+
+    const { error } = await client
+      .from('favorites')
+      .delete()
+      .eq('user_id', user.id)
+      .eq('item_url', url);
+
+    if (error) {
+      console.error('Remove favorite error:', error);
+      return;
+    }
+    writeCache((readCache() || []).filter(f => f.item_url !== url));
+  }
+
+  function setButtonState(btn, active) {
+    btn.classList.toggle('is-active', active);
+  }
+
+  async function initButton(btn) {
+    const url = btn.dataset.url;
+    const title = btn.dataset.title;
+    const type = btn.dataset.type || 'poem';
+    const form = btn.dataset.form || '';
+
+    // Check initial favorite status if logged in
+    const user = await getCurrentUser();
+    if (user) {
+      const fav = await isFavorited(user, url);
+      setButtonState(btn, !!fav);
+    } else {
+      setButtonState(btn, false);
+    }
+
+    // Attach click event
+    btn.addEventListener('click', async function (e) {
+      e.preventDefault();
+      const currentUser = await getCurrentUser();
+
+      // Open auth modal if not logged in
+      if (!currentUser) {
+        const modal = document.getElementById('auth-modal');
+        if (modal) {
+          modal.classList.add('is-open');
+        } else {
+          alert('पसंदीदा में जोड़ने के लिए साइन इन करें / Please sign in to save favourites.');
+        }
+        return;
+      }
+
+      btn.style.pointerEvents = 'none';
+      const existing = await isFavorited(currentUser, url);
+
+      if (existing) {
+        setButtonState(btn, false);
+        await removeFavorite(currentUser, url);
+      } else {
+        setButtonState(btn, true);
+        await addFavorite(currentUser, { url, title, type, form });
+      }
+      btn.style.pointerEvents = 'auto';
+    });
+  }
+
+  async function refreshAllButtons() {
+    clearCache();
+    const user = await getCurrentUser();
+    document.querySelectorAll('.fav-btn').forEach(async btn => {
+      if (user) {
+        const fav = await isFavorited(user, btn.dataset.url);
+        setButtonState(btn, !!fav);
+      } else {
+        setButtonState(btn, false);
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fav-btn').forEach(initButton);
+    const client = getSupabaseClient();
+    if (client && client.auth) {
+      client.auth.onAuthStateChange(() => refreshAllButtons());
+    }
+  });
+
+  window.brajFavorites = { getCurrentUser, fetchFavorites, clearCache };
+})();
+
+================================================================
 FILE: ./static/js/lang.js
 ================================================================
 
@@ -10095,28 +10626,29 @@ FILE: ./static/js/nav.js
 
   if (!toggle || !menu) return;
 
-  // Open / close on button click
+  // Toggle dropdown on button click
   toggle.addEventListener('click', function (e) {
     e.stopPropagation();
     const isOpen = menu.classList.contains('is-open');
-    closeMenu();          // close any already-open state
+    closeMenu();
     if (!isOpen) openMenu();
   });
 
-  // Close when clicking anywhere outside
+  // Close menu when clicking anywhere outside
   document.addEventListener('click', function () {
     closeMenu();
   });
 
-  // Close on Escape
+  // Close menu on Escape key press
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeMenu();
   });
 
-  // Keyboard: allow arrow-key navigation inside the menu
+  // Keyboard accessibility: allow arrow-key navigation inside menu
   menu.addEventListener('keydown', function (e) {
     const items = Array.from(menu.querySelectorAll('a'));
     const idx   = items.indexOf(document.activeElement);
+
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       items[(idx + 1) % items.length].focus();
@@ -10129,7 +10661,7 @@ FILE: ./static/js/nav.js
   function openMenu() {
     menu.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');
-    // Move focus to first item for keyboard users
+    // Focus first item for keyboard users
     const first = menu.querySelector('a');
     if (first) first.focus();
   }
@@ -10140,6 +10672,284 @@ FILE: ./static/js/nav.js
   }
 })();
 
+================================================================
+FILE: ./static/js/poem-download.js
+================================================================
+
+// ============================================
+// Braj Awadhi Kavyalok — Poem Image Download
+// Canvas API — entirely client-side, no cost
+//
+// Generates a 1080×1080 PNG with:
+//   • Dark warm gradient background
+//   • Subtle decorative border
+//   • Poem text (Tiro Devanagari Hindi)
+//   • Poet attribution
+//   • Site branding (corner)
+// Only works for poems of 4 lines or fewer.
+// ============================================
+
+(function () {
+
+  const CANVAS_SIZE  = 1080;
+  const BRAND_NAME   = 'ब्रज अवधी काव्यलोक';
+  const BRAND_URL    = 'braj-avadhi-kavyalok.netlify.app';
+
+  // ── Palette (matches site dark-gold theme) ──────────────────────────────
+  const COLOR = {
+    bgTop:       '#150800',
+    bgBottom:    '#2a0d04',
+    bgAccent:    'rgba(192, 57, 43, 0.12)',
+    border:      'rgba(232, 184, 122, 0.22)',
+    borderInner: 'rgba(232, 184, 122, 0.08)',
+    ornament:    'rgba(232, 184, 122, 0.18)',
+    verse:       '#f0e0c8',
+    poet:        '#c9906a',
+    brand:       'rgba(201, 144, 106, 0.55)',
+    divider:     'rgba(232, 184, 122, 0.25)',
+  };
+
+  // ── Extract poem lines from the rendered DOM ─────────────────────────────
+  function extractLines() {
+    const poemBody = document.getElementById('poem-text');
+    if (!poemBody) return null;
+
+    const raw = poemBody.innerText || poemBody.textContent || '';
+    const lines = raw
+      .split('\n')
+      .map(l => l.trim())
+      .filter(l => l.length > 0);
+
+    return lines;
+  }
+
+  // ── Word-wrap a single line to fit within maxWidth ───────────────────────
+  function wrapLine(ctx, text, maxWidth) {
+    const words  = text.split(' ');
+    const result = [];
+    let current  = '';
+
+    for (const word of words) {
+      const test = current ? current + ' ' + word : word;
+      if (ctx.measureText(test).width > maxWidth && current) {
+        result.push(current);
+        current = word;
+      } else {
+        current = test;
+      }
+    }
+    if (current) result.push(current);
+    return result;
+  }
+
+  // ── Draw rounded rectangle ───────────────────────────────────────────────
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  // ── Draw decorative corner flourish ──────────────────────────────────────
+  function drawCorner(ctx, x, y, size, rotation) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rotation);
+    ctx.strokeStyle = COLOR.ornament;
+    ctx.lineWidth   = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(size, 0);
+    ctx.moveTo(0, 0);
+    ctx.lineTo(0, size);
+    ctx.moveTo(size * 0.4, 0);
+    ctx.quadraticCurveTo(0, 0, 0, size * 0.4);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // ── Main render function ─────────────────────────────────────────────────
+  async function renderToCanvas(lines, poetName) {
+    await document.fonts.ready;
+
+    const canvas = document.createElement('canvas');
+    canvas.width  = CANVAS_SIZE;
+    canvas.height = CANVAS_SIZE;
+    const ctx = canvas.getContext('2d');
+
+    const S   = CANVAS_SIZE;
+    const PAD = 90;
+
+    // 1. Background gradient
+    const grad = ctx.createLinearGradient(0, 0, 0, S);
+    grad.addColorStop(0, COLOR.bgTop);
+    grad.addColorStop(1, COLOR.bgBottom);
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, S, S);
+
+    // Radial glow
+    const radial = ctx.createRadialGradient(S/2, S * 0.3, 0, S/2, S * 0.3, S * 0.6);
+    radial.addColorStop(0, COLOR.bgAccent);
+    radial.addColorStop(1, 'transparent');
+    ctx.fillStyle = radial;
+    ctx.fillRect(0, 0, S, S);
+
+    // 2. Outer border
+    ctx.strokeStyle = COLOR.border;
+    ctx.lineWidth   = 1.5;
+    roundRect(ctx, PAD * 0.55, PAD * 0.55, S - PAD * 1.1, S - PAD * 1.1, 8);
+    ctx.stroke();
+
+    // Inner border
+    ctx.strokeStyle = COLOR.borderInner;
+    ctx.lineWidth   = 1;
+    roundRect(ctx, PAD * 0.55 + 8, PAD * 0.55 + 8, S - PAD * 1.1 - 16, S - PAD * 1.1 - 16, 4);
+    ctx.stroke();
+
+    // 3. Corner decorations
+    const cSize = 36;
+    const cOff  = PAD * 0.55 + 20;
+    drawCorner(ctx, cOff,     cOff,     cSize,  0);
+    drawCorner(ctx, S - cOff, cOff,     cSize,  Math.PI / 2);
+    drawCorner(ctx, S - cOff, S - cOff, cSize,  Math.PI);
+    drawCorner(ctx, cOff,     S - cOff, cSize, -Math.PI / 2);
+
+    // 4. Top ornament
+    ctx.font      = '72px "Tiro Devanagari Hindi", serif';
+    ctx.fillStyle = COLOR.ornament;
+    ctx.textAlign = 'center';
+    ctx.fillText('॥', S / 2, PAD + 55);
+
+    // 5. Verse text — auto-fit font size
+    const maxTextWidth = S - PAD * 2.4;
+    let fontSize = 52;
+    let allWrapped;
+
+    while (fontSize >= 30) {
+      ctx.font = `${fontSize}px "Tiro Devanagari Hindi", serif`;
+      allWrapped = lines.flatMap(l => wrapLine(ctx, l, maxTextWidth));
+      if (allWrapped.length <= 6) break;
+      fontSize -= 2;
+    }
+
+    const lineHeight  = fontSize * 1.75;
+    const blockHeight = allWrapped.length * lineHeight;
+    const startY      = (S - blockHeight) / 2 - 20;
+
+    ctx.fillStyle    = COLOR.verse;
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'top';
+
+    allWrapped.forEach((line, i) => {
+      ctx.font = `${fontSize}px "Tiro Devanagari Hindi", serif`;
+      ctx.fillText(line, S / 2, startY + i * lineHeight);
+    });
+
+    // 6. Divider
+    const dividerY = startY + blockHeight + 36;
+    const divW     = 160;
+    ctx.strokeStyle = COLOR.divider;
+    ctx.lineWidth   = 1;
+    ctx.beginPath();
+    ctx.moveTo(S / 2 - divW / 2, dividerY);
+    ctx.lineTo(S / 2 + divW / 2, dividerY);
+    ctx.stroke();
+
+    // Diamond on divider
+    ctx.fillStyle = COLOR.divider;
+    ctx.save();
+    ctx.translate(S / 2, dividerY);
+    ctx.rotate(Math.PI / 4);
+    ctx.fillRect(-4, -4, 8, 8);
+    ctx.restore();
+
+    // 7. Poet name
+    if (poetName) {
+      ctx.font         = '36px "Tiro Devanagari Hindi", serif';
+      ctx.fillStyle    = COLOR.poet;
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText('— ' + poetName, S / 2, dividerY + 28);
+    }
+
+    // 8. Site branding
+    const brandY = S - PAD * 0.55 - 52;
+    ctx.font         = '24px "Tiro Devanagari Hindi", serif';
+    ctx.fillStyle    = COLOR.brand;
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'top';
+    ctx.fillText(BRAND_NAME, S / 2, brandY);
+
+    ctx.font      = '18px "Lora", Georgia, serif';
+    ctx.fillStyle = 'rgba(201, 144, 106, 0.35)';
+    ctx.fillText(BRAND_URL, S / 2, brandY + 30);
+
+    return canvas;
+  }
+
+  // ── Trigger PNG download ──────────────────────────────────────────────────
+  function downloadCanvas(canvas, filename) {
+    canvas.toBlob(blob => {
+      const url  = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href     = url;
+      link.download = filename;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 3000);
+    }, 'image/png');
+  }
+
+  // ── Slugify poem title for filename ──────────────────────────────────────
+  function makeFilename(title) {
+    const safe = (title || 'poem').replace(/[/\\:*?"<>|]/g, '').trim();
+    return safe + '.png';
+  }
+
+  // ── Init ─────────────────────────────────────────────────────────────────
+  function init() {
+    const btn = document.getElementById('poem-download-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', async function () {
+      const lines = extractLines();
+
+      if (!lines || lines.length > 4) {
+        alert('यह सुविधा केवल चार पंक्तियों तक की कविताओं के लिए उपलब्ध है।\nThis feature is only available for poems of four lines or fewer.');
+        return;
+      }
+
+      const originalHTML = btn.innerHTML;
+      btn.disabled  = true;
+      btn.innerHTML = '<span class="dl-icon">⏳</span><span class="lang-hi">बन रहा है…</span><span class="lang-en">Generating…</span>';
+
+      try {
+        const poetEl   = document.querySelector('.poem-poet a, .poem-poet');
+        const poetName = poetEl ? poetEl.textContent.trim() : '';
+        const titleEl  = document.querySelector('.poem-title');
+        const title    = titleEl ? titleEl.textContent.trim() : 'poem';
+
+        const canvas = await renderToCanvas(lines, poetName);
+        downloadCanvas(canvas, makeFilename(title));
+      } catch (err) {
+        console.error('Poem download error:', err);
+        alert('चित्र बनाने में त्रुटि हुई। / Error generating image.');
+      } finally {
+        btn.disabled  = false;
+        btn.innerHTML = originalHTML;
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+
+})();
 
 ================================================================
 FILE: ./static/js/rhyme-dictionary.js
@@ -10861,28 +11671,63 @@ FILE: ./static/js/supabase-auth.js
 // ============================================
 // Braj Awadhi Kavyalok — Auth & Favourites
 // Powered by Supabase
+// Favourites cached in sessionStorage — only
+// one Supabase fetch per browsing session.
 // ============================================
 
 (function () {
 
-  const SUPABASE_URL = 'https://xftdcucvvgawcozowyew.supabase.co';
-  const SUPABASE_KEY = 'sb_publishable_S9uqhD-0Y700NX-mXK9vpA_Cnjm9XFQ';
+  const SUPABASE_URL = 'https://sktwptunwlnhntwmglvw.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_w6u93KdBShe57XH0O2825g_l6RhjFz-';
 
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
   let currentUser    = null;
-  let userFavourites = new Set(); // stores item_url strings
+  let userFavourites = new Set();
 
   function $(id) { return document.getElementById(id); }
 
+  // ── SESSION CACHE ─────────────────────────────────────────────────────────
+  // Favourites are stored in sessionStorage after the first fetch.
+  // sessionStorage is cleared automatically when the browser tab is closed,
+  // so each new browsing session gets a fresh fetch. Within a session,
+  // all pages share the same cached list — zero extra Supabase calls.
+
+  function cacheKey(userId) {
+    return 'braj_favs_' + userId;
+  }
+
+  function readCache(userId) {
+    try {
+      const raw = sessionStorage.getItem(cacheKey(userId));
+      if (!raw) return null;
+      return new Set(JSON.parse(raw));
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeCache(userId, favouriteSet) {
+    try {
+      sessionStorage.setItem(
+        cacheKey(userId),
+        JSON.stringify([...favouriteSet])
+      );
+    } catch (e) {
+      // sessionStorage full or unavailable — fail silently
+    }
+  }
+
+  function clearCache(userId) {
+    if (userId) sessionStorage.removeItem(cacheKey(userId));
+  }
+
   // ── INITIALISE ────────────────────────────────────────────────────────────
   async function init() {
-    // Check for an existing login session
     const { data: { session } } = await sb.auth.getSession();
     if (session?.user) await onSignedIn(session.user);
     else               onSignedOut();
 
-    // Listen for login / logout events (including OAuth redirect return)
     sb.auth.onAuthStateChange(async (_event, session) => {
       if (session?.user) await onSignedIn(session.user);
       else               onSignedOut();
@@ -10893,14 +11738,12 @@ FILE: ./static/js/supabase-auth.js
   async function onSignedIn(user) {
     currentUser = user;
 
-    // Work out a display name and initial
     const name    = user.user_metadata?.full_name
                  || user.user_metadata?.name
                  || user.email?.split('@')[0]
                  || 'User';
     const initial = name.charAt(0).toUpperCase();
 
-    // Update header UI
     const nameEl   = $('auth-user-name');
     const avatarEl = $('auth-user-avatar');
     const loginBtn = $('auth-login-btn');
@@ -10911,7 +11754,16 @@ FILE: ./static/js/supabase-auth.js
     if (loginBtn) loginBtn.style.display = 'none';
     if (userMenu) userMenu.style.display = 'flex';
 
-    // Load favourites then refresh all heart buttons on the page
+    // Mirror state in mobile nav too
+    const mobileNameEl   = $('mobile-auth-user-name');
+    const mobileAvatarEl = $('mobile-auth-user-avatar');
+    const mobileLoginBtn = $('mobile-auth-login-btn');
+    const mobileUserMenu = $('mobile-auth-user-menu');
+    if (mobileNameEl)   mobileNameEl.textContent   = name;
+    if (mobileAvatarEl) mobileAvatarEl.textContent = initial;
+    if (mobileLoginBtn) mobileLoginBtn.style.display = 'none';
+    if (mobileUserMenu) mobileUserMenu.style.display = 'flex';
+
     await loadFavourites();
     updateFavBtns();
     closeModal();
@@ -10919,6 +11771,9 @@ FILE: ./static/js/supabase-auth.js
 
   // ── SIGNED OUT ────────────────────────────────────────────────────────────
   function onSignedOut() {
+    // Clear the session cache before wiping currentUser
+    if (currentUser) clearCache(currentUser.id);
+
     currentUser = null;
     userFavourites.clear();
 
@@ -10927,35 +11782,50 @@ FILE: ./static/js/supabase-auth.js
     if (loginBtn) loginBtn.style.display = 'flex';
     if (userMenu) userMenu.style.display = 'none';
 
+    const mobileLoginBtn = $('mobile-auth-login-btn');
+    const mobileUserMenu = $('mobile-auth-user-menu');
+    if (mobileLoginBtn) mobileLoginBtn.style.display = 'flex';
+    if (mobileUserMenu) mobileUserMenu.style.display = 'none';
+
     updateFavBtns();
   }
 
-  // ── LOAD FAVOURITES FROM DATABASE ─────────────────────────────────────────
+  // ── LOAD FAVOURITES ───────────────────────────────────────────────────────
+  // Checks the session cache first.
+  // Only hits Supabase if the cache is empty (i.e. first page of this session).
   async function loadFavourites() {
     if (!currentUser) return;
+
+    // 1. Try cache
+    const cached = readCache(currentUser.id);
+    if (cached) {
+      userFavourites = cached;
+      return; // ← no Supabase call needed
+    }
+
+    // 2. Cache miss — fetch from Supabase (happens once per session)
     const { data, error } = await sb
       .from('favourites')
       .select('item_url')
       .eq('user_id', currentUser.id);
+
     if (!error && data) {
       userFavourites = new Set(data.map(r => r.item_url));
+      writeCache(currentUser.id, userFavourites); // save for remaining pages
     }
   }
 
-  // ── TOGGLE A FAVOURITE (add or remove) ───────────────────────────────────
+  // ── TOGGLE A FAVOURITE ────────────────────────────────────────────────────
   async function toggleFavourite(url, title, type) {
-    // Not logged in — open the login modal instead
     if (!currentUser) { openModal(); return; }
 
     if (userFavourites.has(url)) {
-      // Already a favourite — remove it
       await sb.from('favourites')
         .delete()
         .eq('user_id', currentUser.id)
         .eq('item_url', url);
       userFavourites.delete(url);
     } else {
-      // Add as favourite
       await sb.from('favourites').insert({
         user_id:    currentUser.id,
         item_url:   url,
@@ -10965,6 +11835,8 @@ FILE: ./static/js/supabase-auth.js
       userFavourites.add(url);
     }
 
+    // Keep cache in sync so navigating to another page stays accurate
+    writeCache(currentUser.id, userFavourites);
     updateFavBtns();
   }
 
@@ -10981,12 +11853,11 @@ FILE: ./static/js/supabase-auth.js
     });
   }
 
-  // ── MODAL OPEN / CLOSE ────────────────────────────────────────────────────
+  // ── MODAL ─────────────────────────────────────────────────────────────────
   function openModal() {
     const wrap = $('auth-modal-wrap');
     if (!wrap) return;
     wrap.classList.remove('hidden');
-    // Reset state
     const msg        = $('auth-message');
     const emailInput = $('auth-email-input');
     if (msg)        { msg.textContent = ''; msg.style.color = ''; }
@@ -10998,7 +11869,7 @@ FILE: ./static/js/supabase-auth.js
     if (wrap) wrap.classList.add('hidden');
   }
 
-  // ── SIGN IN WITH GOOGLE ───────────────────────────────────────────────────
+  // ── GOOGLE SIGN IN ────────────────────────────────────────────────────────
   async function signInWithGoogle() {
     const { error } = await sb.auth.signInWithOAuth({
       provider: 'google',
@@ -11010,7 +11881,7 @@ FILE: ./static/js/supabase-auth.js
     }
   }
 
-  // ── SIGN IN WITH EMAIL (magic link) ──────────────────────────────────────
+  // ── EMAIL MAGIC LINK ──────────────────────────────────────────────────────
   async function signInWithEmail() {
     const emailInput = $('auth-email-input');
     const emailBtn   = $('auth-email-btn');
@@ -11045,7 +11916,7 @@ FILE: ./static/js/supabase-auth.js
     await sb.auth.signOut();
   }
 
-  // ── BIND ALL EVENT LISTENERS ──────────────────────────────────────────────
+  // ── EVENT LISTENERS ───────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', function () {
     const loginBtn   = $('auth-login-btn');
     const closeBtn   = $('auth-modal-close');
@@ -11065,12 +11936,10 @@ FILE: ./static/js/supabase-auth.js
       if (e.key === 'Enter') signInWithEmail();
     });
 
-    // Escape key closes modal
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeModal();
     });
 
-    // Favourite button clicks — event delegation so it works on any page
     document.addEventListener('click', function (e) {
       const btn = e.target.closest('.fav-btn');
       if (!btn) return;
@@ -11078,11 +11947,10 @@ FILE: ./static/js/supabase-auth.js
       toggleFavourite(btn.dataset.url, btn.dataset.title, btn.dataset.type);
     });
 
-    // Start
     init();
   });
 
-  // ── EXPOSE API FOR THE FAVOURITES PAGE ───────────────────────────────────
+  // ── PUBLIC API (used by favourites page) ──────────────────────────────────
   window.BrajAuth = {
     getClient : () => sb,
     getUser   : () => currentUser,
@@ -11099,3 +11967,25 @@ FILE: ./static/js/supabase-auth.js
   };
 
 })();
+
+
+================================================================
+FILE: ./workflows/keep-alive.yml
+================================================================
+
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    - cron: '0 8 * * *'   # runs every day at 8am UTC
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        run: |
+          curl -s https://xftdcucvvgawcozowyew.supabase.co/rest/v1/ \
+            -H "apikey: sb_publishable_S9uqhD-0Y700NX-mXK9vpA_Cnjm9XFQ" \
+            -o /dev/null
+
